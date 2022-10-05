@@ -63,14 +63,14 @@ LayoutRoutingModule = __decorate([
 /***/ "./src/app/layout/layout.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-header></app-header>\n<app-sidebar></app-sidebar>\n<section class=\"main-container margin-responsive\">\n    <router-outlet></router-outlet>\n</section>\n<app-footer></app-footer>\n"
+module.exports = "<app-header></app-header>\r\n<app-sidebar></app-sidebar>\r\n<section class=\"main-container margin-responsive\">\r\n    <router-outlet></router-outlet>\r\n</section>\r\n<app-footer></app-footer>\r\n"
 
 /***/ }),
 
 /***/ "./src/app/layout/layout.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".main-container {\n  margin-top: 60px;\n  margin-left: 235px;\n  margin-bottom: 120px !important;\n  padding: 15px;\n  -ms-overflow-x: hidden;\n  overflow-x: hidden;\n  overflow-y: scroll;\n  position: relative;\n  overflow: hidden;\n  background-color: #ffffff; }\n\n@media screen and (max-width: 992px) {\n  .main-container {\n    margin-left: 0px !important;\n    margin-bottom: 150px !important; } }\n\n/*\n@media screen and (max-width: 400px) {\n    .margin-responsive {\n        margin-bottom: 130px;\n    }\n}\n@media screen and (max-width: 2000px) {\n    .margin-responsive {\n        margin-bottom: 30px;\n    }\n}\n*/\n"
+module.exports = ".main-container {\n  margin-top: 60px;\n  margin-left: 235px;\n  margin-bottom: 120px !important;\n  padding: 15px;\n  -ms-overflow-x: hidden;\n  overflow-x: hidden;\n  overflow-y: scroll;\n  position: relative;\n  overflow: hidden;\n  background-color: #ffffff; }\n\n@media screen and (max-width: 992px) {\n  .main-container {\n    margin-left: 0px !important;\n    margin-bottom: 150px !important; } }\n\n/*\r\n@media screen and (max-width: 400px) {\r\n    .margin-responsive {\r\n        margin-bottom: 130px;\r\n    }\r\n}\r\n@media screen and (max-width: 2000px) {\r\n    .margin-responsive {\r\n        margin-bottom: 30px;\r\n    }\r\n}\r\n*/\n"
 
 /***/ }),
 

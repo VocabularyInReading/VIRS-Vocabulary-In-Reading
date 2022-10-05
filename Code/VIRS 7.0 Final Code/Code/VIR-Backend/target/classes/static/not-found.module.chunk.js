@@ -39,7 +39,7 @@ NotFoundRoutingModule = __decorate([
 /***/ "./src/app/not-found/not-found.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"welcome-page\" [@routerTransition]>\n    <div class=\"row\">\n        <div class=\"col-md-10 push-md-1\">\n            <h1>404 - Page Not Found</h1>\n            <p class=\"lead\">This page does not exist</p>\n            <p class=\"lead\">\n                <a class=\"btn rounded-btn\" [routerLink]=\"['/']\">Home</a>\n            </p>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"welcome-page\" [@routerTransition]>\r\n    <div class=\"row\">\r\n        <div class=\"col-md-10 push-md-1\">\r\n            <h1>404 - Page Not Found</h1>\r\n            <p class=\"lead\">This page does not exist</p>\r\n            <p class=\"lead\">\r\n                <a class=\"btn rounded-btn\" [routerLink]=\"['/']\">Home</a>\r\n            </p>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
