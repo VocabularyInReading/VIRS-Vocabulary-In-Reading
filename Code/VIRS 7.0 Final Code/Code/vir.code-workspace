@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Backend",
+			"path": "VIR-Backend"
+		},
+		{
+			"name": "Frontend",
+			"path": "VIR-Frontend"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic",
+		"workbench.colorTheme": "Abyss"
+	}
+}

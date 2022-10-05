@@ -1,0 +1,9 @@
+${Ansi.RED} ____   ____  _____  _______     
+${AnsiColor.GREEN}|_  _| |_  _||_   _||_   __ \    
+${AnsiColor.YELLOW}  \ \   / /    | |    | |__) |   
+${AnsiColor.BRIGHT_RED}   \ \ / /     | |    |  __ /    
+${AnsiColor.BLUE}    \ ' /     _| |_  _| |  \ \  
+${AnsiColor.MAGENTA}     \_/     |_____||____|  \ \_ 
+${AnsiColor.BRIGHT_RED}                            |__ |								 
+${AnsiColor.BRIGHT_RED} :: Vocabulary in Reading ::               
+${AnsiColor.BLACK}

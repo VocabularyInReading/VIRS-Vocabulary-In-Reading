@@ -1,0 +1,96 @@
+<div [@routerTransition]>
+    <div id="content">
+    <ngb-alert type="warning" *ngIf="!closed" (close)="close()">Your password did not match, please try again.</ngb-alert>
+    <ngb-alert type="success" *ngIf="registered" (close)="close()">You have succesfully registered! Thank you!</ngb-alert>
+    <!-- <ngb-alert type="success" *ngIf="login" (close)="close()">You have succesfully logged in! Thank you!</ngb-alert> -->
+    <ngb-alert *ngIf="pwordLengthError" type="warning" (close)="close()">Password must be atleast 6 characters long, try again.</ngb-alert>
+    <ngb-alert *ngIf="show" type="danger" (close)="close()">Please choose another user name, the one you chose is taken...</ngb-alert>
+    <ngb-alert *ngIf="emailBlank" type="danger" (close)="close()">Please enter an email</ngb-alert>
+    <ngb-alert *ngIf="userNameBlank" type="danger" (close)="close()">Please enter a user name</ngb-alert>
+    <ngb-alert *ngIf="fullNameBlank" type="danger" (close)="close()">Please enter your full name</ngb-alert>
+    <ngb-alert *ngIf="invalidEmail" type="danger" (close)="close()">Please enter a valid email</ngb-alert>
+    <ngb-alert *ngIf="registrationServerError" type="danger" (close)="close()">There was an error registering. Please try again.</ngb-alert>
+    <ngb-alert *ngIf="emailExists" type="danger" (close)="close()">The email entered has already been registered. Please enter a new one.</ngb-alert>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-4 push-md-4">
+            <!--
+            <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+            <h2>Vocabulary in Reading Study</h2>
+            -->
+            <h2>Create an Account</h2>
+            <form>
+                <div class="form-content">
+                    <div class="form-group">
+
+                        <input type="text" [(ngModel)]="uName" class="form-control input-underline input-lg" id="userName"
+                               name="userName" placeholder="Enter Username" required>
+                    </div>
+                    <div class="form-group">
+
+
+                        <input type="text" [(ngModel)]="fName" class="form-control input-underline input-lg" id="fullName"
+                               name="fullName" placeholder="Enter first and last name" required>
+                    </div>
+                    <div class="form-group">
+
+
+                        <input type="password" [(ngModel)]="pword" class="form-control input-underline input-lg" id="password"
+                               name="pass" placeholder="Enter Password" required />
+                    </div>
+                    <div class="form-group">
+
+
+                        <input type="password" [(ngModel)]="cPass" class="form-control input-underline input-lg" id="cPassword"
+                               name="cpass" placeholder="Re-enter Password" required />
+                    </div>
+                    <div class="form-group">
+
+
+                        <input type="text" [(ngModel)]="email" class="form-control input-underline input-lg" id="email"
+                               name="email" placeholder="Enter email" required />
+                    </div>
+                    <div class="form-group">
+                    </div>
+                </div>
+            </form>
+
+
+            <select class="form-control" id="status" [(ngModel)]="uLevel">
+                <option *ngFor="let i of categoryItems" [value]="i">{{i}}</option>
+            </select>
+            <br />
+            <br />
+            <button class="btn btn-primary btn-block"  type="submit"
+                (click)="getUser(content)" > Register </button>
+            &nbsp;
+
+        </div>
+    </div>
+</div>
+    <!--This is the modal for register warning-->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4>
+                Error<i class="fa fa-fw fa-exclamation"></i>
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!--Alert-->
+            <div *ngIf="show">
+                Please choose another user name, the one you chose is taken...
+            </div>
+            <div>
+                <strong>Sorry! </strong>
+            </div>
+        </div>
+    </ng-template>
+
+<br>
+<br>
+</div>
+</div>

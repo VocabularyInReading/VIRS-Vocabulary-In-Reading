@@ -1,0 +1,113 @@
+$topnav-background-color: #ffffff;
+
+h6{
+    color: rgb(8, 8, 8);
+}
+.topnav {
+    border-radius: 0;
+    background-color: $topnav-background-color;
+    padding : 6px;
+    z-index:2;
+    .text-center{
+        text-align: center;
+        padding-left : 0;
+        cursor: pointer;
+    }
+    .top-right-nav{
+        .buy-now{
+            a{
+                color:#000000;
+            }
+        }
+        .dropdown-menu{
+            top: 40px;
+            right: -5px;
+            left : auto;
+            .message-preview{
+                .media{
+                    .media-body{
+                        .media-heading{
+                            font-size: 14px;
+                            font-weight: bold;
+                            margin-bottom : 0;
+                        }
+                        p{
+                            margin : 0;
+                        }
+                        p.last{
+                            font-size : 13px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            hr {
+                margin-top: 1px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+.messages {
+    width: 300px;
+    .media {
+        border-bottom: 1px solid rgb(0, 0, 0);
+        padding: 5px 10px;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .media-body {
+        h5 {
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .small {
+            margin: 0;
+        }
+        .last {
+            font-size: 12px;
+            margin: 0;
+        }
+    }
+}
+.header .navbar {
+    background: $topnav-background-color !important;
+}
+
+.navbar-toggler{
+    background-color: #3d3d3d;
+}
+/*
+.navbar-toggler-icon{
+    background-color: #3d3d3d !important;
+}
+*/
+.lg-view{
+    display:inline-block;
+ }
+
+ .sm-view{
+    display:none;
+ }
+#title{
+    color: #3d3d3d;
+    font-family: europa,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    font-size: xx-large;
+}
+@media only screen and (max-width: 992px) {
+    .lg-view{
+        display:none;
+     }
+
+     .sm-view{
+        display:inline-block;
+     }
+    .font-responsive {
+          font-size: 1em;
+       }
+
+    }

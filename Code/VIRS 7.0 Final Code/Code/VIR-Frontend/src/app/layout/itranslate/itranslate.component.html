@@ -1,0 +1,60 @@
+
+<div class = "container-fluid ml-1">
+
+    <div class="card-header card-primary card-inverse" id="itranslate">
+        <i class="fa fa-fw fa-font fa-2x float-right"></i>iTranslate&nbsp;&nbsp;
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" name="textArea" id="exampleTextarea" rows="10" maxlength="30000" [(ngModel)]="textArea"
+        placeholder="Enter your text to translate here" required></textarea>
+    </div>
+
+    <br>
+
+    <div>
+        <select class="custom-select" id="inlineFormCustomSelect" [(ngModel)]="target" required>
+            <option [ngValue]="undefined" disabled  selected> Select target language </option>
+            <option *ngFor="let options of optionsSelect" [value]="options.value">{{options.label}}</option>
+        </select>
+    </div>
+    <br/>
+    <div class="btn-group">
+        <button type="button" class="btn dark-mode float-left" (click)="translate()">Translate</button>
+    </div>
+
+    <br>
+    <br>
+
+    <div >
+        <p class="float-left"> Characters left to translate: {{charsLeft}} </p>
+    </div>
+
+    <br>
+    <br>
+
+    <div style="text-align:justify">
+        <div class="card">
+            <div class="card-header card-primary card-inverse bg-success">
+                <i class="fa fa-fw fa-2x float-left"></i>Translation&nbsp;&nbsp;
+            </div>
+            <div class="container-fluid" style="text-align:justify">
+                {{t2}}
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+

@@ -1,0 +1,72 @@
+.fa-times {
+    color: tomato;
+}
+
+.fa-check{
+    color: lawngreen;
+}
+
+#progress {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#progress td, #progress th {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#progress tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#progress tr:hover {
+    background-color: #ddd;
+}
+
+#progress th {
+    border: 2px solid #ddd;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: lightskyblue;
+    color: white;
+}
+
+#stats {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#stats td, #stats th {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#stats tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+#stats tr:hover {
+    background-color: #ddd;
+}
+
+#stats th {
+    border: 2px solid #ddd;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: lightskyblue;
+    color: white;
+}
+
+.modal-header {
+    text-align: center;
+}

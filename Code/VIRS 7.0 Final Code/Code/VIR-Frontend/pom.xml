@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.vir</groupId>
+	<artifactId>VIR-Frontend</artifactId>
+
+	<version>6.1.1</version>
+
+	<packaging>pom</packaging>
+
+	<name>VIR-Frontend</name>
+	<description>Frontend POM for the project</description>
+
+	<properties>
+		<ng.production.flag></ng.production.flag>
+		<npm.executable></npm.executable>
+		<ng.executable></ng.executable>
+	</properties>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>exec-maven-plugin</artifactId>
+				<groupId>org.codehaus.mojo</groupId>
+				<executions>
+					<execution>
+						<id>angular-cli build</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<phase>generate-resources</phase>
+						<configuration>
+							<executable>${ng.executable}</executable>
+							<arguments>
+								<argument>build</argument>
+								<argument>-op=../VIR-Backend/src/main/resources/static</argument>
+								<argument>${ng.production.flag}</argument>
+							</arguments>
+							<workingDirectory>${basedir}</workingDirectory>
+						</configuration>
+					</execution>
+
+
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>install</id>
+			<properties>
+				<activatedProperties>install</activatedProperties>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>exec-maven-plugin</artifactId>
+						<groupId>org.codehaus.mojo</groupId>
+						<executions>
+							<execution>
+								<id>npm install</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>generate-sources</phase>
+								<configuration>
+									<executable>${npm.executable}</executable>
+									<arguments>
+										<argument>install</argument>
+									</arguments>
+									<workingDirectory>${basedir}</workingDirectory>
+									<target>
+										<echo message="Npm install" />
+									</target>
+								</configuration>
+							</execution>
+
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<activatedProperties>test</activatedProperties>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>exec-maven-plugin</artifactId>
+						<groupId>org.codehaus.mojo</groupId>
+						<executions>
+							<execution>
+								<id>angular-cli test</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>test</phase>
+								<configuration>
+									<executable>${ng.executable}</executable>
+									<arguments>
+										<argument>test</argument>
+										<argument>--progress</argument>
+										<argument>--browsers=Chrome</argument>
+										<argument>--reporters=junit</argument>
+										<argument>--single-run</argument>
+									</arguments>
+									<workingDirectory>${basedir}</workingDirectory>
+								</configuration>
+							</execution>
+							<execution>
+								<id>angular-cli e2e</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>test</phase>
+								<configuration>
+									<executable>${ng.executable}</executable>
+									<arguments>
+										<argument>e2e</argument>
+									</arguments>
+									<workingDirectory>${basedir}</workingDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

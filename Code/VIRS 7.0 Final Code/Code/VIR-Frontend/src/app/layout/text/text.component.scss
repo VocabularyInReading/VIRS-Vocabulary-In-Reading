@@ -1,0 +1,96 @@
+// Class
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.fontStyle{
+    font-size: .9em;
+    font-weight: bold;
+}
+.center {
+    margin: auto;
+    width: 50%;
+  }
+h5{
+    text-align: center;
+    font-weight: bold;
+}
+
+.topMargin{
+    margin-top: 10px;
+}
+.bottomMargin {
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width: 992px) {
+    .margin-responsive {
+        margin-bottom: 70px;
+    }
+}
+
+.oneLine{
+    display: inline;
+    list-style-type: none;
+    padding-right: 2px;
+}
+
+.buttonPadding{
+    padding-right: 30px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 10px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 10px solid #a94442; /* red */
+}
+
+.box1{
+    background-color: #FF7919;
+    min-height: 150px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+    padding-top: 35px;
+    border-radius: 8px;
+
+}
+
+.box2{
+    background-color: #74D941;
+    min-height: 150px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+    padding-top: 35px;
+    border-radius: 8px;
+}
+
+.box3{
+    background-color: #3D99F5;
+    min-height: 150px;
+    margin-right: 25px;
+    margin-left: 25px;
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+    padding-top: 35px;
+    border: 2px solid;
+    border-radius: 8px;
+}

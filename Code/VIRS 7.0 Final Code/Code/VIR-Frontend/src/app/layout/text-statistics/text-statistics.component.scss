@@ -1,0 +1,40 @@
+
+  .red {
+      color: #ff0072;
+  }
+
+  .orange {
+      color: rgb(255, 115, 0);
+  }
+
+  .yellow {
+      color: orange;
+  }
+
+  .green {
+      color: #74D941;
+  }
+
+  .blue {
+      color: #4152b4;
+  }
+
+
+// title font resize
+@media screen and (max-width: 570px) {
+    .font-responsive {
+         font-size: 1.8rem;
+    }
+  }
+  
+@media screen and (max-width: 375px) {
+    .font-responsive {
+         font-size: 1.6rem;
+    }
+  }
+
+@media screen and (max-width: 320px) {
+    .font-responsive {
+         font-size: 1.3rem;
+    }
+  }

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.vir.service.impl.dictionary.WikiHtmlCleanerServiceTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0 sec - in com.vir.service.impl.dictionary.WikiHtmlCleanerServiceTest

@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38D0440E1F8153D60030785C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D0440D1F8153D60030785C /* AppDelegate.swift */; };
+		38D044101F8153D60030785C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D0440F1F8153D60030785C /* ViewController.swift */; };
+		38D044131F8153D60030785C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D044111F8153D60030785C /* Main.storyboard */; };
+		38D044151F8153D60030785C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D044141F8153D60030785C /* Assets.xcassets */; };
+		38D044181F8153D60030785C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D044161F8153D60030785C /* LaunchScreen.storyboard */; };
+		38D044231F8153D70030785C /* VIR_iPhoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D044221F8153D70030785C /* VIR_iPhoneTests.swift */; };
+		38D0442E1F8153D70030785C /* VIR_iPhoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D0442D1F8153D70030785C /* VIR_iPhoneUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38D0441F1F8153D70030785C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38D044021F8153D60030785C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38D044091F8153D60030785C;
+			remoteInfo = "VIR-iPhone";
+		};
+		38D0442A1F8153D70030785C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38D044021F8153D60030785C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38D044091F8153D60030785C;
+			remoteInfo = "VIR-iPhone";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		38D0440A1F8153D60030785C /* VIR-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIR-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D0440D1F8153D60030785C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38D0440F1F8153D60030785C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38D044121F8153D60030785C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38D044141F8153D60030785C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38D044171F8153D60030785C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38D044191F8153D60030785C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38D0441E1F8153D70030785C /* VIR-iPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIR-iPhoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D044221F8153D70030785C /* VIR_iPhoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIR_iPhoneTests.swift; sourceTree = "<group>"; };
+		38D044241F8153D70030785C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38D044291F8153D70030785C /* VIR-iPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VIR-iPhoneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D0442D1F8153D70030785C /* VIR_iPhoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIR_iPhoneUITests.swift; sourceTree = "<group>"; };
+		38D0442F1F8153D70030785C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		38D044071F8153D60030785C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38D0441B1F8153D70030785C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38D044261F8153D70030785C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38D044011F8153D60030785C = {
+			isa = PBXGroup;
+			children = (
+				38D0440C1F8153D60030785C /* VIR-iPhone */,
+				38D044211F8153D70030785C /* VIR-iPhoneTests */,
+				38D0442C1F8153D70030785C /* VIR-iPhoneUITests */,
+				38D0440B1F8153D60030785C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		38D0440B1F8153D60030785C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38D0440A1F8153D60030785C /* VIR-iPhone.app */,
+				38D0441E1F8153D70030785C /* VIR-iPhoneTests.xctest */,
+				38D044291F8153D70030785C /* VIR-iPhoneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		38D0440C1F8153D60030785C /* VIR-iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				38D0440D1F8153D60030785C /* AppDelegate.swift */,
+				38D0440F1F8153D60030785C /* ViewController.swift */,
+				38D044111F8153D60030785C /* Main.storyboard */,
+				38D044141F8153D60030785C /* Assets.xcassets */,
+				38D044161F8153D60030785C /* LaunchScreen.storyboard */,
+				38D044191F8153D60030785C /* Info.plist */,
+			);
+			path = "VIR-iPhone";
+			sourceTree = "<group>";
+		};
+		38D044211F8153D70030785C /* VIR-iPhoneTests */ = {
+			isa = PBXGroup;
+			children = (
+				38D044221F8153D70030785C /* VIR_iPhoneTests.swift */,
+				38D044241F8153D70030785C /* Info.plist */,
+			);
+			path = "VIR-iPhoneTests";
+			sourceTree = "<group>";
+		};
+		38D0442C1F8153D70030785C /* VIR-iPhoneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				38D0442D1F8153D70030785C /* VIR_iPhoneUITests.swift */,
+				38D0442F1F8153D70030785C /* Info.plist */,
+			);
+			path = "VIR-iPhoneUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		38D044091F8153D60030785C /* VIR-iPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38D044321F8153D70030785C /* Build configuration list for PBXNativeTarget "VIR-iPhone" */;
+			buildPhases = (
+				38D044061F8153D60030785C /* Sources */,
+				38D044071F8153D60030785C /* Frameworks */,
+				38D044081F8153D60030785C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VIR-iPhone";
+			productName = "VIR-iPhone";
+			productReference = 38D0440A1F8153D60030785C /* VIR-iPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		38D0441D1F8153D70030785C /* VIR-iPhoneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38D044351F8153D70030785C /* Build configuration list for PBXNativeTarget "VIR-iPhoneTests" */;
+			buildPhases = (
+				38D0441A1F8153D70030785C /* Sources */,
+				38D0441B1F8153D70030785C /* Frameworks */,
+				38D0441C1F8153D70030785C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38D044201F8153D70030785C /* PBXTargetDependency */,
+			);
+			name = "VIR-iPhoneTests";
+			productName = "VIR-iPhoneTests";
+			productReference = 38D0441E1F8153D70030785C /* VIR-iPhoneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		38D044281F8153D70030785C /* VIR-iPhoneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38D044381F8153D70030785C /* Build configuration list for PBXNativeTarget "VIR-iPhoneUITests" */;
+			buildPhases = (
+				38D044251F8153D70030785C /* Sources */,
+				38D044261F8153D70030785C /* Frameworks */,
+				38D044271F8153D70030785C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				38D0442B1F8153D70030785C /* PBXTargetDependency */,
+			);
+			name = "VIR-iPhoneUITests";
+			productName = "VIR-iPhoneUITests";
+			productReference = 38D044291F8153D70030785C /* VIR-iPhoneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		38D044021F8153D60030785C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Vocabulary In Reading Strategy";
+				TargetAttributes = {
+					38D044091F8153D60030785C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = K2KAF5N3PU;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+					};
+					38D0441D1F8153D70030785C = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 38D044091F8153D60030785C;
+					};
+					38D044281F8153D70030785C = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 38D044091F8153D60030785C;
+					};
+				};
+			};
+			buildConfigurationList = 38D044051F8153D60030785C /* Build configuration list for PBXProject "VIR-iPhone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 38D044011F8153D60030785C;
+			productRefGroup = 38D0440B1F8153D60030785C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				38D044091F8153D60030785C /* VIR-iPhone */,
+				38D0441D1F8153D70030785C /* VIR-iPhoneTests */,
+				38D044281F8153D70030785C /* VIR-iPhoneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38D044081F8153D60030785C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D044181F8153D60030785C /* LaunchScreen.storyboard in Resources */,
+				38D044151F8153D60030785C /* Assets.xcassets in Resources */,
+				38D044131F8153D60030785C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38D0441C1F8153D70030785C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38D044271F8153D70030785C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38D044061F8153D60030785C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D044101F8153D60030785C /* ViewController.swift in Sources */,
+				38D0440E1F8153D60030785C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38D0441A1F8153D70030785C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D044231F8153D70030785C /* VIR_iPhoneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		38D044251F8153D70030785C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D0442E1F8153D70030785C /* VIR_iPhoneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38D044201F8153D70030785C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38D044091F8153D60030785C /* VIR-iPhone */;
+			targetProxy = 38D0441F1F8153D70030785C /* PBXContainerItemProxy */;
+		};
+		38D0442B1F8153D70030785C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38D044091F8153D60030785C /* VIR-iPhone */;
+			targetProxy = 38D0442A1F8153D70030785C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		38D044111F8153D60030785C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38D044121F8153D60030785C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		38D044161F8153D60030785C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38D044171F8153D60030785C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		38D044301F8153D70030785C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		38D044311F8153D70030785C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		38D044331F8153D70030785C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K2KAF5N3PU;
+				INFOPLIST_FILE = "VIR-iPhone/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vir;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		38D044341F8153D70030785C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = K2KAF5N3PU;
+				INFOPLIST_FILE = "VIR-iPhone/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vir;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		38D044361F8153D70030785C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "VIR-iPhoneTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vir.VIR-iPhoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIR-iPhone.app/VIR-iPhone";
+			};
+			name = Debug;
+		};
+		38D044371F8153D70030785C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "VIR-iPhoneTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vir.VIR-iPhoneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VIR-iPhone.app/VIR-iPhone";
+			};
+			name = Release;
+		};
+		38D044391F8153D70030785C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "VIR-iPhoneUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vir.VIR-iPhoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "VIR-iPhone";
+			};
+			name = Debug;
+		};
+		38D0443A1F8153D70030785C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "VIR-iPhoneUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vir.VIR-iPhoneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "VIR-iPhone";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		38D044051F8153D60030785C /* Build configuration list for PBXProject "VIR-iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38D044301F8153D70030785C /* Debug */,
+				38D044311F8153D70030785C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38D044321F8153D70030785C /* Build configuration list for PBXNativeTarget "VIR-iPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38D044331F8153D70030785C /* Debug */,
+				38D044341F8153D70030785C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38D044351F8153D70030785C /* Build configuration list for PBXNativeTarget "VIR-iPhoneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38D044361F8153D70030785C /* Debug */,
+				38D044371F8153D70030785C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38D044381F8153D70030785C /* Build configuration list for PBXNativeTarget "VIR-iPhoneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38D044391F8153D70030785C /* Debug */,
+				38D0443A1F8153D70030785C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 38D044021F8153D60030785C /* Project object */;
+}

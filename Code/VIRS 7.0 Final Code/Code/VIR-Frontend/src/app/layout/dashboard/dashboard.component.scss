@@ -1,0 +1,52 @@
+.margin-div{
+    margin-top: 5px;
+    //margin-bottom: 5px;
+    //margin-left: 1px;
+}
+
+.padding-div{
+    padding: 5px;
+}
+
+a {text-decoration: none; }
+
+.lg-view {
+    display:inline-block;
+    width: 100%;
+
+}
+.sm-view {
+    display:none;
+}
+@media screen and (max-width: 600px) {
+    .lg-view{
+        display:none;
+     }
+
+     .sm-view{
+        display:inline-block;
+        width: 100%;
+        background-image: url('../../../assets/images/VIRS-1.jpg');
+        background-repeat: no-repeat;
+        color: white;
+        text-align: center;
+        font-size: larger;
+        padding-top: 20%;
+        padding-bottom: 20%;
+        padding-right: 10%;
+        padding-left: 10%;
+        margin: auto;
+     }
+    /*
+    .margin-responsive {
+        margin-bottom: 120px;
+        margin-top: 150px;
+    }
+    */
+
+}
+
+.carousel-caption {
+    bottom:15%;
+    top:auto;
+}

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.vir</groupId>
+	<artifactId>VIR-Backend</artifactId>
+
+	<version>6.3.0</version>
+
+	<packaging>jar</packaging>
+
+	<name>VIR-Backend</name>
+	<description>Backend service which facilitates learning of new languages through analysis of text and gathering of data which is then displayed to the user.</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<!-- General properties -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+
+		<!-- Versions properties -->
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<swager.version>2.7.0</swager.version>
+		<thucydides-core.version>0.9.275</thucydides-core.version>
+		<tika.version>1.16</tika.version>
+		<jasypt.starter.version>1.16</jasypt.starter.version>
+		<opencsv.version>3.3</opencsv.version>
+		<imageio.version>2.0</imageio.version>
+		<imageio-core.version>1.3.1</imageio-core.version>
+		<imageio-jpeg2000.version>1.3.0</imageio-jpeg2000.version>
+		<!--<tess4j.version>4.3.0</tess4j.version>--><!--3.4.1--><!--4.3.0-->
+		<opencv.version>3.2.0-1</opencv.version>
+
+		<!-- AWS bundling properties -->
+		<bundle.dir>${basedir}/bundle</bundle.dir>
+		<target.jar>${project.build.directory}/${project.build.finalName}.jar</target.jar>
+		<bundle.jar>${bundle.dir}/${project.build.finalName}.jar</bundle.jar>
+		<release.bundle.zip>${basedir}/release/bundle-${project.build.finalName}.zip</release.bundle.zip>
+		<procfile.file>${bundle.dir}/Procfile</procfile.file>
+		<procfile.contents>web: java -jar ${project.build.finalName}.jar</procfile.contents>
+	</properties>
+
+	<!--https://mvnrepository.com-->
+	<dependencies>
+		<!-- <dependency>
+            <groupId>org.bytedeco.javacpp-presets</groupId>
+            <artifactId>leptonica-platform</artifactId>
+            <version>1.76.0-1.4.3</version>
+        </dependency> -->
+	<!--
+		Please check this for when the latest version of tesseract is available. 4.0.0 was officially released already
+		https://mvnrepository.com/artifact/org.bytedeco.javacpp-presets/tesseract
+	-->
+		<dependency>
+			<groupId>org.bytedeco.javacpp-presets</groupId>
+			<artifactId>tesseract-platform</artifactId>
+			<!-- <version>3.04.01-1.3</version> -->
+			<version>4.0.0-rc2-1.4.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-textract -->
+		<dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-textract</artifactId>
+            <version>1.11.637</version>
+        </dependency>
+		<dependency>
+			<groupId>org.imgscalr</groupId>
+			<artifactId>imgscalr-lib</artifactId>
+			<version>4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sendgrid</groupId>
+			<artifactId>java-http-client</artifactId>
+			<version>4.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sendgrid</groupId>
+			<artifactId>sendgrid-java</artifactId>
+			<version>4.3.0</version>
+		</dependency>
+		<!-- ADDED BY MONICA -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
+		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.18.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>3.1.1.RELEASE</version>
+		</dependency>
+
+		<!-- CLOSE ADDED BY MONICA -->
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>26.0-jre</version>
+			<!-- or, for Android: -->
+			<!-- <version>26.0-android</version> -->
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-jdbc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<!--START_ADDED_SETTINGS-->
+			<!--http://mvnrepository.com/artifact/mysql/mysql-connector-java-->
+			<!-- <version>8.0.12</version> -->
+			<version>5.1.47</version>
+			<!--END_ADDED_SETTINGS-->
+		</dependency>
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>com.vaadin.external.google</groupId>
+					<artifactId>android-json</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot-starter</artifactId>
+			<version>${jasypt.starter.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swager.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swager.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>net.thucydides</groupId>
+			<artifactId>thucydides-core</artifactId>
+			<version>${thucydides-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-parsers</artifactId>
+			<version>${tika.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>${opencsv.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.levigo.jbig2</groupId>
+			<artifactId>levigo-jbig2-imageio</artifactId>
+			<version>${imageio.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.jai-imageio</groupId>
+			<artifactId>jai-imageio-core</artifactId>
+			<version>${imageio-core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.jai-imageio</groupId>
+			<artifactId>jai-imageio-jpeg2000</artifactId>
+			<version>${imageio-jpeg2000.version}</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>net.sourceforge.tess4j</groupId>
+			<artifactId>tess4j</artifactId>
+			<version>${tess4j.version}</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.openpnp</groupId>
+			<artifactId>opencv</artifactId>
+			<version>${opencv.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.11.3</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<includes>
+						<include>**/*Tests.java</include>
+						<include>**/*Test.java</include>
+					</includes>
+					<excludes>
+						<exclude>**/*IT.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<activatedProperties>dev</activatedProperties>
+				<maven.test.skip>true</maven.test.skip>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<activatedProperties>test</activatedProperties>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>integration-test</id>
+			<properties>
+				<activatedProperties>integration-test</activatedProperties>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.18.1</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>integration-test</goal>
+									<goal>verify</goal>
+								</goals>
+								<configuration>
+									<includes>
+										<include>**/*IT.java</include>
+									</includes>
+									<excludes>
+										<exclude>**/*Tests.java</exclude>
+										<exclude>**/*Test.java</exclude>
+									</excludes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<activatedProperties>prod</activatedProperties>
+			</properties>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<!-- This resources build will allow us to exclude the database files 
+					from prod. We need to specify all these even though it looks verbose. Look 
+					at the effective POM on how Spring Boot does it. -->
+				<resources>
+					<resource>
+						<filtering>true</filtering>
+						<directory>${basedir}/src/main/resources</directory>
+						<includes>
+							<include>**/application*.yml</include>
+							<include>**/application*.yaml</include>
+							<include>**/application*.properties</include>
+						</includes>
+					</resource>
+					<resource>
+						<directory>${basedir}/src/main/resources</directory>
+						<excludes>
+							<exclude>**/application*.yml</exclude>
+							<exclude>**/application*.yaml</exclude>
+							<exclude>**/application*.properties</exclude>
+							<exclude>data.sql</exclude>
+							<exclude>schema.sql</exclude>
+						</excludes>
+					</resource>
+				</resources>
+				<plugins>
+					<!-- Create the production bundle -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<target>
+										<echo message="Prepearing the bundle..." />
+										<delete>
+											<fileset dir="${bundle.dir}">
+												<include name="*.jar" />
+											</fileset>
+										</delete>
+										<copy toFile="${bundle.jar}" file="${target.jar}" />
+										<echo file="${procfile.file}">${procfile.contents}</echo>
+										<zip compress="false" destfile="${release.bundle.zip}"
+											basedir="${bundle.dir}" />
+									</target>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

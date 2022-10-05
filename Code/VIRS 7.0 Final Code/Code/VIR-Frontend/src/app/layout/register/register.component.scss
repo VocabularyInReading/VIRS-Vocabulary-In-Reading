@@ -1,0 +1,50 @@
+h2{
+    text-align:center;
+    margin-bottom: 30px;
+}
+#content {
+    padding-top: 50px;
+    background-color: rgb(177, 209, 231);
+}
+/*
+.ng-tns-c7-1.ng-trigger.ng-trigger-routerTransition {
+
+    background-image: url('../../../assets/images/VIRS-1.jpg');
+    background-repeat: no-repeat;
+    //background-attachment: fixed;
+    background-size: cover;
+
+    margin-top: 40px;
+    //margin-bottom: 40px;
+  }
+  */
+/*
+input{
+
+    border-radius: 12px;
+    //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+select{
+
+    border-radius: 12px;
+    //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+*/
+form{
+    margin: auto;
+}
+.btn.btn-primary.btn-block{
+    background-color: #2b2b2b !important;
+    width: 50%;
+    //border: 2px solid rgb(0, 0, 0);
+    color: #ebebeb;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    //border-radius: 12px;
+    //box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+

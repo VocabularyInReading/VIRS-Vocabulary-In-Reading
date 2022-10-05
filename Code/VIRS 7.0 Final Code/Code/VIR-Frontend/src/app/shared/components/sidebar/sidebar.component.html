@@ -1,0 +1,261 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <ul class="list-group">
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-home"></i>&nbsp;{{ 'home' | translate }}
+        </a>
+
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('upload')">
+                <span>
+                    <i class="fa fa-plus"></i>&nbsp; {{ 'analyze your text' | translate }}
+                </span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'upload'">
+                <ul class="submenu">
+                    <li>
+                        <a [routerLink]="['/text']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-keyboard-o"></i>&nbsp;{{ 'text' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/doc']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-file-text"></i>&nbsp;{{ 'doc' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/pdf']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-file-pdf-o"></i>&nbsp;{{ 'pdf' | translate }}
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/image']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                            <i class="fa fa-fw fa-picture-o"></i>&nbsp;{{ 'image' | translate }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </div>
+
+        <a routerLink="/essential-words" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-list"></i>&nbsp;{{ 'Essential Words List' | translate }}
+        </a>
+
+        <a routerLink="/stem-academia" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-book"></i>&nbsp;{{ 'Academic/STEM Lists' | translate }}
+        </a>
+
+        <a routerLink="/dictionary" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-book"></i>&nbsp;{{ 'school dictionary' | translate }}
+        </a>
+<!--   TEMPORARILY HID VOCABULARY TESTS AT P.O's REQUEST
+        <a routerLink="/tests" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <li class="fa fa-fw fa-pencil-square-o"></li>&nbsp;{{ 'Vocabulary Tests' | translate }}
+        </a>
+        -->
+        <a routerLink="/itranslate" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <li class="fa fa-fw fa-font"></li>&nbsp;{{ 'iTranslate' | translate }}
+        </a>
+
+        <div class="nested-menu">
+            <a class="list-group-item" (click)="addExpandClass('account')">
+                <span *ngIf="!show">
+                    <i class="fa fa-user"></i>&nbsp; {{ 'My Profile' | translate }}
+                </span>
+                <span *ngIf="show">
+                    <i class="fa fa-user"></i>&nbsp; Welcome - {{ firstName }}
+                </span>
+            </a>
+            <li class="nested" [class.expand]="showMenu === 'account'">
+                <ul class="submenu">
+                    <li>
+                        <div *ngIf="!login">
+                            <a id="aLogin" class="list-group-item" (click)="open(content)">
+                                <i class="fa fa-fw fa-keyboard-o"></i>&nbsp;{{ 'Login' | translate }}
+                            </a>
+                            <a [routerLink]="['/register']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-address-book"></i>&nbsp;{{ 'Register' | translate }}
+                            </a>
+                            <a class="list-group-item" (click)="open(recovery)">
+                                <i class="fa fa-fw fa-refresh"></i>&nbsp;{{ 'Recovery' | translate }}
+                            </a>
+                        </div>
+
+                        <div *ngIf="login">
+                            <a [routerLink]="['/account']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-address-card"></i>&nbsp;{{ 'My Profile' | translate }}
+                            </a>
+                            <a [routerLink]="['/dashboard']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="logout()">
+                                <i class="fa fa-fw fa-keyboard-o"></i>&nbsp;{{ 'Log Out' | translate }}
+                            </a>
+                        </div>
+
+
+                        <div *ngIf="login">
+                            <!-- Monica to be continue ... -->
+                            <a [routerLink]="['/change-password']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-address-book"></i>&nbsp;{{ 'Reset Password' | translate }}
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </div>
+    </ul>
+ <!--This is the modal for Login-->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4>
+                Login
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <form role="form" id="form">
+                    <div class="form-content">
+
+                        <div class="form-group">
+                            <div>
+                                <strong>User Name:</strong>
+                            </div>
+                            <input type="text" [(ngModel)]="loginUser" class="form-control input-underline input-lg" name="user" placeholder="Enter User Name"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <strong>Password:</strong>
+                            </div>
+                            <input type="password" [(ngModel)]="loginPassword" class="form-control input-underline input-lg" name="password" placeholder="Enter Password"
+                            />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="btn btn-primary btn-block" (click)="getUser(loginError); c('Close click')"
+                            type="submit">
+                            login
+                        </button>
+                        &nbsp;
+                    </div>
+                </form>
+            </div>
+        </div>
+    </ng-template>
+
+<!--This is the modal for register warning #-->
+    <ng-template #loginError let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4>
+                Login Error
+                <i class="fa fa-fw fa-exclamation"></i>
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!--Alert-->
+            <div class="alert alert-warning">
+                <!-- <strong>Password did not match! </strong> <button type = "button" aria-label="Please try again." (click)="open(content)"></button>
+                <a class="list-group-item" (click)="open(content)">
+                    <i class="fa fa-fw fa-keyboard-o"></i>&nbsp;{{ 'Login' | translate }}
+                </a> -->
+                <strong>Username or password incorrect! Please try again or register. </strong>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="open(content); c('Close click')">Login</button>
+            <button type="button" class="btn btn-success" [routerLink]="['/register']" [routerLinkActive]="['router-link-active']" (click)="c('Close click')">Register</button>
+        </div>
+    </ng-template>
+
+ <!--This is the modal for Login-->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4>
+                Login!
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <form role="form" id="form">
+                    <div class="form-content">
+                        <div class="form-group">
+                            <div>
+                                <strong>User Name:</strong>
+                            </div>
+                            <input type="text" [(ngModel)]="loginUser" class="form-control input-underline input-lg" name="user" placeholder="Enter User Name"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <strong>Password:</strong>
+                            </div>
+                            <input type="password" [(ngModel)]="loginPassword" class="form-control input-underline input-lg" name="password" placeholder="Enter Password"
+                            />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="btn btn-primary btn-block" (click)="getUser(loginError); c('Close click')"
+                            type="submit">
+                            login
+                        </button>
+                        &nbsp;
+                    </div>
+                </form>
+            </div>
+        </div>
+    </ng-template>
+
+
+<!-- this is a modal for recovery  password by email or by user name  -->
+ <ng-template #recovery let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 style="width: 100%; display:flex">
+            Reset Your Password!
+        </h4>
+
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <form role="form" id="form">
+                <div class="form-content">
+                    <div class="form-group">
+                        <div>
+                            <strong>UserName:</strong>
+                        </div>
+                        <input type="text" [(ngModel)]="emailRecovery" class="form-control input-underline input-lg" name="emailRecovery" placeholder="Enter the username"/>
+                    </div>
+                    <div>
+                        <strong>or</strong>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <strong>Email:</strong>
+                        </div>
+                        <input type="text" [(ngModel)]="emailRecoveryByEmail" class="form-control input-underline input-lg" name="emailRecoveryByEmail" placeholder="Enter the email in your account"/>
+                        <p style="font-size: small; display: flex; width: 100%;"><i>Note: Username will show up in your recovery email!</i></p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                        <button id="btnRecovery" routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="btn btn-primary btn-block" type="submit"
+                        (click)="submit()" onClick="this.disabled=true" >
+                        Send Email
+                    </button>
+                </div>
+                <div *ngIf="successEmailSend" class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{emailRecoveryMessage}}
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-template>
+</nav>

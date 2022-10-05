@@ -1,0 +1,175 @@
+<!--if it sees the object it will show the result, else it prompt the user to go back-->
+<div *ngIf="text;  else elseBlock">
+	<div class="row">
+		<div class="col-8 col-md-8">
+			<h2>Enhanced Text</h2>
+		</div>
+		<div class="col-4 col-md-4" (window:resize)="onResize($event)">
+			<div class="float-right">
+				<button type="button" class="btn btn-warning" (click)="backClicked()">
+					<i class="fa fa-step-backward" aria-hidden="true"></i>{{backLabel}}</button>
+				<button type="button" class="btn btn-primary" [routerLink]="['/text-statistics']">
+					<i class="fa fa-pie-chart" aria-hidden="true"></i>{{statisticsLabel}}</button>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+
+
+	<!--Category Colors Information -->
+	<div class="container center">
+		<div class="row center font-responsive">
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('awl'); open(wordList);">
+					<a href="javascript:void(0)">Academic Word</a>
+				</span>
+				<div class="box goldBox"></div>
+			</div>
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('stem'); open(wordList);">
+					<a href="javascript:void(0)">STEM </a>
+				</span>
+				<span class="box purpleBox"></span>
+			</div>
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('hi'); open(wordList);">
+					<a href="javascript:void(0)">Other High Frequency</a>
+				</span>
+				<span class="box blueBox"></span>
+			</div>
+		</div>
+        <div class = row center front-responsive>
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('med'); open(wordList);">
+					<a href="javascript:void(0)">Med Frequency</a>
+				</span>
+				<div class="box redBox"></div>
+			</div>
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('low'); open(wordList);">
+					<a href="javascript:void(0)">Low Frequency</a>
+				</span>
+				<div class="box greenBox"></div>
+			</div>
+
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('k1'); open(wordList);">
+					<a href="javascript:void(0)">K1</a>
+				</span>
+				<div class="box pinkBox"></div>
+			</div>
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('k2'); open(wordList);">
+					<a href="javascript:void(0)">K2</a>
+				</span>
+				<div class="box orangeBox"></div>
+			</div>
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory('k3'); open(wordList);">
+					<a href="javascript:void(0)">K3</a>
+				</span>
+				<div class="box greyBox"></div>
+			</div>
+			<div class="col-xl-4 col-md-8 col-12">
+				<span (click)="activeCategory(''); open(wordList);">
+					<a href="javascript:void(0)">Names & Off-List</a>
+				</span>
+				<div class="box blackBox"></div>
+			</div>
+        </div>
+	</div>
+	<hr>
+
+	<!--Word Lists popups-->
+	<ng-template #wordList let-c="close" let-d="dismiss">
+		<div class="modal-header">
+			<h4 class="modal-title">
+				{{wordCategory}} Words in this text &nbsp;&nbsp;
+			</h4>
+			<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+
+			<!--word List-->
+			<div *ngFor='let word of totalWords; let i= index;'>
+                <span *ngIf="word.category == category" [class]="word.category" (click)="getDefinition(word.initialValue); open(content); ">
+                    <a href="javascript:void(0)">{{word.initialValue}}<hr></a>
+                </span>
+                <span class="oneLine" *ngIf="word.initialValue == ''">
+                    <br>
+                </span>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+		</div>
+	</ng-template>
+
+
+	<!--Definition model (Popup)-->
+	<ng-template #content let-c="close" let-d="dismiss">
+		<div class="modal-header">
+			<h4 class="modal-title">
+				<img src="assets/images/Wikipedia-logo.png" title="Wikipedia Dictionary" style="width:50px;height:50px;"> Definition &nbsp;&nbsp;
+				<i class="fa fa-spinner fa-spin" style="font-size:32px;color:black" *ngIf='processing'></i>
+			</h4>
+			<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		<div class="modal-body">
+			<!--Alert-->
+			<div class="alert alert-warning" role="alert" *ngIf='error'>
+				<strong>Oh snap!</strong> We couldn't find the definition, please try another word.
+			</div>
+			<!--Definition-->
+			<p *ngIf='!error && !processing' class="card-text" [innerHTML]="wordDefinition.wiki.html"></p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+		</div>
+	</ng-template>
+
+
+
+	<!--Print each word from the words object and color it base on the category-->
+	<div class="enhancedTextbox equalLength"
+         infiniteScroll
+         [infiniteScrollDistance]="3"
+         [infiniteScrollThrottle]="50"
+         (scrolled)="onScrollDown()">
+		<div class="oneLine" *ngFor='let word of totalWords; let i = index'>
+            <span [class]="word.category" (click)="getDefinition(word.initialValue); open(content);">
+				<a href="javascript:void(0)">{{word.initialValue}}</a>
+			</span>
+			<span class="oneLine" *ngIf="word.initialValue == '' && word.initialValue != totalWords[i-1].initialValue">
+				<br>
+				<br>
+			</span>
+		</div>
+	</div>
+</div>
+
+<!--if page refreshes it prompt the user to go to the previous page-->
+<ng-template #elseBlock>
+	<!-- <meta http-equiv="refresh" content="0;url=http://www.myvirs.com/dashboard" /> -->
+	<div class="row">
+		<div class="col-6">
+			<h1>Oops!</h1>
+		</div>
+		<div class="col-6" (window:resize)="onResize($event)">
+			<div class="float-right">
+				<button type="button" class="btn btn-warning" (click)="backClicked()">
+					<i class="fa fa-step-backward" aria-hidden="true"></i>{{backLabel}}</button>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div>
+		<h4> Opps! Please go back...</h4>
+	</div>
+</ng-template>

@@ -1,0 +1,1 @@
+web: java -jar VIR-Backend-6.3.0.jar

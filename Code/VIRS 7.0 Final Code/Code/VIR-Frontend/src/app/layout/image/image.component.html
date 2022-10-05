@@ -1,0 +1,86 @@
+<div [@routerTransition] class="container-fluid">
+
+	<!--Alert-->
+	<div class="alert alert-danger" role="alert" *ngIf='error'>
+		<strong>Oh snap!</strong> The file is not readable.
+	</div>
+
+	<div class="alert alert-warning" role="alert" *ngIf='fileSizeExceeded'>
+			<strong>Oh snap!</strong> The file is too big, please choose a smaller file. Maximum 25 mb.
+	</div>
+
+
+	<div class="card card-danger card-inverse mb-3 col-lg-12 center-block">
+		<div class="card-header card-info">
+			<i class="fa fa-fw fa-picture-o fa-2x float-right" title="Upload your Image"></i>Upload your Image.&nbsp;&nbsp;
+			<i class="fa fa-spinner fa-spin" style="font-size:32px;color:white" *ngIf='processing && userImageFile'></i>
+			<span class="badge badge-default">MAX 25 MB</span>
+		</div>
+
+		<div class="card-block bg-white">
+			<form>
+				<div class="form-group">
+					<input type="file" id="myfile" #fileInput name="myfile" class="btn-block btn btn-danger" accept="image/*" />
+				</div>
+
+				<!-- Button (Double) -->
+				<div class="row">
+					<div class="col-md-12 ">
+						<div class="float-right">
+							<button type="button" class=" btn-block btn btn-secondary" (click)="uploadImage('/enhanced-text-result')">
+								<i class="fa fa-file-text" aria-hidden="true"></i> Enhanced Text</button>
+							<button type="button" class="btn-block btn btn-primary" (click)="uploadImage('/text-statistics')">
+								<i class="fa fa-pie-chart" aria-hidden="true"></i> Statistics</button>
+						</div>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 50px;">
+		<div class="center">
+			<h5>Instructions</h5>
+		</div>
+	</div>
+	<hr>
+
+	<!--Instructions Boxes-->
+	<div class="row topMargin">
+
+		<div class="col-md box1">
+			<div class="col-md-12">
+				<i class="fa fa-upload fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+			</div>
+			<div class="col-md-12">
+				<h5>Choose your Image file</h5>
+				<hr>
+				<p>Maximum 25 MB.</p>
+			</div>
+		</div>
+		<div class="col-md box2">
+			<div class="col-md-12">
+				<i class="fa fa-file-text fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+			</div>
+
+			<div class="col-md-12">
+				<h5>Press "Enhanced Text"</h5>
+				<hr>
+				<p>to read your text in frequency-based color coded system.</p>
+			</div>
+		</div>
+		<div class="col-md box3">
+			<div class="col-md-12">
+				<i class="fa fa-pie-chart fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+			</div>
+			<div class="col-md-12">
+				<h5>Press "Statistics"</h5>
+				<hr>
+				<p>to see if the text is suitable for you and view a detailed analysis of the text.</p>
+			</div>
+		</div>
+
+	</div>
+
+</div>

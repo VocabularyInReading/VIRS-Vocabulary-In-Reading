@@ -1,0 +1,195 @@
+<div>
+
+  <!--Card Header-->
+  <div class="card">
+    <div class="card-header  bg-primary card-inverse">
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+      Admin Panel
+      <i class="fa fa-spinner fa-spin" style="font-size:32px;color:#ff0072" *ngIf='processing'></i>
+    </div>
+
+    <!--Card contents-->
+    <div class="card-block">
+      <h4 class="card-title"></h4>
+      <p class="card-text">
+
+        <!--Alert-->
+        <div class="alert alert-danger" role="alert" *ngIf='error'>
+          <strong>{{alertWord}} </strong> doesn't exist in data base.
+        </div>
+        <div class="alert alert-warning" role="alert" *ngIf='errorAdd'>
+          Please Choose the category!
+        </div>
+
+
+        <!--Search-->
+        <div class="form-group row">
+          <label for="example-search-input" class="col-1 col-form-label">
+            <strong>Search</strong>
+          </label>
+          <div class="col-2">
+            <input class="form-control" type="search" name="searchArea" [(ngModel)]="searchArea" id="example-search-input" placeholder="Word..">
+          </div>
+          <button class="btn btn-primary" (click)="searchWord()" [disabled]="!searchArea" required>Search</button>
+        </div>
+
+        <!--Table - shows the search result-->
+        <div class='table-responsive table-hover table-striped'>
+          <table class='table table-hover'>
+            <thead>
+              <tr>
+                <th>Word</th>
+                <th>Categories</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf='showTable && !error'>
+                <td>{{word.value}}</td>
+                <td>{{word.category}}</td>
+                <td>{{word.id}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!--Add Edit Delete-->
+        <div class=" row">
+
+          <div class="col-2 form-group">
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Word*" name="wordArea" [(ngModel)]="wordArea">
+            <div [hidden]="wordArea" class="alert alert-default" style="color: #ff0072">
+              Word is required
+            </div>
+          </div>
+
+
+          <select class="custom-select mb-2 mr-sm-2 mb-sm-0 col-2" id="inlineFormCustomSelect" [(ngModel)]="category">
+            <option *ngFor="let i of categoryItems" [value]="i">{{i}}</option>
+          </select>
+
+          <div class="col-3 form-group">
+            <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="ID" value="1212" name="idArea"
+              [(ngModel)]="idArea">
+            <div [hidden]="idArea" class="alert alert-default" style="color: #ff0072">
+              ID is required only to
+              <strong> EDIT</strong>
+            </div>
+          </div>
+
+          <div class="col-3 float-right">
+            <button class="btn btn-success" (click)="addWord(wordArea, category)" [disabled]="!wordArea" required>
+              <i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+            <button class="btn btn-warning" (click)="editWord()" [disabled]="!wordArea || !idArea" required>
+              <i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
+            <button class="btn btn-danger" (click)="deleteWord()" [disabled]="!wordArea" required>
+              <i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+          </div>
+        </div>
+
+        <!--Bulk word upload-->
+        <body ng-controller="MainCtrl">
+        
+          <h1>Add words through CSV File</h1>
+          <div class="row top-buffer"></div>
+
+          <div class="row">
+            <input type="file" accept=".csv" (change) = "fileUploadListener($event)" />
+          </div>
+
+          <div class="row top-buffer"></div>
+
+          <div class="row">
+            <select name = "bulkUploadSelect" class="custom-select mb-2 mr-sm-2 mb-sm-0 col-2" id="inlineFormCustomSelect" [(ngModel)]="bulkCategory">
+              <option *ngFor="let i of categoryItems" [value]="i">{{i}}</option>
+            </select>
+            <br>
+          
+            <div class="col-3 float-right">
+              <button class="btn btn-primary" (click)="csvaddCaller()" >
+                <i class="fa fa-plus" aria-hidden="true"></i> Upload</button>
+
+              <button class="btn btn-primary" (click)="csvCategoryUpdate(bulkCategory)" >
+                <i class="fa fa-plus" aria-hidden="true"></i> DELETE and Upload</button>
+            </div>
+            
+          </div>
+        </body>
+
+
+
+        <hr>
+        <!--Session history-->
+        <div>
+          <h3>
+            Session history:
+          </h3>
+          <ul>
+            <div *ngFor="let history of sessionHistory">
+              <li>
+                <strong>{{history}}</strong>
+              </li>
+              <br>
+            </div>
+          </ul>
+
+
+        </div>
+
+
+    </div>
+  </div>
+
+
+  <!--Instructions Boxes-->
+  <div class="row topMargin">
+
+    <div class="col-md box1">
+      <div class="col-md-12">
+        <i class="fa fa-plus fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-12">
+        <h5>Add</h5>
+
+        <hr>
+
+        <p>-Type the word </p>
+        <p>-Select the category</p>
+        <p>-Leave the ID box empty</p>
+        <p>-Click on "Add" button.</p>
+
+      </div>
+    </div>
+    <div class="col-md box2">
+      <div class="col-md-12">
+        <i class="fa fa-pencil fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+      </div>
+
+      <div class="col-md-12">
+        <h5>Edit</h5>
+        <hr>
+        <p>-Search the word</p>
+        <p>-Type the word in "Word" field</p>
+        <p>-Select the category</p>
+        <p>-Type the ID in "ID" field</p>
+        <p>-Click on "Edit" button.</p>
+      </div>
+    </div>
+    <div class="col-md box3">
+      <div class="col-md-12">
+        <i class="fa fa-trash fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+      </div>
+      <div class="col-md-12">
+        <h5>Delete</h5>
+        <hr>
+        <p>-Type the word </p>
+        <p>-Click on "Delete" button.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

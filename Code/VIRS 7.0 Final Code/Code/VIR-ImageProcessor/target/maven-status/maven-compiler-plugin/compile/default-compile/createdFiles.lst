@@ -1,0 +1,4 @@
+com/vir/image/processor/helpers/TesseractOcrReader.class
+com/vir/image/processor/ImageProcessor.class
+com/vir/image/processor/helpers/IOHelper.class
+com/vir/image/processor/helpers/OcrReader.class

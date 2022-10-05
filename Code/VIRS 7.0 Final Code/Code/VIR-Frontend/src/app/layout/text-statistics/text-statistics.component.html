@@ -1,0 +1,226 @@
+<!--if it sees the object it will show the result, else it prompt the user to go back-->
+<div *ngIf="text;  else elseBlock">
+	<div class="row">
+		<div class="col-6 col-sm-7">
+			<h1 class="font-responsive">Text Statistics</h1>
+		</div>
+
+		<div class="col-6 col-sm-5" (window:resize)="onResize($event)">
+			<div class="float-right">
+				<button type="button" class="btn btn-warning" (click)="backClicked()">
+					<i class="fa fa-step-backward" aria-hidden="true"></i>{{backLabel}}</button>
+				<button type="button" class="btn btn-success" [routerLink]="['/enhanced-text-result']">
+					<i class="fa fa-file-text" aria-hidden="true"></i> {{enhanceTextLabel}} </button>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div *ngIf="showDiv">
+
+		<!--Readability Score-->
+		<div class="card" style="margin: auto; margin-bottom: 3%; margin-top: 3%;">
+			<h3 class="card-header">Readability Scores
+			</h3>
+
+			<div class="card-block">
+				<div [ngSwitch]="true" style=" margin-bottom: 2%">
+					<div *ngSwitchCase="text.fleschReadingScore > 79">
+						<ngb-progressbar type="primary" [value]="text.fleschReadingScore" [striped]="true" [animated]="true">
+							<i>
+								<strong>{{text.fleschReadingScore | number:'1.0-2'}} / 100</strong>
+							</i>
+						</ngb-progressbar>
+					</div>
+					<div *ngSwitchCase="text.fleschReadingScore > 69 && text.fleschReadingScore < 80">
+						<ngb-progressbar type="success" [value]="text.fleschReadingScore" [striped]="true" [animated]="true">
+							<i>
+								<strong>{{text.fleschReadingScore | number:'1.0-2'}} / 100</strong>
+							</i>
+						</ngb-progressbar>
+					</div>
+					<div *ngSwitchCase="text.fleschReadingScore < 30">
+						<ngb-progressbar type="danger" [value]="text.fleschReadingScore" [striped]="true" [animated]="true">
+							<i>
+								<strong>{{text.fleschReadingScore | number:'1.0-2'}} / 100</strong>
+							</i>
+						</ngb-progressbar>
+					</div>
+					<div *ngSwitchDefault>
+						<ngb-progressbar type="warning" [value]="text.fleschReadingScore" [striped]="true" [animated]="true">
+							<i>
+								<strong>{{text.fleschReadingScore | number:'1.0-2'}} / 100</strong>
+							</i>
+						</ngb-progressbar>
+					</div>
+				</div>
+
+
+				<p>
+					<Strong>Total Readability Level: </Strong>
+					<strong [class]="textColor" style="font-size: 20px; font-weight: bold;">{{text.fleschReadingScore | number:'1.0-2'}}</strong>
+				</p>
+				<p>
+					<Strong>The text is appropriate for: </Strong>
+					<strong [class]="textColor" style="font-size: 20px; font-weight: bold;">{{textLVL}}</strong>
+				</p>
+                <ng-template #content let-modal let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Readability Score Explained</h4>
+                      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <p><Strong>Beginner</Strong>: Books at the beginner skill level are intended for readers that may have some difficulties with pronunciation and comprehension when new vocabulary is encountered. Uncommon and difficult words should be properly introduced or defined when used. New concepts may rely heavily on pictures or illustrations to assist comprehension. These books should be accessible to readers with no education in the subject area, and should keep new vocabulary and long sentences to a minimum.</p>
+                        <p><Strong>Intermediate</Strong>: Books at the intermediate skill level are intended for readers that may comprehend new vocabulary from the context and usage. Sentence structures may be more diverse, and more difficult vocabulary is often not explained. These books should be accessible to readers without any particular expertise in the subject area, and subject-specific jargon should always be explained.</p>
+                        <p><Strong>Advanced</Strong>: Books at the advanced skill level depend on more background knowledge and understanding of more specialized vocabulary than is common for intermediate readers. Some subject-specific jargon is likely to be used without explanation, but a heavy reliance on subject-specific jargon should be avoided to increase readability and comprehension.</p>
+                        <p><Strong>College</Strong>: Books at the college skill level tend to be highly subject-specific and require extensive background knowledge among readers. Jargon tends to be used extensively, and readability is often sacrificed for precision. These books may be dry, academic, and not welcoming to most readers.</p>
+                        <p><i></i></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="d('Cross click')">Close</button>
+                    </div>
+                </ng-template>
+
+                <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Readability Score Explained</button>
+
+			</div>
+
+		</div>
+
+		<!--Text Statistic-->
+		<div class="card">
+			<h3 class="card-header">Statistics</h3>
+			<div class="card-block">
+				<table class="table table-bordered" style="margin-bottom: 3%;">
+					<thead class="thead-default">
+						<tr>
+							<th>#</th>
+							<th>Word Count</th>
+							<th>Percentage</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">STEM Words</th>
+							<td>{{text.statistics.wordCount.stem}}</td>
+							<td>{{(text.statistics.wordPercentage.stem * 100) | number:'1.0-2'}}%</td>
+						</tr>
+						<tr>
+							<th scope="row">Academic Words</th>
+							<td>{{text.statistics.wordCount.awl}}</td>
+							<td>{{(text.statistics.wordPercentage.awl * 100) | number:'1.0-2'}}%</td>
+						</tr>
+						<tr>
+							<th scope="row">High Freq.</th>
+							<td>{{text.statistics.wordCount.hi}}</td>
+							<td>{{(text.statistics.wordPercentage.hi * 100) | number:'1.0-2'}}%</td>
+						</tr>
+						<tr>
+							<th scope="row">Medium Freq.</th>
+							<td>{{text.statistics.wordCount.med}}</td>
+							<td>{{(text.statistics.wordPercentage.med * 100) | number:'1.0-2'}}%</td>
+						</tr>
+						<tr>
+							<th scope="row">Low Freq.</th>
+							<td>{{text.statistics.wordCount.low}}</td>
+							<td>{{(text.statistics.wordPercentage.low * 100) | number:'1.0-2'}}%</td>
+						</tr>
+						<tr>
+							<th scope="row">Names & off-list</th>
+							<td>{{text.statistics.wordCount.noCategory}}</td>
+							<td>{{(text.statistics.wordPercentage.noCategory * 100) | number:'1.0-2'}}%</td>
+							<span class="box green"></span>
+						</tr>
+						<tr>
+							<th scope="row">K1</th>
+							<td>{{text.statistics.wordCount.k1}}</td>
+							<td>{{(text.statistics.wordPercentage.k1 * 100) | number:'1.0-2'}}%</td>
+							<span class="box green"></span>
+						</tr>
+						<tr>
+							<th scope="row">K2</th>
+							<td>{{text.statistics.wordCount.k2}}</td>
+							<td>{{(text.statistics.wordPercentage.k2 * 100) | number:'1.0-2'}}%</td>
+							<span class="box green"></span>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="table table-bordered">
+					<thead class="thead-default">
+						<tr>
+							<th>#</th>
+							<th>Words</th>
+							<th>Sentences</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Total</th>
+							<td>{{text.statistics.wordCount.total}}</td>
+							<td>{{text.sentenceCount}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+
+		<div class="row" style="margin-top: 3%;">
+			<div class="col col-md-6">
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fa fa-fw fa-bar-chart fa-2x float-right"></i>
+						Bar Chart (#)
+					</div>
+					<div class="card-body">
+						<canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"    [legend]="barChartLegend"
+						 [chartType]="barChartType" [colors]= "lineChartColors" (chartHover)="chartHovered($event)"  (chartClick)="chartClicked($event)" >
+						</canvas>
+					</div>
+				</div>
+			</div>
+			<div class="col col-md-6">
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fa fa-fw fa-pie-chart fa-2x float-right"></i>
+						Pie Chart (%)
+					</div>
+					<div class="card-body">
+						<canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [colors]= "lineChartColors" (chartHover)="chartHovered($event)"
+						 (chartClick)="chartClicked($event)"></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<br>
+<br>
+
+<!--if page refreshes it prompt the user to go to the previous page-->
+<ng-template #elseBlock>
+	<div class="row">
+		<!-- <meta http-equiv="refresh" content="0;url=http://www.myvirs.com/dashboard" /> -->
+		<div class="col-6">
+			<h1>Oops!</h1>
+		</div>
+		<div class="col-6" (window:resize)="onResize($event)">
+			<div class="float-right">
+				<button type="button" class="btn btn-warning" (click)="backClicked()">
+					<i class="fa fa-step-backward" aria-hidden="true"></i> {{backLabel}}</button>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<div>
+		<h4> Opps! Please go back...</h4>
+	</div>
+
+</ng-template>

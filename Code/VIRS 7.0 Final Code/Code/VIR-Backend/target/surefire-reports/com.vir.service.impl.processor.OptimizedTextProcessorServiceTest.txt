@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.vir.service.impl.processor.OptimizedTextProcessorServiceTest
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 15, Time elapsed: 0.008 sec - in com.vir.service.impl.processor.OptimizedTextProcessorServiceTest

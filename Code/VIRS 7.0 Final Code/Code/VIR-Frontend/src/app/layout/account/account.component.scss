@@ -1,0 +1,108 @@
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+li {
+    display: inline-block;
+    //text-align: center;
+}
+
+#stats {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#stats td, #stats th {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#stats tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+#stats tr:hover {
+    background-color: #ddd;
+}
+
+#stats th {
+    border: 2px solid #ddd;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: lightskyblue;
+    color: white;
+}
+
+.right-container
+{
+    text-align: right;
+}
+.hidden
+{
+    display: none;
+}
+.modal-table
+{
+    width: 100%;
+    padding: 5px;
+    margin: auto;
+}
+.modal-header
+{
+    background-color: #4152b4;
+    color: #ffffff;
+}
+.modal-header div
+{
+    margin: auto;
+    font-size: 145%;
+    font-weight: 550;
+}
+.modal-table td
+{
+    // width: 100%;
+    padding: 10px 25px 10px 25px;
+}
+.modal-table tr
+{
+    border-bottom: 1px solid grey;
+}
+.btnModal
+{
+    width: 75%;
+}
+.btnOpenModal
+{
+    margin-right: 10px;
+    // width: 40%;
+}
+.col-btn-modal, #profile-options-container, .btnModalContainer
+{
+    text-align: center;
+}
+.btnModalContainer
+{
+    margin: 10px;
+}
+.modal-table input[type="text"], .modal-table input[type="password"]
+{
+    width: 75%;
+    padding: 5px 15px 5px 15px;
+}
+#userLevel
+{
+    height: 35px;
+}
+#updateMsg
+{
+    margin: 18px;
+    text-align: center;
+    font-size: larger;
+}

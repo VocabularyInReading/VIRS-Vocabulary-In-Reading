@@ -1,0 +1,28 @@
+VIRS v6.3.1
+Date 07/19/2020
+The Enhanced Text page now has an infinite scroll feature, so the app does not become unresponsive
+when large files are processed.
+
+VIRS v6.2.1
+Date 07/03/2020
+OutOfMemoryError bug was fixed that would occur when processing large files. The solution was
+to break down the query that retrieves distinct words from the database that match the
+words extracted from a file into smaller queries.
+
+VIRS v6.1.1
+Date 07/03/2020
+Bug was fixed of not being able to upload a new file without refreshing the page after
+a file processing failure when the message "Oh snap! The file is not readable." appears.
+Before the fix, when a user would choose a new file to upload, it would not get uploaded,
+because the previous file would stay in memory and would fail again. From the perspective
+of a user, it seemed as if processing of any file would always fail after a single failure,
+because there was no way for a user to see what was happening in memory. After fixing the
+bug, when processing of a file fails, a user can upload a new file which now correctly
+replaces the old file in memory.
+
+VIRS v6.1.0
+Date 06/30/2020
+The image processor was changed to account for images with text arranged in columns. Before, 
+the app took the processed text returned from textract and output it in a way that was effectively
+just reading left to right, from the top of the page to the bottom. Now the location of each line is
+analysed to determine if the image has columns of text, then it is all output in the correct order.

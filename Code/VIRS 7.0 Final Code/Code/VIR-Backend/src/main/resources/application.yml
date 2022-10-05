@@ -1,0 +1,108 @@
+spring:
+  profiles:
+    active: "@activatedProperties@"
+  output:
+    ansi:
+      enabled: detect
+  http:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  #THIS CONFIG IS NEW, IT'S REQUIRED TO CONNECT TO GMAIL SERVERS
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: virssenior@gmail.com
+    password: monik123!
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+        auth: true
+        starttls.enable: true
+        ssl.trust: smtp.gmail.com
+
+  # Configuration needed to keep the JPA entity open
+  # Used from here: https://github.com/GluuFederation/message-consumer/issues/4
+  # This would be enough: https://github.com/netgloo/spring-boot-samples/blob/master/spring-boot-mysql-springdatajpa-hibernate/src/main/resources/application.properties
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      connection-test-query: SELECT 1
+  
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+      
+jasypt:
+  encryptor:
+    password: ${APP_ENCRYPTION_PASSWORD}
+
+email:
+  from: do-not-reply@myvirs.com
+  url:
+    recovery: http://localhost:8080/restore?token={token}
+  
+---
+spring:
+  profiles: dev
+  application:
+    name: App-Dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/vir?allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=utf8&connectionCollation=utf8mb4_unicode_ci
+    username: root
+    password: root
+    initialize: false
+    
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+        
+security:
+  user:
+    name: admin
+    password: admin
+    
+server:
+  port: 8080
+  
+oxford:
+  api:
+    id: ENC(1u9g0s3t62OyBexMq3LfYDnzJ1XtJlmd)
+    key: ENC(VKef7KMN0A9KyKYSM0Eqm1g1iK6Mq1Jc4t4BpS5ugTwpweLMV+fQKBXSAsLouZCC)
+---
+
+spring:
+  profiles: prod
+  application:
+    name: App-Prod
+  datasource:
+    url: ENC(xJGlMDD9Yjxl4Sf3j0XnfWgWws2K5dwFJqCawd5OUWW/MdI0Un4065hc688jIVQ/iP6Vs6wVe+qj2sKIFqcwINOWjDQgCki0yFgyCwndbP8HrbJYxrfVIw==)
+    username: ENC(UTkNIxV6ppTay6dw1Y2Ko7wslhPUEBlt)
+    password: ENC(e727rLvbmnoUNdmsXj7CpZPWtklCNXW0)
+    initialize: false
+    
+  jpa:
+    generate-ddl: false
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+
+security:
+  user:
+    name: ENC(FDR1l4UOnbo2E7qq1ByDzg==)
+    password: ENC(E4nbtM4lNXAYJ1Z2HwwpAxwVlIrVgroS)
+    
+server:
+  port: 5000
+  
+oxford:
+  api:
+    id: ENC(1u9g0s3t62OyBexMq3LfYDnzJ1XtJlmd)
+    key: ENC(VKef7KMN0A9KyKYSM0Eqm1g1iK6Mq1Jc4t4BpS5ugTwpweLMV+fQKBXSAsLouZCC)

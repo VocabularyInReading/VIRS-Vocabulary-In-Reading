@@ -1,0 +1,32 @@
+.main-container{
+    margin-top: 60px;
+    margin-left: 235px;
+    margin-bottom: 120px !important;
+    padding: 15px;
+    -ms-overflow-x: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 992px) {
+    .main-container {
+        margin-left: 0px !important;
+        margin-bottom: 150px !important;
+    }
+}
+/*
+@media screen and (max-width: 400px) {
+    .margin-responsive {
+        margin-bottom: 130px;
+    }
+}
+@media screen and (max-width: 2000px) {
+    .margin-responsive {
+        margin-bottom: 30px;
+    }
+}
+*/
+

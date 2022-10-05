@@ -1,0 +1,138 @@
+.oneLine{
+    display: inline;
+    list-style-type: none;
+}
+
+.equalLength{
+      text-align: justify;
+}
+
+.hi {
+    color: #0026ff;
+}
+
+.med {
+    color: red;
+}
+
+.low {
+    color: green;
+}
+
+.awl {
+    //color: rgb(255, 166, 0);
+    color:gold
+}
+
+.stem {
+    color:darkorchid;
+}
+
+.K1 {
+  color:pink;
+}
+
+.K2 {
+  color:orange;
+}
+
+.K3 {
+  color:lightslategrey;
+}
+
+////////////////////////
+
+.box {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.blueBox {
+  background: blue;
+}
+
+.redBox {
+  background: red;
+}
+
+.greenBox {
+  background: green;
+}
+
+.goldBox {
+  background: gold;
+}
+
+.blackBox {
+  background: black;
+}
+
+.purpleBox{
+    background:darkorchid;
+}
+
+.pinkBox {
+  background:pink;
+}
+
+.orangeBox {
+  background:orange;
+}
+
+.greyBox {
+  background:lightslategray;
+}
+
+.enhancedTextbox{
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+
+
+a {
+  color: inherit;
+}
+
+a.disabled {
+  pointer-events: none;
+
+}
+
+.solid {
+  border-style: solid;
+  border-color: black;
+}
+
+.modal-body {
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .margin-responsive {
+      margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .font-responsive {
+       font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .font-responsive {
+       font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .font-responsive {
+       font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,126 @@
+<div [@routerTransition] class="container-fluid">
+
+    <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+        $(function () {
+            $('.example-popover').popover({
+                container: 'body'
+            })
+        })
+    </script>
+    <!--edit profile modal-->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <div>
+                Edit Profile Details
+            </div>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div>
+            <table class="modal-table">
+                <tr>
+                    <td><label for="fullName">Name:</label></td>
+                    <td><input type="text" [(ngModel)]="userEdit.fullName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="text" [(ngModel)]="userEdit.email" /></td>
+                </tr>
+                <tr>
+                    <td><label for="userName">User Name:</label></td>
+                    <td><input type="text" [(ngModel)]="userEdit.updatedUserName" /></td>
+                </tr>
+                <tr>
+                    <td><label for="userLevel">User Level:</label></td>
+                    <td>
+                        <select [(ngModel)]="userEdit.userLevel">
+                            <option value="">----Select User Level----</option>
+                            <option value="Student">Student</option>
+                            <option value="Professor">Professor</option>
+                            <option value="Parent">Parent</option>
+                            <option value="Researcher">Researcher</option>
+                            <option value="Faculty">Faculty</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="col-btn-modal">
+                        <button type="button" class="btn btn-primary btnModal" title="Update"
+                        (click)="updateUser(updateAlert)">Update</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </ng-template>
+    <!--error updating-->
+    <ng-template #updateAlert let-c="close">
+        <div class="modal-header">
+            <div id="updateResultHeader"></div>
+        </div>
+        <div class="modal-body">
+            <div id="updateMsg"></div>
+            <div class="btnModalContainer" id="btnUpdateAlert">
+                <button type="button" class="btn btn-primary btnModal" (click)="c('Close click')">Ok</button>
+            </div>
+        </div>
+    </ng-template>
+    <!--delete modal-->
+    <ng-template #deleteAccount let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <div>
+                Delete Account
+            </div>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div>
+            <table class="modal-table">
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" [(ngModel)]="password" id="password" name="password"/></td>
+                </tr>
+                <tr>
+                    <td><label for="passwordConfirm">Confirm Password:</label></td>
+                    <td><input type="password" [(ngModel)]="passwordConfirm" id="passwordConfirm" name="passwordConfirm"/></td>
+                </tr>
+                <tr>
+                    <td class="right-container"><input type="checkbox" [(ngModel)]="confirmDelete" id="confirmDelete" name="confirmDelete"/></td>
+                    <td><label for="confirmDelete">I understand that my account will NOT be recoverable after deletion</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="col-btn-modal">
+                        <button type="button" class="btn btn-primary" title="Delete Account"
+                        (click)="deleteUser(updateAlert)" type="submit">Delete Account</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </ng-template>
+
+    <div class="col col-md-6 col-sm-12 center" id="profile-view-container">
+        <ul class="list-group">
+            <li class="list-group-item active">My Profile Details</li>
+            <li class="list-group-item">Name: <span id="fullNameView">{{user.fullName}}</span></li>
+            <li class="list-group-item">Email: <span id="emailView">{{user.email}}</span></li>
+            <li class="list-group-item">User Name: <span id="userNameView">{{user.userName}}</span></li>
+            <li class="list-group-item">User Type: <span id="userLevelView">{{user.userLevel}}</span></li>
+            <li class="list-group-item" id="profile-options-container">
+                <button type="button" class="btn btn-primary btnOpenModal" (click)="openEdit(content)" title="Edit Profile">Edit</button>
+                <button type="button" class="btn btn-primary btnOpenModal" (click)="openDelete(deleteAccount)" title="Delete Account">Delete</button>
+                <button type="button" class="btn btn-primary btnOpenModal" (click)="openChangePassword()" title="Change Password">Change Password</button>
+            </li>
+        </ul>
+    </div>
+    <hr />
+    <div>
+        <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="Coming Soon">My Saved Materials</button>
+    </div>
+</div>
+<br>
+<br>

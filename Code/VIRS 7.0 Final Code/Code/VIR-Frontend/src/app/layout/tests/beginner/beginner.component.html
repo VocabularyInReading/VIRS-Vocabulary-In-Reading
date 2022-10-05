@@ -1,0 +1,204 @@
+
+<div [@routerTransition] class="container-fluid">
+
+    <!--This button dissapears whenerer you start the quiz-->
+
+    <div class="container-fluid" text-align="center" (window:resize)="onResize($event)">
+
+        <button class="btn btn-warning float-right" (click)="backClicked()">
+            <i class="fa fa-step-backward"></i> {{backLabel}}
+        </button>
+
+        <h3>{{level}} Questions.</h3>
+    </div>
+
+
+    <hr />
+
+    <!--This is the start of the card, this displays the questions -->
+
+    <div class="card card-info card-inverse mb-3 col-lg-12 center-block">
+        <div class="card-header card-info" placeholder="test" *ngIf="!start">
+            <h5 *ngIf="loggedOn">Ready, {{firstName}}?</h5>
+            <h5 *ngIf="!loggedOn">Ready? You have <strong>{{remaining}}</strong>  attempt(s) remaining</h5>
+        </div>
+        <div class="card-header card-info" placeholder="test" *ngIf="start">
+            <div class="float-right">Time: {{timer}} sec</div>
+            <br />
+            <hr />
+            <i class="fa fa-fw fa-check fa-2x float-right" *ngIf="correct"></i>
+            <i class="fa fa-fw fa-times fa-2x float-right" *ngIf="wrong"></i>
+            <h5>{{question}}</h5>
+            <hr>
+
+            <!--This is the section for the possible answers-->
+            <form id="qOptions" name="formRadio">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-4">
+                            <label class="custom-control custom-radio">
+                                <input id="radio1" name="radio" [(ngModel)]="radioData" type="radio" [class.custom-control-checked]="checked" class="custom-control-input" value="0">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">{{options[0]}}</span>
+                            </label>
+                        </div>
+                        <div class="col col-lg-6 col-md-4">
+                            <label class="custom-control custom-radio">
+                                <input id="radio2" name="radio" [(ngModel)]="radioData" type="radio" class="custom-control-input" value="1">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">{{options[1]}}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col col-lg-6 col-md-4">
+                            <label class="custom-control custom-radio">
+                                <input id="radio3" name="radio" [(ngModel)]="radioData" type="radio" class="custom-control-input" value="2">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">{{options[2]}}</span>
+                            </label>
+                        </div>
+                        <div class="col col-lg-6 col-md-4">
+                            <label class="custom-control custom-radio">
+                                <input id="radio4" name="radio" [(ngModel)]="radioData" type="radio" class="custom-control-input" value="3">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">{{options[3]}}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block" (click)="validate()" [disabled]="submited || finished" *ngIf="!timeUp">Check your answer!</button>
+
+                <div class="alert alert-success" *ngIf="correct">Correct!</div>
+                <div class="alert alert-danger" *ngIf="wrong && !timeUp"><strong>Opps! </strong>Sorry, the answer is: '{{correctAnswer}}'</div>
+                <div class="alert alert-warning" *ngIf="timeUp"><strong>Ran out of time! </strong>Remember that you only have 60 secs per question! </div>
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="!start">
+        <hr />
+        <button *ngIf="!loggedOn"class="btn btn-success btn-block" (click)="startQuiz()" type="button" [disabled]="remaining == 0">
+            Start The {{level}} Word Test!
+        </button>
+        <button *ngIf="loggedOn" class="btn btn-success btn-block" (click)="startQuiz()" type="button" >
+            Start The {{level}} Word Test!
+        </button>
+    </div>
+    <!-- Buttons, next and finish -->
+
+    <div class="container-fluid">
+        <button class="btn btn-primary" (click)="finishQuiz(stats); calcPercentage()" *ngIf="start">
+            {{finish}}
+        </button>
+        <button class="btn btn-success float-right" (click)="nextQuestion(content)" *ngIf="!finished" id="Next">
+            Next <i class="fa fa-step-forward">  </i>
+        </button>
+    </div>
+
+    <div class="container-fluid">
+        <hr />
+        <div class="alert alert-warning" *ngIf="alrt"><strong>You need to attempt atleast 10 questions. </strong> You have attempted only {{attempted}}.</div>
+    </div>
+
+    <br />
+
+    <!--This is the modal for skipped question warning-->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4>
+                WARNING<i class="fa fa-fw fa-exclamation"></i>
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!--Alert-->
+            <div>
+                <strong>This question is not answered! </strong>Please hit 'Check Answer' to check your selection. If you skip the question without checking, we will mark it as an 'Not Attempted'.
+            </div>
+        </div>
+        <div class="modal-footer">
+            <!--this button will skip the current question from the quiz-->
+            <button type="button" class="btn btn-warning" (click)="c('Close click'); skipQuestion(); nextQuestion(content)">Skip Anyway...</button>
+        </div>
+    </ng-template>
+
+
+    <!--This is the modal that shows the stats of the session once a user hits finish-->
+
+    <ng-template #stats let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4>
+                Test Results:
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <table id="progress">
+                <tr>
+                    <th>Attempts</th>
+                    <th>Correct</th>
+                    <th>Wrong</th>
+                    <th>Skipped</th>
+                </tr>
+                <tr>
+                    <td>{{attempted}}</td>
+                    <td>{{numRight}}</td>
+                    <td>{{numWrong}}</td>
+                    <td>{{numSkipped}}</td>
+                </tr>
+            </table>
+
+            <div>
+                <hr />
+                <h5><strong>You scored: </strong> {{percent}}% - {{suggestion}}.</h5>
+                <hr />
+            </div>
+            <table id="stats">
+                <tr>
+                    <th>Range</th>
+                    <th>Standing</th>
+                </tr>
+                <tr>
+                    <td>100 - 95</td>
+                    <td>Excelent</td>
+                </tr>
+                <tr>
+                    <td>94 - 85</td>
+                    <td>Very Good</td>
+                </tr>
+                <tr>
+                    <td>84 - 70</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>69 - 60</td>
+                    <td>Fair</td>
+                </tr>
+                <tr>
+                    <td>Less than 60</td>
+                    <td>Needs Instruction</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="modal-footer">
+            <!--this button will skip the currwnt question from the quiz-->
+            <button type="button" class="btn btn-warning" (click)="c('Close click'); backClicked()">Done</button>
+        </div>
+    </ng-template>
+
+    <div>
+
+
+    </div>
+
+
+
+</div>

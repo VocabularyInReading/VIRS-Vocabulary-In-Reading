@@ -1,0 +1,84 @@
+<div [@routerTransition]>
+
+	<!--Alert-->
+	<div class="alert alert-danger" role="alert" *ngIf='error'>
+		<strong>Oh snap!</strong> We don't support alien characters, yet. Please enter your text again.
+	</div>
+
+	<div class="row">
+		<div class="card card-info card-inverse mb-3 col-lg-12 center-block">
+			<div class="card-header">
+				<i class="fa fa-fw fa-keyboard-o fa-2x float-right" title="Enter your text"></i>Enter your text&nbsp;&nbsp;
+				<i class="fa fa-spinner fa-spin" style="font-size:32px;color:white" *ngIf='processing'></i>
+				<span class="badge badge-default">MAX 30,000 Characters</span>
+			</div>
+
+			<div class="card-block bg-white">
+
+				<div class="form-group">
+					<div class="col-md-12">
+						<textarea class="form-control" name="textArea" id="exampleTextarea" rows="10" maxlength="30000" [(ngModel)]="textArea"
+						 placeholder="Enter your text here (required). You must input at least 100 words of text to run readability test." required></textarea>
+					</div>
+				</div>
+
+
+				<!-- Button (Double) -->
+				<div class="row">
+					<div class="col-md-12 ">
+						<div class="float-right">
+							<button type="button" class="btn-block btn btn-secondary " (click)="analyzeText('/enhanced-text-result')" [disabled]="!textArea">
+								<i class="fa fa-file-text" aria-hidden="true"></i> Enhanced Text</button>
+							<button type="button" class="btn-block btn btn-primary" (click)="analyzeText('/text-statistics')" [disabled]="!textArea">
+								<i class="fa fa-pie-chart" aria-hidden="true"></i> Statistics</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 10px;">
+		<div class="center">
+			<h5>Instructions</h5>
+		</div>
+	</div>
+	<hr>
+
+	<!--Instructions Boxes-->
+	<div class="row topMargin bottomMargin">
+
+		<div class="col-md box1">
+			<div class="col-md-12">
+				<i class="fa fa-keyboard-o fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+			</div>
+			<div class="col-md-12">
+				<h5>Type you text</h5>
+				<hr>
+				<p>Maximum 30,000 characters.</p>
+			</div>
+		</div>
+		<div class="col-md box2">
+			<div class="col-md-12">
+				<i class="fa fa-file-text fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+			</div>
+
+			<div class="col-md-12">
+				<h5>Press "Enhanced Text"</h5>
+				<hr>
+				<p>to read your text in frequency-based color coded system.</p>
+			</div>
+		</div>
+		<div class="col-md box3">
+			<div class="col-md-12">
+				<i class="fa fa-pie-chart fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+			</div>
+			<div class="col-md-12">
+				<h5>Press "Statistics"</h5>
+				<hr>
+				<p>to see if the text is suitable for you and view a detailed analysis of the text.</p>
+			</div>
+		</div>
+
+	</div>
+</div>

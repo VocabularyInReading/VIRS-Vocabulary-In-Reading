@@ -1,0 +1,50 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 10px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 10px solid #a94442; /* red */
+  }
+
+
+.box1{
+  background-color: #74D941;
+  min-height: 150px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
+  color: white;
+  text-align: center;
+  padding-top: 35px;
+  border-radius: 8px;
+}
+
+.box2{
+  background-color: #FF7919;
+  min-height: 150px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
+  color: white;
+  text-align: center;
+  padding-top: 35px;
+  border-radius: 8px;
+
+}
+
+
+
+.box3{
+  background-color: #ff0072;
+  min-height: 150px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
+  color: white;
+  text-align: center;
+  padding-top: 35px;
+  border: 2px solid;
+  border-radius: 8px;
+}
+
+.top-buffer { margin-top:20px; }

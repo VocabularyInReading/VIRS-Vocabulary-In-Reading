@@ -1,0 +1,223 @@
+<div [@routerTransition] class="container-fluid">
+
+    <div class="card card-info card-inverse mb-3 col-lg-12 center-block">
+        <div class="card-header card-info">
+            <i class="fa fa-fw fa-pencil-square-o fa-3x float-right" title="Test"></i>
+            <h2>Test your Vocabulary!</h2>
+            <hr>
+            <div *ngIf="login">
+                See how well your vocabulary is! Choose the category you desire, but we recommend starting from 'Beginner'.
+            </div>
+            <div *ngIf="!login">
+                See how well your vocabulary is! Choose the category you desire, but we recommend starting from 'Beginner'.
+                Take in mind that you also have <strong>5</strong> attempts for each test if you are not a registered user.
+                <br />
+                Register <a href="../register">Here</a> to have unlimited access to the tests. If you have an account, simply, log in to use this service without interruptions.
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--Category selection for quizes-->
+
+    <br>
+
+    <div>
+        <h3>Test Categories</h3>
+    </div>
+    <hr>
+    <!--Button for Desktop sized screens-->
+
+    <div class="hidden-sm-down">
+        <div class="row">
+            <div class="col col-md-4">
+                <button routerLink="/tests/beginner" [routerLinkActive]="['router-link-active']" class="btn btn-success btn-block btn-lg">
+                    Beginner
+                </button>
+
+            </div>
+            <div class="col col-md-4">
+                <button routerLink="/tests/intermediate" [routerLinkActive]="['router-link-active']" class="btn btn-info btn-block btn-lg">
+                    Intermediate
+                </button>
+            </div>
+            <div class="col col-md-4">
+                <button routerLink="/tests/upper" [routerLinkActive]="['router-link-active']" class="btn btn-primary btn-block btn-lg">
+                    Upper Intermediate
+                </button>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col col-md-4">
+                <button routerLink="/tests/advanced" [routerLinkActive]="['router-link-active']" class="btn btn-warning btn-block btn-lg">
+                    Advanced
+                </button>
+            </div>
+            <div class="col col-md-4">
+                <button class="btn btn-danger btn-block btn-lg" routerLink="/tests/vocabA" [routerLinkActive]="['router-link-active']">
+                    Vocabulary Size Test A
+                </button>
+            </div>
+            <div class="col col-md-4">
+                <button class="btn button1 btn-block btn-lg" routerLink="/tests/vocabB" [routerLinkActive]="['router-link-active']">
+                    Vocabulary Size Test B
+                </button>
+            </div>
+            <!--div class="col col-md-4">
+                <button routerLink="/tests/depth" [routerLinkActive]="['router-link-active']" class="btn btn-primary btn-block btn-lg" >{{smallLabel}}
+                </button>
+            </div-->
+        </div>
+    </div>
+
+
+    <!--Buttons for smaller screen sized-->
+    <div class="container-fluid hidden-md-up" (window:resize)="onResize($event)">
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <button routerLink="/tests/beginner" [routerLinkActive]="['router-link-active']" class="btn btn-success btn-block btn-lg">
+                    Beginner
+                </button>
+            </div>
+            <div class="container hidden-sm-up">
+                <hr />
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <button routerLink="/tests/intermediate" [routerLinkActive]="['router-link-active']" class="btn btn-info btn-block btn-lg">
+                    Intermediate
+                </button>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <button routerLink="/tests/upper" [routerLinkActive]="['router-link-active']" class="btn btn-primary btn-block btn-lg">
+                    Upper Intermediate
+                </button>
+            </div>
+            <div class="container hidden-sm-up">
+                <hr />
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <button routerLink="/tests/advanced" [routerLinkActive]="['router-link-active']" class="btn btn-warning btn-block btn-lg">
+                    Advanced
+                </button>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <button class="btn btn-danger btn-block btn-lg" routerLink="/tests/vocabA" [routerLinkActive]="['router-link-active']">
+                    Vocabulary Size Test A
+                </button>
+            </div>
+            <div class="container hidden-sm-up">
+                <hr />
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <button class="btn button1 btn-block btn-lg" routerLink="/tests/vocabB" [routerLinkActive]="['router-link-active']">
+                    Vocabulary Size Test B
+                </button>
+            </div>
+
+            <!--div class="col-md-6 col-sm-6">
+        <button routerLink="/tests/depth" [routerLinkActive]="['router-link-active']" class="btn btn-primary btn-block btn-lg">
+            {{smallLabel}}
+        </button>
+    </!-div--->
+        </div>
+    </div>
+
+    <!--This is the modal for the 2 versions of Vocab tests (ADD '(click)="open(content)' in the button tag if you want to have the two versions together)-->
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4>
+                Choose Desired Version.
+            </h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!--Alert-->
+            <div>
+                <a routerLink="/tests/vocabA" [routerLinkActive]="['router-link-active']"
+                   class="btn btn-warning btn-block btn-lg" (click)="c('Close click')">Version A</a>
+            </div>
+            <hr />
+            <div>
+                <a routerLink="/tests/vocabB" [routerLinkActive]="['router-link-active']"
+                   class="btn btn-primary btn-block btn-lg" (click)="c('Close click')">Version B</a>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <hr />
+    <!--Instructions Boxes-->
+    <div>
+        <h3>Instructions</h3>
+    </div>
+
+    <div class="row topMargin">
+
+        <div class="col-md box1">
+            <div class="col-md-12 head">
+                <i class="fa fa-calculator fa-3x" style="padding-bottom: 10px;" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-12">
+                <div class="head">
+                    <h5>Select the level of dificulty</h5>
+                </div>
+
+                <hr>
+                <p>- Choose from the levels above.</p>
+                <p>- The levels are ordered from easy to hard.</p>
+            </div>
+        </div>
+        <div class="col-md box2">
+            <div class="col-md-12 head">
+                <i class="fa fa-edit fa-3x " style="padding-bottom: 10px;" aria-hidden="true"></i>
+            </div>
+
+            <div class="col-md-12">
+                <div class="head">
+                    <h5>Press "Take the test!"</h5>
+                </div>
+
+                <hr>
+                <p>- You will have 60 secs per question</p>
+                <p>- Choose the best answer for the question, then hit 'Check answer'.</p>
+            </div>
+        </div>
+        <div class="col-md box3">
+            <div class="col-md-12 head">
+                <i class="fa fa-pie-chart fa-3x" style="padding-bottom: 10px;" aria-hidden="true"></i>
+            </div>
+            <div class="col-md-12">
+                <div class="head">
+                    <h5>Press "Finish Test"</h5>
+                </div>
+
+                <hr>
+                <p>- To end the current test and display your results.</p>
+                <p>- Once you are done, you can hit 'Done' to return to this page.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
