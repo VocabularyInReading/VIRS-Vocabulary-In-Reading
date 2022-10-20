@@ -40,6 +40,7 @@ var routes = [
             { path: 'account', loadChildren: './account/account.module#UserAccountModule' },
             { path: 'change-password', loadChildren: './change-password/change-password.module#ChangePasswordModule' },
             { path: 'essential-words', loadChildren: './essential-words/essential-words.module#EssentialWordsModule' },
+            { path: 'search-words', loadChildren: './search-words/search-words.module#SearchWordsModule' },
             { path: 'restore', loadChildren: './recovery/recovery.module#RecoveryModule' },
         ]
     }
