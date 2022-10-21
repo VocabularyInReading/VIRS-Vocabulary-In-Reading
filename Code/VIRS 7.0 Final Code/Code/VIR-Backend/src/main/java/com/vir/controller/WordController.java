@@ -33,14 +33,13 @@ public class WordController {
 	// @Autowired
 	private final WordRepository wordRepository;
 
-	public WordController(WordRepository wordRepository)
-	{
+	public WordController(WordRepository wordRepository) {
 		this.wordRepository = wordRepository;
 	}
-	
+
 	@ApiOperation("Retrieves a list of words by category")
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-	public Page<Word> findAll (
+	public Page<Word> findAll(
 			@RequestParam(value = "category", required = true) String category,
 			@RequestParam(value = "page", defaultValue = "0") int page,
 			@RequestParam(value = "size", defaultValue = "20") int size,
@@ -50,29 +49,37 @@ public class WordController {
 		PageRequest pageRequest = new PageRequest(page, size, new Sort(direction, sortField));
 		return wordRepository.findAllByCategory(pageRequest, category);
 	}
-	
+
 	@ApiOperation("Finds a word by value")
 	@GetMapping(value = "{value}/{categories}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Word findOneByValue
-	(
-		@PathVariable(name="value", required=true) String value
-		, @PathVariable(name="categories", required=true) String categories
-		, HttpServletResponse response
-	)
-	{
-		//check if we can even query 
+	public Word findOneByValue(
+			@PathVariable(name = "value", required = true) String value,
+			@PathVariable(name = "categories", required = true) String categories, HttpServletResponse response) {
+		// check if we can even query
 		boolean badRequest = TextUtils.isBlank(value) || TextUtils.isBlank(categories);
-		//if it's a bad request we can't query the datastore
+		// if it's a bad request we can't query the datastore
 		Word word = badRequest ? null : wordRepository.findFirstByValueAndCategoryIn(value, categories.split(","));
-		//set the http response code based on 
-		int code =
-			badRequest
+		// set the http response code based on
+		int code = badRequest
 				? HttpServletResponse.SC_BAD_REQUEST
 				: word == null
-					? HttpServletResponse.SC_NOT_FOUND
-					: HttpServletResponse.SC_OK;
+						? HttpServletResponse.SC_NOT_FOUND
+						: HttpServletResponse.SC_OK;
 		response.setStatus(code);
-		//we return the result instead of requerying a 2nd time
+		// we return the result instead of requerying a 2nd time
 		return word;
+	}
+
+	@ApiOperation("Retrieves a list of words by starting value")
+	@GetMapping(value = "values", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Page<Word> findAllByValueStartingWith(
+			@RequestParam(value = "value", required = true) String value,
+			@RequestParam(value = "page", defaultValue = "0") int page,
+			@RequestParam(value = "size", defaultValue = "20") int size,
+			@RequestParam(value = "sortKey", defaultValue = "value") String sortField,
+			@RequestParam(value = "sortDirection", defaultValue = "ASC") Direction direction) {
+
+		PageRequest pageRequest = new PageRequest(page, size, new Sort(direction, sortField));
+		return wordRepository.findAllByValueStartingWith(pageRequest, value);
 	}
 }

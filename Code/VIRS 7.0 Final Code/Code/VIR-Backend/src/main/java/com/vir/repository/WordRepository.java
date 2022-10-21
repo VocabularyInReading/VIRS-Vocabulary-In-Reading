@@ -12,29 +12,32 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vir.model.Word;
 
 @Repository
-public interface  WordRepository extends JpaRepository<Word, Long>
-{
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+public interface WordRepository extends JpaRepository<Word, Long> {
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	List<Word> findByValueIn(List<String> words);
-	
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	List<Word> findWordDistinctByValueIn(List<String> words);
-	
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Word findFirstByValue(String value);
-	//https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+
+	// https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Word findFirstByValueAndCategoryIn(String value, String[] categories);
 
+	@Transactional(isolation = Isolation.SERIALIZABLE)
+	Page<Word> findAllByValueStartingWith(Pageable pageable, String value);
+
 	@Transactional
-    Long removeByValue(String value);
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+	Long removeByValue(String value);
+
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Page<Word> findAllByCategory(Pageable pageable, String category);
 
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Long removeById(int id);
 
-	@Transactional(isolation=Isolation.SERIALIZABLE)
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Long removeByCategory(String category);
 }
-	
