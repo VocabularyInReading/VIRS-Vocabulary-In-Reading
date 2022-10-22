@@ -19,26 +19,35 @@ import org.springframework.data.domain.Sort;
 
 import jj2000.j2k.NotImplementedError;
 
-public class MockWordRepository implements WordRepository
-{
+public class MockWordRepository implements WordRepository {
     private final List<Word> datastore;
-    public MockWordRepository()
-    {
+
+    public MockWordRepository() {
         this(MockWordRepository.getDataStore());
     }
-    public MockWordRepository(List<Word> datastore)
-    {
+
+    public MockWordRepository(List<Word> datastore) {
         this.datastore = datastore == null ? new ArrayList<Word>() : datastore;
     }
+
     @Override
     public List<Word> findAll() {
         return this.datastore;
     }
 
-    @Override//ADDED THIS TO DEBUG
-    public Long removeByCategory(String category) {throw new NotImplementedError();}
+    public Page<Word> findAllByValueStartingWith(Pageable pageable, String value) {
+        throw new NotImplementedError();
+    }
+
+    @Override // ADDED THIS TO DEBUG
+    public Long removeByCategory(String category) {
+        throw new NotImplementedError();
+    }
+
     @Override
-    public Long removeById(int id)  {throw new NotImplementedError();}
+    public Long removeById(int id) {
+        throw new NotImplementedError();
+    }
 
     @Override
     public List<Word> findAll(Sort sort) {
@@ -159,35 +168,37 @@ public class MockWordRepository implements WordRepository
     public List<Word> findByValueIn(List<String> words) {
         throw new NotImplementedError();
     }
-    //2018-11-11 - PAA
-    //this class is a mock repository, but needed this in order to run integration tests faster
-    //there's no need to test wiring up via the framework, so this explicit datastore calls are faster
-    //sometimes setup can take up to 5 minutes and that's just counter-productive
-    //a system test would require spring/hibernate to wireup, but unit tests and integration tests don't relaly need that much bloat
+
+    // 2018-11-11 - PAA
+    // this class is a mock repository, but needed this in order to run integration
+    // tests faster
+    // there's no need to test wiring up via the framework, so this explicit
+    // datastore calls are faster
+    // sometimes setup can take up to 5 minutes and that's just counter-productive
+    // a system test would require spring/hibernate to wireup, but unit tests and
+    // integration tests don't relaly need that much bloat
     @Override
-    public List<Word> findWordDistinctByValueIn(List<String> words)
-    {
+    public List<Word> findWordDistinctByValueIn(List<String> words) {
         List<Word> results = new ArrayList<Word>();
-        if(words == null || words.size() == 0) return results;
+        if (words == null || words.size() == 0)
+            return results;
         StringBuilder listIn = new StringBuilder("");
-        for(String s : words)
-        {
-            if(listIn.length() > 0) listIn.append(",");
+        for (String s : words) {
+            if (listIn.length() > 0)
+                listIn.append(",");
             listIn.append("'" + s + "'");
-        }//for s
-        if((listIn + "").trim() == "") return results;
-        try
-                (
-                        Connection con = DriverManager.getConnection(
-                                "jdbc:mysql://localhost:3306/vir?useSSL=false&characterEncoding=utf8&connectionCollation=utf8mb4_unicode_ci",
-                                "root",
-                                "root");
-                        Statement stmt = con.createStatement();
-                        ResultSet rs = stmt.executeQuery(String.format("SELECT DISTINCT id, value, category FROM word WHERE value in(%s)", listIn));
-                )
-        {
-            while (rs.next())
-            {
+        } // for s
+        if ((listIn + "").trim() == "")
+            return results;
+        try (
+                Connection con = DriverManager.getConnection(
+                        "jdbc:mysql://localhost:3306/vir?useSSL=false&characterEncoding=utf8&connectionCollation=utf8mb4_unicode_ci",
+                        "root",
+                        "root");
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery(
+                        String.format("SELECT DISTINCT id, value, category FROM word WHERE value in(%s)", listIn));) {
+            while (rs.next()) {
                 int i = 0;
                 Long id = rs.getLong(++i);
                 String val = rs.getString(++i);
@@ -196,10 +207,9 @@ public class MockWordRepository implements WordRepository
                 Word w = new Word(val, cat);
                 w.setId(id);
                 results.add(w);
-            }//while
-        }//try
-        catch(Throwable t)
-        {
+            } // while
+        } // try
+        catch (Throwable t) {
             System.out.println(t);
         }
         return results;
@@ -207,16 +217,16 @@ public class MockWordRepository implements WordRepository
         // List<Word> found = new ArrayList<Word>();
         // for(Word w : this.datastore)
         // {
-        //     String val = w == null ? null : w.getValue();
-        //     if(TextUtils.isBlank(val)) continue;
-        //     for(String s : words)
-        //     {
-        //         if(TextUtils.isBlank(s)) continue;
-        //         boolean foundEntry = s.equalsIgnoreCase(s);
-        //         if(!foundEntry) continue;
-        //         found.add(w);
-        //         break;
-        //     }//for s
+        // String val = w == null ? null : w.getValue();
+        // if(TextUtils.isBlank(val)) continue;
+        // for(String s : words)
+        // {
+        // if(TextUtils.isBlank(s)) continue;
+        // boolean foundEntry = s.equalsIgnoreCase(s);
+        // if(!foundEntry) continue;
+        // found.add(w);
+        // break;
+        // }//for s
         // }//for w
         // return found.isEmpty() ? Collections.<Word>emptyList() : found;
     }
@@ -240,8 +250,8 @@ public class MockWordRepository implements WordRepository
     public Page<Word> findAllByCategory(Pageable pageable, String category) {
         throw new NotImplementedError();
     }
-    private static List<Word> getDataStore()
-    {
+
+    private static List<Word> getDataStore() {
         List<Word> datastore = new ArrayList<Word>();
         datastore.add(new Word("value", "cat"));
         datastore.add(new Word("a", "cat"));
