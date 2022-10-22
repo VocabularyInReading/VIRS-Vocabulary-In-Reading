@@ -51,12 +51,52 @@ public class OptimizedTextProcessorService implements TextProcessorService
 		this.lockRepo = new Object();
 	}
 
-	// HACK: to fix problem with multi words with different categories taken from:
-	// https://stackoverflow.com/questions/23699371/java-8-distinct-by-property#27872852
-	private static <T> Predicate<T> distinctByKey(Function<? super T, ?> keyExtractor) {
-		Set<Object> seen = ConcurrentHashMap.newKeySet();
-		return t -> seen.add(keyExtractor.apply(t));
+
+	private int priorityOfCategory(String category){ //Priorities go from 1 to 10 with 1 being the most important
+
+		if(category.equalsIgnoreCase("K1")){return 1;}
+		else if(category.equalsIgnoreCase("K2")){return 2;}
+		else if(category.equalsIgnoreCase("K3")){return 3;}
+		else if(category.equalsIgnoreCase("awl")){return 4;}
+		else if(category.equalsIgnoreCase("stem")){return 5;}
+		else if(category.equalsIgnoreCase("hi")){return 6;}
+		else if(category.equalsIgnoreCase("med")){return 7;}
+		else if(category.equalsIgnoreCase("low")){return 9;}
+		return 10;
+			
+
 	}
+
+	//Handles words with multiple categories
+	private List<Word> removeMultCategory(List<Word> c){
+
+		List<Word> singleCategory = new ArrayList<Word>(); //List where the final word entities go
+		HashMap<String, Integer> seen = new HashMap<String, Integer>(); //HashMap to see if a word has already been seen
+		
+		int index = 0;
+		for(Word a : c){
+			if (seen.get(a.getValue()) != null){
+				//Check if word that has been seen has less priority, if so replace
+				if(priorityOfCategory(singleCategory.get(seen.get(a.getValue())).getCategory()) > priorityOfCategory(a.getCategory())){ 
+					
+					int temp = seen.remove(a.getValue());
+					seen.put(a.getValue(), temp);
+					singleCategory.set(temp, a);
+	
+				}
+
+			}
+			else{
+				seen.put(a.getValue(), index);
+				singleCategory.add(index, a);
+				index++;
+			}
+
+		}
+		return singleCategory;
+		
+    }
+
 
 	protected Text process(String textString, int dataQuerySize) {
 		logger.info("Attempting to process extracted text");
@@ -87,17 +127,13 @@ public class OptimizedTextProcessorService implements TextProcessorService
 			}
 			logger.info("Making a query of {} words from the list of clean words of size {}.", upperIndex - lowerIndex, cleanValuesSize);
 			logger.debug("LowerIndex is {} and upperIndex is {} in the total list of clean values.", lowerIndex, upperIndex);
-			resultWords.addAll(wordRepository.findWordDistinctByValueIn(cleanValues.subList(lowerIndex, upperIndex)));
+			resultWords.addAll(removeMultCategory(wordRepository.findWordDistinctByValueIn(cleanValues.subList(lowerIndex, upperIndex))));
+			
 		}//synchronized
 		logger.info("Total of {} distinct words was found in the database.", resultWords.size());
 
 		Map<String, Word> resultsMap = resultWords.stream()
-				/******************************************************************************************************************
-				 HACK: to fix problem with multi words with different categories taken from:
-				 https://stackoverflow.com/questions/23699371/java-8-distinct-by-property#27872852
-				 */
-				.filter(distinctByKey(Word::getValue))
-				//******************************************************************************************************************
+				
 
 				.collect(Collectors.toMap(Word::getValue, w -> w));
 		List<WordMatch> matches = new ArrayList<>();

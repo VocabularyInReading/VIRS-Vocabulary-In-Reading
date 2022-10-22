@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-enhanced-text-result',
   templateUrl: './enhanced-text-result.component.html',
@@ -27,6 +28,7 @@ export class EnhancedTextResultComponent implements OnInit {
   closeResult: string;
   category: string;
   wordCategory: string;
+  categoryDescription: string;
   totalWords: IWordMatch[];
   pageOfWords: IWordMatch[];
   pageSize: number = 1000;
@@ -138,10 +140,47 @@ export class EnhancedTextResultComponent implements OnInit {
     }
   }
 
-  // Convert the active category name "hi,med,low,..." to "High Frequency,.." used for popup title.
+  //Convert the active category name "hi,med,low,..." to "High Frequency,.." used for popup title.
+  //Sets up the category descriptions.
   activeCategory(cat: string) {
       this.category = cat;
       // tslint:disable-next-line:max-line-length
-      this.wordCategory = ( cat === 'awl') ? 'Academic' :( cat === 'stem') ? 'STEM' : ( cat === 'hi') ? 'Other High Frequency' : ( cat === 'med') ? 'Medium Frequency' : ( cat === 'low') ? 'Low Frequency' :( cat === 'K1') ? 'K1' :( cat === 'K2') ? 'K2' :( cat === 'K3') ? 'K3' : 'Names & Off-Lists';
+      this.wordCategory = ( cat === 'awl')  ? 'Academic' 
+                        : ( cat === 'stem') ? 'STEM'
+                        : ( cat === 'hi')   ? 'Other High Frequency'
+                        : ( cat === 'med')  ? 'Medium Frequency'
+                        : ( cat === 'low')  ? 'Low Frequency'
+                        : ( cat === 'K1')   ? 'K1'
+                        : ( cat === 'K2')   ? 'K2'
+                        : ( cat === 'K3')   ? 'K3'
+                        :                     'Names & Off-Lists';
+      this.categoryDescription = ( cat === 'awl')   ? 'This are words that are mainly used in an academic field'
+                               : ( cat === 'stem')  ? 'This are words mainly scientific words'
+                               : ( cat === 'hi')    ? 'This are words that are used often'
+                               : ( cat === 'med')   ? 'This are words are used sometimes'
+                               : ( cat === 'low')   ? 'This are words that are rarely used'
+                               : ( cat === 'K1')    ? 'This are words that are in the range of 1000 most used words'
+                               : ( cat === 'K2')    ? 'This are words that are in the range of 2000 most used words'
+                               : ( cat === 'K3')    ? 'This are words that are in the range of 3000 most used words'
+                               :                      'This are words that are names or are not analyzed by us';
   }
+
+  //Convert the active category name "hi,med,low,..." to "High Frequency,.." used for popUps when hovering over words
+  popUpCategory(cat: string){
+
+    return                ( cat === 'awl')  ? 'Academic' 
+                        : ( cat === 'stem') ? 'STEM'
+                        : ( cat === 'hi')   ? 'Other High Frequency'
+                        : ( cat === 'med')  ? 'Medium Frequency'
+                        : ( cat === 'low')  ? 'Low Frequency'
+                        : ( cat === 'K1')   ? 'K1'
+                        : ( cat === 'K2')   ? 'K2'
+                        : ( cat === 'K3')   ? 'K3'
+                        :                     'Names & Off-Lists';
+
+
+
+  }
+
+
 }

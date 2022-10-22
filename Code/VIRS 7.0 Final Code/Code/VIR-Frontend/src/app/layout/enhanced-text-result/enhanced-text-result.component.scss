@@ -8,36 +8,41 @@
 }
 
 .hi {
-    color: #0026ff;
+    //color: bright yellow
+    color: rgb(207, 207, 0);
 }
 
 .med {
-    color: red;
+    //color: magenta
+    color: rgb(234, 0, 255);
 }
 
 .low {
-    color: green;
+    color: pink;
 }
 
 .awl {
-    //color: rgb(255, 166, 0);
-    color:gold
+    //color: dark gold/orange
+    color: #b38902;
 }
 
 .stem {
-    color:darkorchid;
+    //color: bright green
+    color: rgb(6, 240, 130);
 }
 
 .K1 {
-  color:pink;
+  //color: light blue
+  color: rgb(115, 115, 241);
 }
 
 .K2 {
-  color:orange;
+  //color: dark green
+  color: rgb(37, 121, 37);
 }
 
 .K3 {
-  color:lightslategrey;
+  color: red;
 }
 
 ////////////////////////
@@ -50,40 +55,46 @@
   border: 1px solid rgba(0, 0, 0, .2);
 }
 
-.blueBox {
-  background: blue;
+.hiBox {
+  //color: bright yellow
+  background: rgb(207, 207, 0);
 }
 
-.redBox {
-  background: red;
+.medBox {
+  //color: magenta
+  background: rgb(234, 0, 255);
 }
 
-.greenBox {
-  background: green;
+.lowBox {
+  background: pink;
 }
 
-.goldBox {
-  background: gold;
+.awlBox {
+  //color: dark gold/orange
+  background: #b38902;
 }
 
-.blackBox {
+.offBox {
   background: black;
 }
 
-.purpleBox{
-    background:darkorchid;
+.stemBox{
+    //color: bright green
+    background:rgb(6, 240, 130);
 }
 
-.pinkBox {
-  background:pink;
+.K1Box {
+  //color = light blue
+  background:rgb(115, 115, 241);
 }
 
-.orangeBox {
-  background:orange;
+.K2Box {
+  //color: dark green
+  background:rgb(37, 121, 37);
 }
 
-.greyBox {
-  background:lightslategray;
+.K3Box {
+  background:red;
 }
 
 .enhancedTextbox{
