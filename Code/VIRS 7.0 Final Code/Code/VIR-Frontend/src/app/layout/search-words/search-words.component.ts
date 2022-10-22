@@ -9,6 +9,7 @@ import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { IWord, IText, IDefinition, IPage, WordsListService } from '../../shared'
 import * as XLSX from 'xlsx';
+import { getErrorLogger } from '@angular/core/src/errors';
 
 @Component({
   selector: 'app-search-words',
@@ -20,10 +21,9 @@ export class SearchWordsComponent implements OnInit {
   page: IPage;
   turnOn: boolean;
 
-  k1page = 1;
-  k2page = 1;
-  k3page = 1;
-  bawpage = 1;
+  k1page = 1; k2page = 1; k3page = 1;
+  bawpage = 1; awlpage = 1; stempage =1;
+  hipage = 1; medpage = 1; lowpage = 1;
 
   defaultPagination: number;
   advancedPagination: number;
@@ -31,10 +31,12 @@ export class SearchWordsComponent implements OnInit {
   disabledPagination: number;
   isDisabled: boolean;
   tableSize: number;
-
+  k1: number; k2: number; k3: number; hi: number; med: number; low: number; awl: number; stem: number; baw: number;
+  perma: 0;
   sort: string;
   activeCategory: string;
   wordCategory: string;
+  categoryIsEnabled = 0;
 
   processing: boolean;
   wordDefinition: IDefinition;
@@ -61,20 +63,55 @@ export class SearchWordsComponent implements OnInit {
     this.tableSize = 20;
     this.sort = 'ASC'
     this.activeCategory = 'k1';
+    this.k1 = 0;
+    this.k2 = 0;
+    this.k3 = 0;
+    this.hi = 0;
+    this.med = 0;
+    this.low = 0;
+    this.awl = 0;
+    this.stem = 0;
+    this.baw = 0;
+
   }
 
   resetPagination() {
     this.k1page = 1;
     this.k2page = 1;
-	this.k3page = 1;
+	  this.k3page = 1;
     this.bawpage = 1;
+    this.awlpage = 1;
+    this.stempage = 1;
+    this.hipage = 1;
+    this.medpage = 1;
+    this.lowpage = 1;
+
   }
 
-  updateCategory(category: string) {
+
+  updateCategory(element, category: string) {
+    
+          
+    if(this[category]){
+
+      this.categoryIsEnabled = 0;
+      element.textContent = element.textContent.slice(0, -1);
+      this[category] = 0;
+
+    }
+    else{
+      this[category] = 1;
+      this.categoryIsEnabled = 1;
+      element.textContent = element.textContent + "✓";
       this.activeCategory = category;
       this.searchTrigger = false;
-    this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
-    this.convertText(this.activeCategory)
+      this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
+      this.convertText(this.activeCategory)
+    }
+    
+                        
+      
+    
   }
 
   private getWordList(pageNumber: number, category: string, size: number, sort: string): void {
@@ -113,21 +150,42 @@ export class SearchWordsComponent implements OnInit {
     this.getWordList(pageNumber - 1, 'baw', this.tableSize, this.sort)
   }
 
+  getAWLWordList(pageNumber: number): void {
+    this.getWordList(pageNumber - 1, 'awl', this.tableSize, this.sort)
+  }
+
+  getSTEMWordList(pageNumber: number): void {
+    this.getWordList(pageNumber - 1, 'stem', this.tableSize, this.sort)
+  }
+
+  getHIWordList(pageNumber: number): void {
+    this.getWordList(pageNumber - 1, 'hi', this.tableSize, this.sort)
+  }
+
+  getMEDWordList(pageNumber: number): void {
+    this.getWordList(pageNumber - 1, 'med', this.tableSize, this.sort)
+  }
+
+  getLOWWWordList(pageNumber: number): void {
+    this.getWordList(pageNumber - 1, 'low', this.tableSize, this.sort)
+  }
+
 
   convertText(category: string)
   {
       var temp: string;
 
-      if (category === 'k1') {
-          temp = 'K1'
-      } else if (category === 'k2') {
-        temp = 'K2'
-	  } else if (category === 'k3') {
-        temp = 'K3'
-      } else if (category === 'baw') {
-        temp = 'Basic Academic Words'
-      }
-      else temp = category;
+      temp =  (category === 'k1') ? 'K1'
+            : (category === 'k2') ? 'K2'
+            : (category === 'k3') ? 'K3'
+            : (category === 'baw') ? 'Basic Academic Words'
+            : (category === 'awl') ? 'Academic Words'
+            : (category === 'stem') ? 'STEM'
+            : (category === 'hi') ? 'Other High Frequency'
+            : (category === 'med') ? 'Medium Frequency'
+            : (category === 'low') ? 'Low Frequency'
+            :                         category;
+            
       if (this.searchTrigger == true) {
           return this.resultCategory = temp;
       } else if (this.searchTrigger == false) {
@@ -192,7 +250,7 @@ export class SearchWordsComponent implements OnInit {
     this.errorSearch = false;
     this.searchTrigger = true;
     this.alertWord = this.searchArea;
-    var categories = "K1,K2,K3,baw";
+    var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
 
     this._wordsList.getWord(this.searchArea, categories)
       .subscribe
