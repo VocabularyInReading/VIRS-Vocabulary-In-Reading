@@ -1,11 +1,10 @@
-$topnav-background-color: #ffffff;
 
 h6{
     color: rgb(8, 8, 8);
 }
 .topnav {
     border-radius: 0;
-    background-color: $topnav-background-color;
+    background-image: linear-gradient(to right, red , yellow);
     padding : 6px;
     z-index:2;
     .text-center{
@@ -72,7 +71,7 @@ h6{
     }
 }
 .header .navbar {
-    background: $topnav-background-color !important;
+    background-image: linear-gradient(to right, rgb(190, 84, 22),rgb(192, 129, 11), rgb(202, 135, 10) ,rgb(201, 131, 3), rgb(155, 80, 9) ,rgb(151, 14, 99)) !important;
 }
 
 .navbar-toggler{
