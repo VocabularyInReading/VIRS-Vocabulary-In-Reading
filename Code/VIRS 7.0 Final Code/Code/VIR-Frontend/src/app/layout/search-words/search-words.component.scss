@@ -105,3 +105,29 @@ a {
     display: table;
     clear: both;
   }
+
+.pageCount{
+    display:flex;
+    flex-wrap:nowrap;
+    
+}
+
+.pageCount p{
+        
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 20px;
+    
+}
+
+#pgSize {
+    width: 20%;
+    text-align: right;
+    
+}
+
+#ASC{
+    width: 20%;
+    text-align: right;
+}
+
