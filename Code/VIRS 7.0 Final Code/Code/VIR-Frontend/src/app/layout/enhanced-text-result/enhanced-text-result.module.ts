@@ -7,6 +7,9 @@ import { EnhancedTextResultComponent } from './enhanced-text-result.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
+
+
+
 @NgModule({
   imports: [
     CommonModule,

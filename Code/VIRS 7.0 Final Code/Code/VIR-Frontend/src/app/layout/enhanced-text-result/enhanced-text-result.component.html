@@ -24,19 +24,19 @@
 				<span (click)="activeCategory('awl'); open(wordList);">
 					<a href="javascript:void(0)">Academic Word</a>
 				</span>
-				<div class="box goldBox"></div>
+				<div class="box awlBox"></div>
 			</div>
 			<div class="col-xl-4 col-md-8 col-12">
 				<span (click)="activeCategory('stem'); open(wordList);">
 					<a href="javascript:void(0)">STEM </a>
 				</span>
-				<span class="box purpleBox"></span>
+				<span class="box stemBox"></span>
 			</div>
 			<div class="col-xl-4 col-md-8 col-12">
 				<span (click)="activeCategory('hi'); open(wordList);">
 					<a href="javascript:void(0)">Other High Frequency</a>
 				</span>
-				<span class="box blueBox"></span>
+				<span class="box hiBox"></span>
 			</div>
 		</div>
         <div class = row center front-responsive>
@@ -44,38 +44,38 @@
 				<span (click)="activeCategory('med'); open(wordList);">
 					<a href="javascript:void(0)">Med Frequency</a>
 				</span>
-				<div class="box redBox"></div>
+				<div class="box medBox"></div>
 			</div>
 			<div class="col-xl-4 col-md-8 col-12">
 				<span (click)="activeCategory('low'); open(wordList);">
 					<a href="javascript:void(0)">Low Frequency</a>
 				</span>
-				<div class="box greenBox"></div>
+				<div class="box lowBox"></div>
 			</div>
 
 			<div class="col-xl-4 col-md-8 col-12">
-				<span (click)="activeCategory('k1'); open(wordList);">
+				<span (click)="activeCategory('K1'); open(wordList);">
 					<a href="javascript:void(0)">K1</a>
 				</span>
-				<div class="box pinkBox"></div>
+				<div class="box K1Box"></div>
 			</div>
 			<div class="col-xl-4 col-md-8 col-12">
-				<span (click)="activeCategory('k2'); open(wordList);">
+				<span (click)="activeCategory('K2'); open(wordList);">
 					<a href="javascript:void(0)">K2</a>
 				</span>
-				<div class="box orangeBox"></div>
+				<div class="box K2Box"></div>
 			</div>
 			<div class="col-xl-4 col-md-8 col-12">
-				<span (click)="activeCategory('k3'); open(wordList);">
+				<span (click)="activeCategory('K3'); open(wordList);">
 					<a href="javascript:void(0)">K3</a>
 				</span>
-				<div class="box greyBox"></div>
+				<div class="box K3Box"></div>
 			</div>
 			<div class="col-xl-4 col-md-8 col-12">
 				<span (click)="activeCategory(''); open(wordList);">
 					<a href="javascript:void(0)">Names & Off-List</a>
 				</span>
-				<div class="box blackBox"></div>
+				<div class="box offBox"></div>
 			</div>
         </div>
 	</div>
@@ -84,12 +84,17 @@
 	<!--Word Lists popups-->
 	<ng-template #wordList let-c="close" let-d="dismiss">
 		<div class="modal-header">
+			<div class="flex-column">
 			<h4 class="modal-title">
 				{{wordCategory}} Words in this text &nbsp;&nbsp;
 			</h4>
+			<p class="pl-2">
+				{{categoryDescription}}
+			</p>
 			<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
 				<span aria-hidden="true">&times;</span>
 			</button>
+		</div>
 		</div>
 		<div class="modal-body">
 
@@ -97,6 +102,7 @@
 			<div *ngFor='let word of totalWords; let i= index;'>
                 <span *ngIf="word.category == category" [class]="word.category" (click)="getDefinition(word.initialValue); open(content); ">
                     <a href="javascript:void(0)">{{word.initialValue}}<hr></a>
+
                 </span>
                 <span class="oneLine" *ngIf="word.initialValue == ''">
                     <br>
@@ -134,15 +140,15 @@
 	</ng-template>
 
 
-
-	<!--Print each word from the words object and color it base on the category-->
+	<!--Print each word from the words object and color it base on the category, Adds popUps when hover for each word-->
+	
 	<div class="enhancedTextbox equalLength"
          infiniteScroll
          [infiniteScrollDistance]="3"
          [infiniteScrollThrottle]="50"
          (scrolled)="onScrollDown()">
 		<div class="oneLine" *ngFor='let word of totalWords; let i = index'>
-            <span [class]="word.category" (click)="getDefinition(word.initialValue); open(content);">
+            <span [class]="word.category" ngbTooltip= "{{popUpCategory(word.category)}}" (click)="getDefinition(word.initialValue); open(content);"> 
 				<a href="javascript:void(0)">{{word.initialValue}}</a>
 			</span>
 			<span class="oneLine" *ngIf="word.initialValue == '' && word.initialValue != totalWords[i-1].initialValue">
