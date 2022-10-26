@@ -32,11 +32,12 @@ export class SearchWordsComponent implements OnInit {
   isDisabled: boolean;
   tableSize: number;
   k1: number; k2: number; k3: number; hi: number; med: number; low: number; awl: number; stem: number; baw: number;
+  //gradeK: number; grade1: number; grade2: number; grade3: number; grade4: number; grade5: number; grade6: number; 
+  //grade7: number; grade8: number; grade9: number; grade10: number; grade11: number; grade12: number;
   perma: 0;
   sort: string;
   activeCategory: string;
   wordCategory: string;
-  categoryIsEnabled = 0;
 
   processing: boolean;
   wordDefinition: IDefinition;
@@ -63,15 +64,23 @@ export class SearchWordsComponent implements OnInit {
     this.tableSize = 20;
     this.sort = 'ASC'
     this.activeCategory = 'k1';
-    this.k1 = 0;
-    this.k2 = 0;
-    this.k3 = 0;
-    this.hi = 0;
-    this.med = 0;
-    this.low = 0;
-    this.awl = 0;
-    this.stem = 0;
-    this.baw = 0;
+    this.wordCategory = 'K1';
+    this.k1 = 1;
+
+  }
+
+  popUpCategory(cat: string){
+
+    return    ( cat === 'awl')   ? 'This are words that are mainly used in an academic field'
+            : ( cat === 'stem')  ? 'This are mainly scientific words'
+            : ( cat === 'hi')    ? 'This are words that are used often'
+            : ( cat === 'med')   ? 'This are words are used sometimes'
+            : ( cat === 'low')   ? 'This are words that are rarely used'
+            : ( cat === 'K1')    ? 'This are words that are in the range of 1000 most used words'
+            : ( cat === 'K2')    ? 'This are words that are in the range of 2000 most used words'
+            : ( cat === 'K3')    ? 'This are words that are in the range of 3000 most used words'
+            : ( cat === 'baw')   ? 'This are academic words that are more simple'
+            :                      'This are words that are names or are not analyzed by us';
 
   }
 
@@ -88,29 +97,31 @@ export class SearchWordsComponent implements OnInit {
 
   }
 
+  checkCatStatus(category: string){
 
-  updateCategory(element, category: string) {
+    if(this[category])
+      return "✓";
+
+  }
+
+  /*checkGradeStatus(grade: string){
+
+    if(this[grade])
+      return "✓";
+
+  }*/
+
+
+  updateCategory(category: string) {
     
-          
-    if(this[category]){
-
-      this.categoryIsEnabled = 0;
-      element.textContent = element.textContent.slice(0, -1);
-      this[category] = 0;
-
-    }
-    else{
+      this.k1 = 0; this.k2 = 0; this.k3 = 0;
+      this.hi = 0; this.med = 0; this.low = 0;
+      this.awl = 0; this.stem = 0; this.baw = 0;
       this[category] = 1;
-      this.categoryIsEnabled = 1;
-      element.textContent = element.textContent + "✓";
       this.activeCategory = category;
       this.searchTrigger = false;
       this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
       this.convertText(this.activeCategory)
-    }
-    
-                        
-      
     
   }
 
