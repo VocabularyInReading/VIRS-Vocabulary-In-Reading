@@ -18,6 +18,13 @@ export class WordsListService {
       .do((res => console.log(res)));
   }
 
+  getLiveWordList(pageNumber: number = 0, category: string, size: number, sort: string, value: string): Observable<IPage> {
+    if (value == null)
+      return this.http.get<IPage>(`/api/words?category=${category}&page=${pageNumber}&size=${size}&sortKey=value&sortDirection=${sort}`)
+
+    return this.http.get<IPage>(`/api/words/valueandcat?value=${value}&category=${category}&page=${pageNumber}&size=${size}&sortKey=value&sortDirection=${sort}`)
+      .do((res => console.log("Response:", res)));
+  }
 
   // To get word ID, Value and Category
   getWord(word: string, categories: string): Observable<IWord> {

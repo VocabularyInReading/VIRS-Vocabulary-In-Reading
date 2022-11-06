@@ -35,7 +35,11 @@ public class MockWordRepository implements WordRepository {
         return this.datastore;
     }
 
-    public Page<Word> findAllByValueStartingWith(Pageable pageable, String value) {
+    public List<Word> LiveWordSearch(String value, String category) {
+        throw new NotImplementedError();
+    }
+
+    public Page<Word> findAllByValueStartingWithAndCategoryIn(Pageable pageable, String value, String category) {
         throw new NotImplementedError();
     }
 

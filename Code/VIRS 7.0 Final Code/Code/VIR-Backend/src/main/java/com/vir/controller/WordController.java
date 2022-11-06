@@ -1,5 +1,7 @@
 package com.vir.controller;
 
+import java.util.List;
+
 import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.http.util.TextUtils;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
@@ -70,16 +73,19 @@ public class WordController {
 		return word;
 	}
 
-	@ApiOperation("Retrieves a list of words by starting value")
-	@GetMapping(value = "values", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ApiOperation("Retrieves a PAGE of words by starting value and category")
+	@GetMapping(value = "valueandcat", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Page<Word> findAllByValueStartingWith(
 			@RequestParam(value = "value", required = true) String value,
+			@RequestParam(value = "category", required = true) String category,
 			@RequestParam(value = "page", defaultValue = "0") int page,
 			@RequestParam(value = "size", defaultValue = "20") int size,
 			@RequestParam(value = "sortKey", defaultValue = "value") String sortField,
 			@RequestParam(value = "sortDirection", defaultValue = "ASC") Direction direction) {
 
 		PageRequest pageRequest = new PageRequest(page, size, new Sort(direction, sortField));
-		return wordRepository.findAllByValueStartingWith(pageRequest, value);
+
+		return wordRepository.findAllByValueStartingWithAndCategoryIn(pageRequest, value, category);
 	}
+
 }
