@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs/Observable';
-import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, NgModule, OnInit, ViewChild } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -19,10 +19,11 @@ import { getErrorLogger } from '@angular/core/src/errors';
 })
 export class SearchWordsComponent implements OnInit {
   page: IPage;
+  @ViewChild('searchItem') searchItem: ElementRef;
   turnOn: boolean;
 
   k1page = 1; k2page = 1; k3page = 1;
-  bawpage = 1; awlpage = 1; stempage =1;
+  bawpage = 1; awlpage = 1; stempage = 1;
   hipage = 1; medpage = 1; lowpage = 1;
 
   defaultPagination: number;
@@ -69,25 +70,25 @@ export class SearchWordsComponent implements OnInit {
 
   }
 
-  popUpCategory(cat: string){
+  popUpCategory(cat: string) {
 
-    return    ( cat === 'awl')   ? 'This are words that are mainly used in an academic field'
-            : ( cat === 'stem')  ? 'This are mainly scientific words'
-            : ( cat === 'hi')    ? 'This are words that are used often'
-            : ( cat === 'med')   ? 'This are words are used sometimes'
-            : ( cat === 'low')   ? 'This are words that are rarely used'
-            : ( cat === 'K1')    ? 'This are words that are in the range of 1000 most used words'
-            : ( cat === 'K2')    ? 'This are words that are in the range of 2000 most used words'
-            : ( cat === 'K3')    ? 'This are words that are in the range of 3000 most used words'
-            : ( cat === 'baw')   ? 'This are academic words that are more simple'
-            :                      'This are words that are names or are not analyzed by us';
+    return (cat === 'awl') ? 'This are words that are mainly used in an academic field'
+      : (cat === 'stem') ? 'This are mainly scientific words'
+        : (cat === 'hi') ? 'This are words that are used often'
+          : (cat === 'med') ? 'This are words are used sometimes'
+            : (cat === 'low') ? 'This are words that are rarely used'
+              : (cat === 'K1') ? 'This are words that are in the range of 1000 most used words'
+                : (cat === 'K2') ? 'This are words that are in the range of 2000 most used words'
+                  : (cat === 'K3') ? 'This are words that are in the range of 3000 most used words'
+                    : (cat === 'baw') ? 'This are academic words that are more simple'
+                      : 'This are words that are names or are not analyzed by us';
 
   }
 
   resetPagination() {
     this.k1page = 1;
     this.k2page = 1;
-	  this.k3page = 1;
+    this.k3page = 1;
     this.bawpage = 1;
     this.awlpage = 1;
     this.stempage = 1;
@@ -97,9 +98,9 @@ export class SearchWordsComponent implements OnInit {
 
   }
 
-  checkCatStatus(category: string){
+  checkCatStatus(category: string) {
 
-    if(this[category])
+    if (this[category])
       return "✓";
 
   }
@@ -113,16 +114,17 @@ export class SearchWordsComponent implements OnInit {
 
 
   updateCategory(category: string) {
-    
-      this.k1 = 0; this.k2 = 0; this.k3 = 0;
-      this.hi = 0; this.med = 0; this.low = 0;
-      this.awl = 0; this.stem = 0; this.baw = 0;
-      this[category] = 1;
-      this.activeCategory = category;
-      this.searchTrigger = false;
-      this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
-      this.convertText(this.activeCategory)
-    
+
+    this.k1 = 0; this.k2 = 0; this.k3 = 0;
+    this.hi = 0; this.med = 0; this.low = 0;
+    this.awl = 0; this.stem = 0; this.baw = 0;
+    this[category] = 1;
+    this.activeCategory = category;
+    this.searchTrigger = false;
+    //this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
+    this.getLiveWordList(0, this.activeCategory, this.tableSize, this.sort);
+    this.convertText(this.activeCategory)
+
   }
 
   private getWordList(pageNumber: number, category: string, size: number, sort: string): void {
@@ -134,80 +136,107 @@ export class SearchWordsComponent implements OnInit {
         this.page = res;
         this.turnOn = true;
       },
-      (err: HttpErrorResponse) => {
-        if (err.error instanceof Error) {
-          console.log('Client-side Error occured');
-        } else {
-          console.log('Server-side Error occured');
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+            console.log('Client-side Error occured');
+          } else {
+            console.log('Server-side Error occured');
+          }
         }
-      }
+      );
+  }
+
+  private getLiveWordList(pageNumber: number = 0, category: string, size: number, sort: string, value: string = this.searchItem.nativeElement.value): void {
+    console.log(`inside livewords method. category is:  ${category}`);
+    this.sort = sort;
+    this._wordsList.getLiveWordList(pageNumber, category, size, sort, value)
+      .subscribe
+      (res => {
+        this.page = res;
+        this.turnOn = true;
+      },
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+            console.log('Client-side Error occured');
+          } else {
+            console.log('Server-side Error occured');
+          }
+        }
       );
   }
 
   // Since the page Number starts from 0 in the backend we decrement the PageNumber by 1
   getK1WordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'k1', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'k1', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'k1', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getK2WordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'k2', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'k2', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'k2', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getK3WordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'k3', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'k3', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'k3', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getBAWWordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'baw', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'baw', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'baw', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getAWLWordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'awl', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'awl', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'awl', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getSTEMWordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'stem', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'stem', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'stem', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getHIWordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'hi', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'hi', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'hi', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getMEDWordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'med', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'med', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'med', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getLOWWWordList(pageNumber: number): void {
-    this.getWordList(pageNumber - 1, 'low', this.tableSize, this.sort)
+    //this.getWordList(pageNumber - 1, 'low', this.tableSize, this.sort)
+    this.getLiveWordList(pageNumber - 1, 'low', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
 
-  convertText(category: string)
-  {
-      var temp: string;
+  convertText(category: string) {
+    var temp: string;
 
-      temp =  (category === 'k1') ? 'K1'
-            : (category === 'k2') ? 'K2'
-            : (category === 'k3') ? 'K3'
-            : (category === 'baw') ? 'Basic Academic Words'
+    temp = (category === 'k1') ? 'K1'
+      : (category === 'k2') ? 'K2'
+        : (category === 'k3') ? 'K3'
+          : (category === 'baw') ? 'Basic Academic Words'
             : (category === 'awl') ? 'Academic Words'
-            : (category === 'stem') ? 'STEM'
-            : (category === 'hi') ? 'Other High Frequency'
-            : (category === 'med') ? 'Medium Frequency'
-            : (category === 'low') ? 'Low Frequency'
-            :                         category;
-            
-      if (this.searchTrigger == true) {
-          return this.resultCategory = temp;
-      } else if (this.searchTrigger == false) {
-          return this.wordCategory = temp;
-      }//This determines if the user hits 'search' in order to update the view properly
+              : (category === 'stem') ? 'STEM'
+                : (category === 'hi') ? 'Other High Frequency'
+                  : (category === 'med') ? 'Medium Frequency'
+                    : (category === 'low') ? 'Low Frequency'
+                      : category;
+
+    if (this.searchTrigger == true) {
+      return this.resultCategory = temp;
+    } else if (this.searchTrigger == false) {
+      return this.wordCategory = temp;
+    }//This determines if the user hits 'search' in order to update the view properly
   }
 
   ngOnInit() {
     this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
-      this.convertText(this.activeCategory)
-      window.scrollTo(0,0);
+    this.convertText(this.activeCategory)
+    window.scrollTo(0, 0);
   }
 
 
@@ -223,15 +252,15 @@ export class SearchWordsComponent implements OnInit {
         this.turnOn = true;
         this.processing = false;
       },
-      (err: HttpErrorResponse) => {
-        if (err.error instanceof Error) {
-          console.log('Client-side Error occured');
-        } else {
-          this.error = true;
-          this.processing = false;
-          console.log('Server-side Error occured');
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+            console.log('Client-side Error occured');
+          } else {
+            this.error = true;
+            this.processing = false;
+            console.log('Server-side Error occured');
+          }
         }
-      }
       );
 
   }
@@ -257,11 +286,13 @@ export class SearchWordsComponent implements OnInit {
   }
 
 
-  searchWord(): void {
+  searchWord(sortOrder: string = this.sort): void {
     this.errorSearch = false;
     this.searchTrigger = true;
     this.alertWord = this.searchArea;
     var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
+
+    this.getLiveWordList(0, this.activeCategory, this.tableSize, sortOrder, this.searchItem.nativeElement.value);
 
     this._wordsList.getWord(this.searchArea, categories)
       .subscribe
@@ -272,44 +303,44 @@ export class SearchWordsComponent implements OnInit {
         this.resultCategory = this.convertText(res.category);
         categories = null;
       },
-      (err: HttpErrorResponse) =>
-      {
-        if (err.error instanceof Error) {
-          console.log('Client-side Error occured');
-        } else {
-          this.errorSearch = true;
-          console.log('Server-side Error occured');
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+            console.log('Client-side Error occured');
+          } else {
+            this.errorSearch = true;
+            console.log('Server-side Error occured');
+          }
+          categories = null;
         }
-        categories = null;
-      }
       );
+
   }
 
-  copyMessage(val: string){
-        const selBox = document.createElement('textarea');
-        selBox.style.position = 'fixed';
-        selBox.style.left = '0';
-        selBox.style.top = '0';
-        selBox.style.opacity = '0';
-        selBox.value = val;
-        document.body.appendChild(selBox);
-        selBox.focus();
-        selBox.select();
-        document.execCommand('copy');
-        document.body.removeChild(selBox);
+  copyMessage(val: string) {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
   }
 
-    exportexcel(): void{
-        /* table id is passed over here */
-        let element = document.getElementById('excel-table');
-        const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
+  exportexcel(): void {
+    /* table id is passed over here */
+    let element = document.getElementById('excel-table');
+    const ws: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
 
-        /* generate workbook and add the worksheet */
-        const wb: XLSX.WorkBook = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
+    /* generate workbook and add the worksheet */
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
-        /* save to file */
-        XLSX.writeFile(wb, 'WordList.xlsx');
-    }
+    /* save to file */
+    XLSX.writeFile(wb, 'WordList.xlsx');
+  }
 
 }
