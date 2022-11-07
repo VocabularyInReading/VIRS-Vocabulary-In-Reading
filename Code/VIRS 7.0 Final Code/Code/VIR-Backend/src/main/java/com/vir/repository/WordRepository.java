@@ -28,6 +28,9 @@ public interface WordRepository extends JpaRepository<Word, Long> {
 	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Word findFirstByValueAndCategoryIn(String value, String[] categories);
 
+	@Transactional(isolation = Isolation.SERIALIZABLE)
+	List<Word> findByCategoryIn(String[] categories);
+
 	@Transactional
 	Long removeByValue(String value);
 
@@ -36,10 +39,6 @@ public interface WordRepository extends JpaRepository<Word, Long> {
 
 	@Transactional
 	Page<Word> findAllByValueStartingWithAndCategoryIn(Pageable pageable, String value, String category);
-
-	@Query("select value from Word where value like ?1% and category = ?2")
-	List<Word> LiveWordSearch(@Param("value") String value,
-			@Param("category") String category);
 
 	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Long removeById(int id);

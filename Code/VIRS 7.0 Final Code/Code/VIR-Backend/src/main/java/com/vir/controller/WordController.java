@@ -28,6 +28,8 @@ import com.vir.repository.WordRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/words")
 @Api(tags = "words")

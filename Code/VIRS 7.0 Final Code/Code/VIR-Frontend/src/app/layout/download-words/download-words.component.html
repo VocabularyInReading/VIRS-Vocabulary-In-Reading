@@ -1,0 +1,33 @@
+<div>
+  <h1>Download Individual Lists</h1><br>
+  <div id="individualListContainer">
+    <span (click)="startDownload(['K1']);">
+      <a id="K1" href="javascript:void(0)">&#x2022; Download K1</a>
+    </span><br>
+  <span (click)="startDownload(['K2']);">
+    <a style="text-indent: 50px" href="javascript:void(0)">&#x2022; Download K2</a>
+  </span><br>
+  <span (click)="startDownload(['K3']);">
+    <a href="javascript:void(0)">&#x2022; Download K3</a>
+  </span><br>
+
+  <span (click)="startDownload(['stem']);">
+    <a href="javascript:void(0)">&#x2022; Download Stem Words</a>
+  </span><br>
+  <span (click)="startDownload(['awl']);">
+    <a href="javascript:void(0)">&#x2022; Download Academic Words</a>
+  </span><br>
+  </div>
+
+  <h1>Download Groups of Lists</h1><br>
+  <div id="groupListContainer">
+    <span (click)="startDownload(['K1, K2, K3']);">
+      <a href="javascript:void(0)">&#x2022; Download K1-K3</a>
+    </span><br>
+    <span (click)="startDownload(['stem, awl']);">
+      <a href="javascript:void(0)">&#x2022; Download Stem and Academic Words</a>
+    </span><br>
+  </div>
+</div>
+
+
