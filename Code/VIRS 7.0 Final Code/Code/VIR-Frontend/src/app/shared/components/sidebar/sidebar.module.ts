@@ -1,4 +1,4 @@
-/*import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule, NgbAlertModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
@@ -23,4 +23,4 @@ import { RegisterService } from 'app/shared/services/register.service';
 
 })
 export class SidebarModule { }
-*/
+

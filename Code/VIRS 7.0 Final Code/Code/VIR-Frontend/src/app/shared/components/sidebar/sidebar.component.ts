@@ -24,6 +24,7 @@ export class SidebarComponent implements OnInit {
     email: string;
     emailRecovery: string;
     emailRecoveryByEmail: string;
+    citation = 'Cite Us';
 
     processing: boolean;
     show: boolean;
@@ -73,6 +74,23 @@ export class SidebarComponent implements OnInit {
         aLogin.click();
         aLogin = null;
     }
+    copyMessage(val: string){
+        const selBox = document.createElement('textarea');
+        selBox.style.position = 'fixed';
+        selBox.style.left = '0';
+        selBox.style.top = '0';
+        selBox.style.opacity = '0';
+        selBox.value = val;
+        document.body.appendChild(selBox);
+        selBox.focus();
+        selBox.select();
+        document.execCommand('copy');
+        document.body.removeChild(selBox);
+        setTimeout(() => {
+            this.citation = "Cite Us";
+        }, 3000);
+        this.citation = "Citation Copied!"
+  }
 
     //-----------------------------------------------------------------------------------
     //Opens or closes the modal
@@ -297,3 +315,4 @@ setResetButtonDisabled(disabled : boolean) : void
 
     }
 }
+

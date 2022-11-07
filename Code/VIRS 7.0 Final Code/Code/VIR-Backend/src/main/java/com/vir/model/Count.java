@@ -13,13 +13,14 @@ public class Count {
 	private long noCategory;
 	private long k1;
 	private long k2;
+	private long k3;
 	private long total;
 	
 
 	// private Count() {
 	// }
 
-	public Count(long stem, long awl, long hi, long med, long low, long noCategory, long k1, long k2) {
+	public Count(long stem, long awl, long hi, long med, long low, long noCategory, long k1, long k2, long k3) {
 		this.stem = stem;
 		this.awl = awl;
 		this.hi = hi;
@@ -27,8 +28,9 @@ public class Count {
 		this.low = low;
 		this.k1 = k1;
 		this.k2 = k2;
+		this.k3 = k3;
 		this.noCategory = noCategory;
-		this.total = this.stem + this.awl + this.hi + this.med + this.low + this.noCategory + this.k1 + this.k2;
+		this.total = this.stem + this.awl + this.hi + this.med + this.low + this.noCategory + this.k1 + this.k2 + this.k3;
 	}
 	
 	@Override
@@ -88,6 +90,15 @@ public class Count {
 	public void setK2(long k2) {
 		this.k2 = k2;
 	}
+
+	public long getK3() {
+		return k3;
+	}
+
+	public void setK3(long k3) {
+		this.k3 = k3;
+	}
+
 	public long getNoCategory() {
 		return noCategory;
 	}
@@ -100,5 +111,5 @@ public class Count {
 	public void setTotal(long total) {
 		this.total = total;
 	}
-	public static final Count EMPTY_COUNT = new Count(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L);
+	public static final Count EMPTY_COUNT = new Count(0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L, 0L);
 }

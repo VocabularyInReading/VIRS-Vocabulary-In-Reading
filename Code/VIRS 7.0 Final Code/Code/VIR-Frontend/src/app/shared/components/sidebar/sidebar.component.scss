@@ -39,6 +39,24 @@ $topnav-background-color: #3d3d3d;
             background: darken($topnav-background-color, 5%);
             color: #e0e0e0;
         }
+        button.list-group-item{
+            background: $topnav-background-color;
+            outline: 0;
+            border: 0;
+            border-radius: 0;
+            color: #e0e0e0;
+            text-decoration: none;
+
+            .fa {
+                margin-right: 10px;
+            }
+        }
+        button:hover{
+            background: darken($topnav-background-color, 5%);
+            color: #e0e0e0;
+            cursor: pointer;
+        }
+
     }
     .sidebar-dropdown {
         *:focus {
@@ -71,7 +89,7 @@ $topnav-background-color: #3d3d3d;
             background: darken($topnav-background-color, 5%);
         }
         .panel-collapse {
-            border-radious :0;
+            border-radius :0;
             border : none;
             .panel-body {
                 .list-group-item {

@@ -15,7 +15,7 @@ export class TextStatisticsComponent implements OnInit {
   public static BACK_LABEL = ' Back';
   public static readonly ENHANCETEXT_LABEL: string = ' Enhanced Text';
 
-  public pieChartLabels: string[] = ['Stem Word', 'Academic Word', 'Other High Freq.', 'Medium Freq.', 'Low Freq.', 'Names & Off-List', 'K1', 'K2'];
+  public pieChartLabels: string[] = ['Stem Word', 'Academic Word', 'Other High Freq.', 'Medium Freq.', 'Low Freq.', 'Names & Off-List', 'K1', 'K2', 'K3'];
   public pieChartData: number[]; //number[];
   public pieChartType = 'pie';
 
@@ -23,13 +23,14 @@ export class TextStatisticsComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true
   };
-  public barChartLabels: string[] = ['Stem Word', 'Academic Word', 'Other High Freq.', 'Medium Freq.', 'Low Freq.', 'Off-List', 'K1', 'K2'];
+  public barChartLabels: string[] = ['Stem Word', 'Academic Word', 'Other High Freq.', 'Medium Freq.', 'Low Freq.', 'Off-List', 'K1', 'K2', 'K3'];
   public barChartData: any[];
   public barChartType = 'bar';
   public barChartLegend = true;
   public lineChartColors:Array<any> = [
     { // all colors in order
-    backgroundColor: ['darkorchid', 'gold', 'blue', 'red','green', 'black', 'pink', 'orange']
+    backgroundColor: ['rgb(6, 240, 130)', '#b38902', 'rgb(207, 207, 0)', 'rgb(234, 0, 255)','pink', 'black', 'rgb(115, 115, 241)', 'rgb(37, 121, 37)', 'red']
+    //colors in order: Bright Green, dark gold/orange, Bright Yellow, magenta, pink, black, light blue, dark green, red.
     }
 
     ];
@@ -52,6 +53,7 @@ export class TextStatisticsComponent implements OnInit {
   lowPercentage: number;
   k1Percentage: number;
   k2Percentage: number;
+  k3Percentage: number;
   noCategoryPercentage: number;
 
   closeResult: string;
@@ -76,9 +78,9 @@ export class TextStatisticsComponent implements OnInit {
       return;
     } else {
       this.updateBarChart(this.text.statistics.wordCount.stem, this.text.statistics.wordCount.awl, this.text.statistics.wordCount.hi,
-        this.text.statistics.wordCount.med, this.text.statistics.wordCount.low, this.text.statistics.wordCount.noCategory, this.text.statistics.wordCount.k1, this.text.statistics.wordCount.k2);
+        this.text.statistics.wordCount.med, this.text.statistics.wordCount.low, this.text.statistics.wordCount.noCategory, this.text.statistics.wordCount.k1, this.text.statistics.wordCount.k2, this.text.statistics.wordCount.k3);
       this.updatePieChart(this.text.statistics.wordPercentage.stem, this.text.statistics.wordPercentage.awl, this.text.statistics.wordPercentage.hi,
-        this.text.statistics.wordPercentage.med, this.text.statistics.wordPercentage.low, this.text.statistics.wordPercentage.noCategory, this.text.statistics.wordPercentage.k1, this.text.statistics.wordPercentage.k2);
+        this.text.statistics.wordPercentage.med, this.text.statistics.wordPercentage.low, this.text.statistics.wordPercentage.noCategory, this.text.statistics.wordPercentage.k1, this.text.statistics.wordPercentage.k2, this.text.statistics.wordPercentage.k3);
     }
   }
 
@@ -139,14 +141,14 @@ export class TextStatisticsComponent implements OnInit {
   }
 
   // Update Pie chart
-  updateBarChart(stem:number, awl: number, hi: number, med: number, low: number, noCategory: number, K1:number, K2:number ) {
+  updateBarChart(stem: number, awl: number, hi: number, med: number, low: number, noCategory: number, K1: number, K2: number, K3: number) {
 
     this.barChartData = [
-      { data: [stem, awl, hi, med, low, noCategory, K1, K2], label: '# of Words in different Category' },
+      { data: [stem, awl, hi, med, low, noCategory, K1, K2, K3], label: '# of Words in different Category' },
     ];
   }
-  updatePieChart(stem:number, awl: number, hi: number, med: number, low: number, noCategory: number, K1: number, K2: number) {
-    this.pieChartData = [stem*100, awl * 100, hi * 100, med * 100, low * 100, noCategory * 100, K1 * 100, K2 * 100]
+  updatePieChart(stem: number, awl: number, hi: number, med: number, low: number, noCategory: number, K1: number, K2: number, K3: number) {
+    this.pieChartData = [stem*100, awl * 100, hi * 100, med * 100, low * 100, noCategory * 100, K1 * 100, K2 * 100, K3 * 100]
   }
 
   open(content) {

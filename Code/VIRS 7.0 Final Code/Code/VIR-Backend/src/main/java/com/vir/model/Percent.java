@@ -13,6 +13,7 @@ public class Percent {
 	private double total;
 	private double K1;
 	private double K2;
+	private double K3;
 
 	@SuppressWarnings("unused")
 	private Percent()
@@ -30,6 +31,7 @@ public class Percent {
 		this.noCategory = zeroTotal ? 0 : (double) count.getNoCategory() / count.getTotal();
 		this.K1 = zeroTotal ? 0 : (double) count.getK1() /count.getTotal();
 		this.K2 = zeroTotal ? 0 : (double) count.getK2() /count.getTotal();
+		this.K3 = zeroTotal ? 0 : (double) count.getK3() /count.getTotal();
 		this.total = zeroTotal ? 0 : (double) count.getTotal() / count.getTotal();
 	}
 
@@ -87,6 +89,12 @@ public class Percent {
 	}
 	public void setK2(double K2) {
 		this.K2 = K2;
+	}
+	public double getK3() {
+		return K3;
+	}
+	public void setK3(double K3) {
+		this.K3 = K3;
 	}
 	public double getTotal() {
 		return total;

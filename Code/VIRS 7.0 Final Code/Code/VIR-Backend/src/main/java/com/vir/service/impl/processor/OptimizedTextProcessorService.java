@@ -121,21 +121,18 @@ public class OptimizedTextProcessorService implements TextProcessorService
 			while (upperIndex < cleanValuesSize) {
 				logger.info("Making a query of {} words from the list of clean words of size {}.", upperIndex - lowerIndex, cleanValuesSize);
 				logger.debug("LowerIndex is {} and upperIndex is {}.", lowerIndex, upperIndex);
-				resultWords.addAll(wordRepository.findWordDistinctByValueIn(cleanValues.subList(lowerIndex, upperIndex)));
+				resultWords.addAll(removeMultCategory(wordRepository.findWordDistinctByValueIn(cleanValues.subList(lowerIndex, upperIndex)))); //removeMultCategory might not be needed here.
 				lowerIndex = upperIndex;
 				upperIndex = Math.min((upperIndex + dataQuerySize), cleanValuesSize);
 			}
 			logger.info("Making a query of {} words from the list of clean words of size {}.", upperIndex - lowerIndex, cleanValuesSize);
 			logger.debug("LowerIndex is {} and upperIndex is {} in the total list of clean values.", lowerIndex, upperIndex);
-			resultWords.addAll(removeMultCategory(wordRepository.findWordDistinctByValueIn(cleanValues.subList(lowerIndex, upperIndex))));
+			resultWords.addAll(removeMultCategory(wordRepository.findWordDistinctByValueIn(cleanValues.subList(lowerIndex, upperIndex)))); //Retrieves words from DB and calls method to remove mult catgry.
 			
 		}//synchronized
 		logger.info("Total of {} distinct words was found in the database.", resultWords.size());
 
-		Map<String, Word> resultsMap = resultWords.stream()
-				
-
-				.collect(Collectors.toMap(Word::getValue, w -> w));
+		Map<String, Word> resultsMap = resultWords.stream().collect(Collectors.toMap(Word::getValue, w -> w));
 		List<WordMatch> matches = new ArrayList<>();
 
 		// Loop through the word list and clean it
@@ -168,7 +165,7 @@ public class OptimizedTextProcessorService implements TextProcessorService
 	@Override
 	public Text process(String textString)
 	{
-		return process(textString, 1000);
+		return process(textString, 1000); //No idea why dataQuerySize was hard-coded here might want to take a look
 	}
 
 	/**
@@ -185,6 +182,7 @@ public class OptimizedTextProcessorService implements TextProcessorService
 		long med = 0;
 		long k1 = 0;
 		long k2 = 0;
+		long k3 = 0;
 		long noCategory = 0;
 
 		for (WordMatch wordMatch : words) {
@@ -196,13 +194,14 @@ public class OptimizedTextProcessorService implements TextProcessorService
 				low += wordMatch.getCategory().equalsIgnoreCase("low") ? 1 : 0;
 				k1 += wordMatch.getCategory().equalsIgnoreCase("K1") ? 1 : 0;
 				k2 += wordMatch.getCategory().equalsIgnoreCase("K2") ? 1 : 0;
+				k3 += wordMatch.getCategory().equalsIgnoreCase("K3") ? 1 : 0;
 
 				if (StringUtils.isBlank(wordMatch.getCategory())) {
 					noCategory++;
 				}
 			}
 		}
-		return new Count(stem, awl, hi, med, low, noCategory, k1, k2);
+		return new Count(stem, awl, hi, med, low, noCategory, k1, k2, k3);
 	}
 
 	/**

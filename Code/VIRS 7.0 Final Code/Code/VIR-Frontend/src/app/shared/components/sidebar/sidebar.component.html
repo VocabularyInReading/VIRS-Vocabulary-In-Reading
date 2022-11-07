@@ -57,9 +57,14 @@
             <li class="fa fa-fw fa-pencil-square-o"></li>&nbsp;{{ 'Vocabulary Tests' | translate }}
         </a>
         -->
+
         <a routerLink="/itranslate" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <li class="fa fa-fw fa-font"></li>&nbsp;{{ 'iTranslate' | translate }}
         </a>
+        
+        <button class="list-group-item" (click)="copyMessage('Ehsanzadeh, S.J. & Dwyer, E. (2017). A Corpus-based K-12 School Dictionary.')" value="click to copy" style="font-size:17px">
+            <li class="fa fa-fw fa-quote-right" ></li>&nbsp;{{citation}}
+        </button>
 
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('account')">
