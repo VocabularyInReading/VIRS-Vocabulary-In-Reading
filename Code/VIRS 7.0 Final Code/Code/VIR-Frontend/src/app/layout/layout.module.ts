@@ -1,14 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-import { TranslateModule } from '@ngx-translate/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { NgbDropdownModule } from "@ng-bootstrap/ng-bootstrap";
+import { TranslateModule } from "@ngx-translate/core";
+import { FormsModule } from "@angular/forms";
 
-import { LayoutRoutingModule } from './layout-routing.module';
-import { LayoutComponent } from './layout.component';
-import { HeaderComponent, SidebarComponent, FooterComponent } from '../shared';
-
-
+import { LayoutRoutingModule } from "./layout-routing.module";
+import { LayoutComponent } from "./layout.component";
+import { HeaderComponent, SidebarComponent, FooterComponent } from "../shared";
 
 @NgModule({
     imports: [
@@ -16,14 +14,13 @@ import { HeaderComponent, SidebarComponent, FooterComponent } from '../shared';
         NgbDropdownModule.forRoot(),
         LayoutRoutingModule,
         TranslateModule,
-        FormsModule
+        FormsModule,
     ],
     declarations: [
         LayoutComponent,
         HeaderComponent,
         SidebarComponent,
-        FooterComponent,     
-
-    ]
+        FooterComponent,
+    ],
 })
-export class LayoutModule { }
+export class LayoutModule {}

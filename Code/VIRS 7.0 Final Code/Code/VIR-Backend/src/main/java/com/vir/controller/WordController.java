@@ -25,6 +25,8 @@ import com.vir.repository.WordRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/words")
 @Api(tags = "words")
@@ -81,5 +83,28 @@ public class WordController {
 
 		PageRequest pageRequest = new PageRequest(page, size, new Sort(direction, sortField));
 		return wordRepository.findAllByValueStartingWith(pageRequest, value);
+	}
+
+//	@ApiOperation("Retrieves a list of words by starting value and category")
+//	@GetMapping(value = "test/value/{categories}", produces = MediaType.APPLICATION_JSON_VALUE)
+//	public Page<Word> findAllByValueStartingWithAndCategoryIn(
+//			@RequestParam(value = "value", required = true) String value,
+//			@RequestParam(value = "page", defaultValue = "0") int page,
+//			@RequestParam(value = "size", defaultValue = "20") int size,
+//			@RequestParam(value = "sortKey", defaultValue = "value") String sortField,
+//			@RequestParam(value = "sortDirection", defaultValue = "ASC") Direction direction,
+//			@PathVariable(name = "categories", required = true) String[] categories, HttpServletResponse response)
+//	{
+//		PageRequest pageRequest = new PageRequest(page, size, new Sort(direction, sortField));
+//		return wordRepository.findAllByValueStartingWithAndCategoryIn(pageRequest, value, categories);
+//	}
+
+	@ApiOperation("Retrieves a list of words by starting value and category")
+	@GetMapping(value = "test/{value}/{categories}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Word> findAllByValueStartingWithAndCategoryIn(
+			@PathVariable(name = "value", required = true) String value,
+			@PathVariable(name = "categories", required = true) String[] categories)
+	{
+		return wordRepository.findAllByValueStartingWithAndCategoryIn(value, categories);
 	}
 }

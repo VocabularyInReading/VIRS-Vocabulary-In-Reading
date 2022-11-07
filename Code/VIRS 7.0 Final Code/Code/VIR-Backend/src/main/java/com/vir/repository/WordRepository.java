@@ -27,8 +27,16 @@ public interface WordRepository extends JpaRepository<Word, Long> {
 	Word findFirstByValueAndCategoryIn(String value, String[] categories);
 
 	@Transactional(isolation = Isolation.SERIALIZABLE)
+	List<Word> findByCategoryIn(String[] categories);
+
+	@Transactional(isolation = Isolation.SERIALIZABLE)
 	Page<Word> findAllByValueStartingWith(Pageable pageable, String value);
 
+//	@Transactional(isolation = Isolation.SERIALIZABLE)
+//	Page<Word> findAllByValueStartingWithAndCategoryIn(Pageable pageable, String value, String[] categories);
+
+	@Transactional(isolation = Isolation.SERIALIZABLE)
+	List<Word> findAllByValueStartingWithAndCategoryIn(String value, String[] categories);
 	@Transactional
 	Long removeByValue(String value);
 
