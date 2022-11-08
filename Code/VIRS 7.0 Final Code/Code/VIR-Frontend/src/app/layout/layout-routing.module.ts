@@ -30,15 +30,6 @@ const routes: Routes = [
                 loadChildren:
                     "./text-statistics/text-statistics.module#TextStatisticsModule",
             },
-            {
-                path: "dictionary",
-                loadChildren: "./dictionary/dictionary.module#DictionaryModule",
-            },
-            {
-                path: "stem-academia",
-                loadChildren:
-                    "./stem-academia/stem-academia.module#StemAcademiaModule",
-            },
             { path: "admin", loadChildren: "./admin/admin.module#AdminModule" },
             {
                 path: "credits",
@@ -65,11 +56,6 @@ const routes: Routes = [
                 path: "change-password",
                 loadChildren:
                     "./change-password/change-password.module#ChangePasswordModule",
-            },
-            {
-                path: "essential-words",
-                loadChildren:
-                    "./essential-words/essential-words.module#EssentialWordsModule",
             },
             {
                 path: "search-words",

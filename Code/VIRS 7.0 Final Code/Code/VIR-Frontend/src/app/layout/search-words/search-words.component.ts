@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs/Observable';
-import { Component, ElementRef, Input, NgModule, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, NgModule, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
