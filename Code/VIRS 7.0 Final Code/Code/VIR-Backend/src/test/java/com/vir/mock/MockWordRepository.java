@@ -64,6 +64,11 @@ public class MockWordRepository implements WordRepository {
     }
 
     @Override
+    public List<Word> findByCategoryIn(String[] categories) {
+        throw new NotImplementedError();
+    }
+
+    @Override
     public <S extends Word> List<S> save(Iterable<S> entities) {
         throw new NotImplementedError();
     }
