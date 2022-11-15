@@ -1,5 +1,5 @@
 <!-- Buttons - Visible only on cellphones-->
-<div class="container bottomMarging">
+<!--div class="container bottomMarging">
     <div class="btn-group d-md-none" style="width: 100%;">
         <button type="button" class="btn btn-primary" (click)="updateCategory('k1')">K1</button>
         <button type="button" class="btn K2Button" (click)="updateCategory('k2')">K2</button>
@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<!--
+<
 <div class="container">
   <div class="d-none d-md-block" >
       <button type="button" class="btn btn-warning btn-block" (click)="updateCategory('baw')">Basic Academic Words</button>
@@ -40,7 +40,7 @@
 <div class="form-group row m-1 p-1">
     <div class="col col-md-8 col-xl-4">
         <input #searchItem class="form-control" type="search" name="searchArea" [(ngModel)]="searchArea"
-            id="example-search-input" placeholder="Word.." (keydown.enter)="searchWord();">
+            id="example-search-input" placeholder="Word.." (keydown.enter)="searchWord();resetPagination()">
     </div>
     <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -69,16 +69,16 @@
                     <button class="dropdown-item" (click)="updateCategory('hi' );"
                         ngbTooltip="{{popUpCategory('hi')}}  " placement="right">Other High
                         Frequency{{checkCatStatus('hi')}}</button>
-                    <button class="dropdown-item" (click)="updateCategory('med');"
+                    <button class="dropdown-item" (click)="updateCategory('med' );"
                         ngbTooltip="{{popUpCategory('med')}} " placement="right">Medium
                         Frequency{{checkCatStatus('med')}}</button>
-                    <button class="dropdown-item" (click)="updateCategory('low');"
+                    <button class="dropdown-item" (click)="updateCategory('low' );"
                         ngbTooltip="{{popUpCategory('low')}} " placement="right">Low
                         Frequency{{checkCatStatus('low')}}</button>
-                    <button class="dropdown-item" (click)="updateCategory('awl');"
+                    <button class="dropdown-item" (click)="updateCategory('awl' );"
                         ngbTooltip="{{popUpCategory('awl')}} "
                         placement="right">Academic{{checkCatStatus('awl')}}</button>
-                    <button class="dropdown-item" (click)="updateCategory('stem');"
+                    <button class="dropdown-item" (click)="updateCategory('stem' );"
                         ngbTooltip="{{popUpCategory('stem')}}" placement="right">STEM{{checkCatStatus('stem')}}</button>
                     <button class="dropdown-item" (click)="updateCategory('baw' );"
                         ngbTooltip="{{popUpCategory('baw')}} " placement="right">Basic
@@ -196,27 +196,27 @@
         </div>
         <div *ngSwitchCase="'awl'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="awlpage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(awlpage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getAWLWordList(awlpage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
         <div *ngSwitchCase="'stem'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="stempage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(stempage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getSTEMWordList(stempage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
         <div *ngSwitchCase="'hi'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="hipage" [maxSize]="4"
-                [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(hipage)" [boundaryLinks]="true">
+                [rotate]="true" [ellipses]="false" (pageChange)="getHIWordList(hipage)" [boundaryLinks]="true">
             </ngb-pagination>
         </div>
         <div *ngSwitchCase="'med'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="medpage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(medpage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getMEDWordList(medpage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
         <div *ngSwitchCase="'low'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="lowpage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(lowpage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getLOWWordList(lowpage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
 
@@ -310,27 +310,27 @@
         </div>
         <div *ngSwitchCase="'awl'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="awlpage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(awlpage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getAWLWordList(awlpage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
         <div *ngSwitchCase="'stem'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="stempage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(stempage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getSTEMWordList(stempage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
         <div *ngSwitchCase="'hi'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="hipage" [maxSize]="4"
-                [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(hipage)" [boundaryLinks]="true">
+                [rotate]="true" [ellipses]="false" (pageChange)="getHIWordList(hipage)" [boundaryLinks]="true">
             </ngb-pagination>
         </div>
         <div *ngSwitchCase="'med'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="medpage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(medpage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getMEDWordList(medpage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
         <div *ngSwitchCase="'low'">
             <ngb-pagination [collectionSize]="page.totalElements" [pageSize]="tableSize" [(page)]="lowpage"
-                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getBAWWordList(lowpage)"
+                [maxSize]="4" [rotate]="true" [ellipses]="false" (pageChange)="getLOWWordList(lowpage)"
                 [boundaryLinks]="true"></ngb-pagination>
         </div>
     </div>

@@ -154,15 +154,15 @@ export class EnhancedTextResultComponent implements OnInit {
                         : ( cat === 'K2')   ? 'K2'
                         : ( cat === 'K3')   ? 'K3'
                         :                     'Names & Off-Lists';
-      this.categoryDescription = ( cat === 'awl')   ? 'This are words that are mainly used in an academic field'
-                               : ( cat === 'stem')  ? 'This are words mainly scientific words'
-                               : ( cat === 'hi')    ? 'This are words that are used often'
-                               : ( cat === 'med')   ? 'This are words are used sometimes'
-                               : ( cat === 'low')   ? 'This are words that are rarely used'
-                               : ( cat === 'K1')    ? 'This are words that are in the range of 1000 most used words'
-                               : ( cat === 'K2')    ? 'This are words that are in the range of 2000 most used words'
-                               : ( cat === 'K3')    ? 'This are words that are in the range of 3000 most used words'
-                               :                      'This are words that are names or are not analyzed by us';
+      this.categoryDescription = ( cat === 'awl')   ? 'Commonly occurring among a wide variety of academic subjects but not within the 2000 most frequent words '
+                               : ( cat === 'stem')  ? 'Words occurring in Math or Science texts but not within the 2000 most frequent words'
+                               : ( cat === 'hi')    ? 'Words more than 100 times per 10 million words but not within the 3000 most commonly used words'
+                               : ( cat === 'med')   ? 'Moderately occurring words, occurring between 10 to 100 times per 10 million words'
+                               : ( cat === 'low')   ? 'Rarely occurring words, occurring only 1 to 10 times per 10 million words'
+                               : ( cat === 'K1')    ? 'Among the list of the 1000 most frequently used words in primary and secondary texts'
+                               : ( cat === 'K2')    ? 'Among the list of the 2nd 1000 most frequency used words in primary and secondary texts'
+                               : ( cat === 'K3')    ? 'Among the list of the 3rd 1000 most frequency used words in primary and secondary texts'
+                               :                      'These are words that are names or are not analyzed by us';
   }
 
   //Convert the active category name "hi,med,low,..." to "High Frequency,.." used for popUps when hovering over words

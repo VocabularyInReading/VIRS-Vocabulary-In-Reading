@@ -72,16 +72,16 @@ export class SearchWordsComponent implements OnInit {
 
   popUpCategory(cat: string) {
 
-    return (cat === 'awl') ? 'This are words that are mainly used in an academic field'
-      : (cat === 'stem') ? 'This are mainly scientific words'
-        : (cat === 'hi') ? 'This are words that are used often'
-          : (cat === 'med') ? 'This are words are used sometimes'
-            : (cat === 'low') ? 'This are words that are rarely used'
-              : (cat === 'K1') ? 'This are words that are in the range of 1000 most used words'
-                : (cat === 'K2') ? 'This are words that are in the range of 2000 most used words'
-                  : (cat === 'K3') ? 'This are words that are in the range of 3000 most used words'
-                    : (cat === 'baw') ? 'This are academic words that are more simple'
-                      : 'This are words that are names or are not analyzed by us';
+    return (cat === 'awl')  ? 'Commonly occurring among a wide variety of academic subjects but not within the 2000 most frequent words'
+         : (cat === 'stem') ? 'Words occurring in Math or Science texts but not within the 2000 most frequent words'
+         : (cat === 'hi')   ? 'Words more than 100 times per 10 million words but not within the 3000 most commonly used words'
+         : (cat === 'med')  ? 'Moderately occurring words, occurring between 10 to 100 times per 10 million words'
+         : (cat === 'low')  ? 'Rarely occurring words, occurring only 1 to 10 times per 10 million words'
+         : (cat === 'K1')   ? 'Among the list of the 1000 most frequently used words in primary and secondary texts'
+         : (cat === 'K2')   ? 'Among the list of the 2nd 1000 most frequency used words in primary and secondary texts'
+         : (cat === 'K3')   ? 'Among the list of the 3rd 1000 most frequency used words in primary and secondary texts'
+         : (cat === 'baw')  ? 'These are academic words that are simpler'
+         : 'These are words that are names or are not analyzed by us';
 
   }
 
@@ -206,7 +206,7 @@ export class SearchWordsComponent implements OnInit {
     this.getLiveWordList(pageNumber - 1, 'med', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
-  getLOWWWordList(pageNumber: number): void {
+  getLOWWordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'low', this.tableSize, this.sort)
     this.getLiveWordList(pageNumber - 1, 'low', this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
@@ -215,16 +215,16 @@ export class SearchWordsComponent implements OnInit {
   convertText(category: string) {
     var temp: string;
 
-    temp = (category === 'k1') ? 'K1'
-      : (category === 'k2') ? 'K2'
-        : (category === 'k3') ? 'K3'
-          : (category === 'baw') ? 'Basic Academic Words'
-            : (category === 'awl') ? 'Academic Words'
-              : (category === 'stem') ? 'STEM'
-                : (category === 'hi') ? 'Other High Frequency'
-                  : (category === 'med') ? 'Medium Frequency'
-                    : (category === 'low') ? 'Low Frequency'
-                      : category;
+    temp = (category === 'k1')   ? 'K1'
+         : (category === 'k2')   ? 'K2'
+         : (category === 'k3')   ? 'K3'
+         : (category === 'baw')  ? 'Basic Academic Words'
+         : (category === 'awl')  ? 'Academic Words'
+         : (category === 'stem') ? 'STEM'
+         : (category === 'hi')   ? 'Other High Frequency'
+         : (category === 'med')  ? 'Medium Frequency'
+         : (category === 'low')  ? 'Low Frequency'
+         : category;
 
     if (this.searchTrigger == true) {
       return this.resultCategory = temp;
