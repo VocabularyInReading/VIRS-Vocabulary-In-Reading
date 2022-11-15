@@ -1,3 +1,7 @@
+/*
+
+If you remove this comment then at prod-build the front-end will fail
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule, NgbAlertModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -24,3 +28,5 @@ import { RegisterService } from 'app/shared/services/register.service';
 })
 export class SidebarModule { }
 
+
+*/
