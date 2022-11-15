@@ -13,7 +13,7 @@ export class DownloadListService {
         // console.log(`/api/download/${categories}`);
         // return this.http.get<any>(`/api/download/${categories}`);
         // .do((res) => console.log(res));
-        fetch(`http://localhost:8080/api/download/${categories}`).then(
+        fetch(`/api/download/${categories}`).then(
             (response) => {
                 // Access-Control-Expose-Headers: *;
                 // const headers = response.headers;
