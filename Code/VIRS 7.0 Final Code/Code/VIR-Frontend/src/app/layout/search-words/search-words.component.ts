@@ -288,14 +288,15 @@ export class SearchWordsComponent implements OnInit {
 
   searchWord(sortOrder: string = this.sort): void {
 
-    if(this.searchArea === undefined){this.searchArea = "";}
+    
     this.errorSearch = false;
     this.searchTrigger = true;
     this.alertWord = this.searchArea;
     var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
 
     this.getLiveWordList(0, this.activeCategory, this.tableSize, sortOrder, this.searchItem.nativeElement.value);
-
+    if(this.searchArea === undefined){return;}
+    
     this._wordsList.getWord(this.searchArea, categories)
       .subscribe
       (res => {
