@@ -287,6 +287,8 @@ export class SearchWordsComponent implements OnInit {
 
 
   searchWord(sortOrder: string = this.sort): void {
+
+    if(this.searchArea === undefined){this.searchArea = "";}
     this.errorSearch = false;
     this.searchTrigger = true;
     this.alertWord = this.searchArea;
