@@ -15,7 +15,7 @@ export class TextStatisticsComponent implements OnInit {
   public static BACK_LABEL = ' Back';
   public static readonly ENHANCETEXT_LABEL: string = ' Enhanced Text';
 
-  public pieChartLabels: string[] = ['Stem Word', 'Academic Word', 'Other High Freq.', 'Medium Freq.', 'Low Freq.', 'Names & Off-List', 'K1', 'K2', 'K3'];
+  public pieChartLabels: string[] = ['Stem Word %', 'Academic Word %', 'Other High Freq. %', 'Medium Freq. %', 'Low Freq. %', 'Names & Off-List %', 'K1 %', 'K2 %', 'K3 %'];
   public pieChartData: number[]; //number[];
   public pieChartType = 'pie';
 
@@ -148,7 +148,9 @@ export class TextStatisticsComponent implements OnInit {
     ];
   }
   updatePieChart(stem: number, awl: number, hi: number, med: number, low: number, noCategory: number, K1: number, K2: number, K3: number) {
-    this.pieChartData = [stem*100, awl * 100, hi * 100, med * 100, low * 100, noCategory * 100, K1 * 100, K2 * 100, K3 * 100]
+    this.pieChartData = [+((stem*100).toFixed(2)), +((awl*100).toFixed(2)), +((hi*100).toFixed(2)), 
+                        +((med*100).toFixed(2)), +((low*100).toFixed(2)), +((noCategory*100).toFixed(2)), 
+                        +((K1*100).toFixed(2)), +((K2*100).toFixed(2)), +((K3*100).toFixed(2))]
   }
 
   open(content) {
