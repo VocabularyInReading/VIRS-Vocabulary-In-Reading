@@ -30,7 +30,8 @@ export class PdfComponent implements OnInit {
     this.formData = new FormData();
     this.processing = true;
     this.error = false;
-    const fileBrowser = this.fileInput.nativeElement;
+    const fileBrowser = this.fileInput.nativeElement; //could it be this constant or something else causing the uploads to stop working after a while
+                                                      //the issue is possibly caused by memory running out after a while.
     if (fileBrowser.files && fileBrowser.files[0]) {
       this.userPDFFile = fileBrowser.files[0];
 

@@ -78,8 +78,8 @@ export class SearchWordsComponent implements OnInit {
          : (cat === 'med')  ? 'Moderately occurring words, occurring between 10 to 100 times per 10 million words'
          : (cat === 'low')  ? 'Rarely occurring words, occurring only 1 to 10 times per 10 million words'
          : (cat === 'K1')   ? 'Among the list of the 1000 most frequently used words in primary and secondary texts'
-         : (cat === 'K2')   ? 'Among the list of the 2nd 1000 most frequency used words in primary and secondary texts'
-         : (cat === 'K3')   ? 'Among the list of the 3rd 1000 most frequency used words in primary and secondary texts'
+         : (cat === 'K2')   ? 'Among the list of the 2nd 1000 most frequently used words in primary and secondary texts'
+         : (cat === 'K3')   ? 'Among the list of the 3rd 1000 most frequently used words in primary and secondary texts'
          : (cat === 'baw')  ? 'These are academic words that are simpler'
          : 'These are words that are names or are not analyzed by us';
 
