@@ -19,31 +19,69 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 var routes = [
     {
-        path: '', component: __WEBPACK_IMPORTED_MODULE_2__layout_component__["a" /* LayoutComponent */],
+        path: "",
+        component: __WEBPACK_IMPORTED_MODULE_2__layout_component__["a" /* LayoutComponent */],
         children: [
-            { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-            { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsModule' },
-            { path: 'text', loadChildren: './text/text.module#TextModule' },
-            { path: 'doc', loadChildren: './doc/doc.module#DocModule' },
-            { path: 'pdf', loadChildren: './pdf/pdf.module#PdfModule' },
-            { path: 'image', loadChildren: './image/image.module#ImageModule' },
-            { path: 'enhanced-text-result', loadChildren: './enhanced-text-result/enhanced-text-result.module#EnhancedTextResultModule' },
-            { path: 'text-statistics', loadChildren: './text-statistics/text-statistics.module#TextStatisticsModule' },
-            { path: 'dictionary', loadChildren: './dictionary/dictionary.module#DictionaryModule' },
-            { path: 'stem-academia', loadChildren: './stem-academia/stem-academia.module#StemAcademiaModule' },
-            { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
-            { path: 'credits', loadChildren: './credits/credits.module#CreditsModule' },
-            { path: 'tests', loadChildren: './tests/tests.module#TestsModule' },
-            { path: 'tests/:id', loadChildren: './tests/beginner/beginner.module#BeginnerModule' },
-            { path: 'itranslate', loadChildren: './itranslate/itranslate.module#ItranslateModule' },
-            { path: 'register', loadChildren: './register/register.module#RegisterModule' },
-            { path: 'account', loadChildren: './account/account.module#UserAccountModule' },
-            { path: 'change-password', loadChildren: './change-password/change-password.module#ChangePasswordModule' },
-            { path: 'essential-words', loadChildren: './essential-words/essential-words.module#EssentialWordsModule' },
-            { path: 'search-words', loadChildren: './search-words/search-words.module#SearchWordsModule' },
-            { path: 'restore', loadChildren: './recovery/recovery.module#RecoveryModule' },
-        ]
-    }
+            {
+                path: "dashboard",
+                loadChildren: "./dashboard/dashboard.module#DashboardModule",
+            },
+            {
+                path: "contact-us",
+                loadChildren: "./contact-us/contact-us.module#ContactUsModule",
+            },
+            { path: "text", loadChildren: "./text/text.module#TextModule" },
+            { path: "doc", loadChildren: "./doc/doc.module#DocModule" },
+            { path: "pdf", loadChildren: "./pdf/pdf.module#PdfModule" },
+            { path: "image", loadChildren: "./image/image.module#ImageModule" },
+            {
+                path: "enhanced-text-result",
+                loadChildren: "./enhanced-text-result/enhanced-text-result.module#EnhancedTextResultModule",
+            },
+            {
+                path: "text-statistics",
+                loadChildren: "./text-statistics/text-statistics.module#TextStatisticsModule",
+            },
+            { path: "admin", loadChildren: "./admin/admin.module#AdminModule" },
+            {
+                path: "credits",
+                loadChildren: "./credits/credits.module#CreditsModule",
+            },
+            { path: "tests", loadChildren: "./tests/tests.module#TestsModule" },
+            {
+                path: "tests/:id",
+                loadChildren: "./tests/beginner/beginner.module#BeginnerModule",
+            },
+            {
+                path: "itranslate",
+                loadChildren: "./itranslate/itranslate.module#ItranslateModule",
+            },
+            {
+                path: "register",
+                loadChildren: "./register/register.module#RegisterModule",
+            },
+            {
+                path: "account",
+                loadChildren: "./account/account.module#UserAccountModule",
+            },
+            {
+                path: "change-password",
+                loadChildren: "./change-password/change-password.module#ChangePasswordModule",
+            },
+            {
+                path: "search-words",
+                loadChildren: "./search-words/search-words.module#SearchWordsModule",
+            },
+            {
+                path: "download-words",
+                loadChildren: "./download-words/download-words.module#DownloadWordsModule",
+            },
+            {
+                path: "restore",
+                loadChildren: "./recovery/recovery.module#RecoveryModule",
+            },
+        ],
+    },
 ];
 var LayoutRoutingModule = (function () {
     function LayoutRoutingModule() {
@@ -53,7 +91,7 @@ var LayoutRoutingModule = (function () {
 LayoutRoutingModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */].forChild(routes)],
-        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */]]
+        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* RouterModule */]],
     })
 ], LayoutRoutingModule);
 
@@ -158,14 +196,14 @@ LayoutModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["d" /* NgbDropdownModule */].forRoot(),
             __WEBPACK_IMPORTED_MODULE_5__layout_routing_module__["a" /* LayoutRoutingModule */],
             __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */]
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_6__layout_component__["a" /* LayoutComponent */],
             __WEBPACK_IMPORTED_MODULE_7__shared__["HeaderComponent"],
             __WEBPACK_IMPORTED_MODULE_7__shared__["SidebarComponent"],
             __WEBPACK_IMPORTED_MODULE_7__shared__["FooterComponent"],
-        ]
+        ],
     })
 ], LayoutModule);
 
