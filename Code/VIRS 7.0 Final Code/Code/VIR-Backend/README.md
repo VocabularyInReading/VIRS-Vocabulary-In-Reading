@@ -5,7 +5,7 @@
 *Make sure that JAVA is installed
 *Set up an environmental variable called "APP_ENCRYPTION_PASSWORD". (the key is kept secret, guarded in a vault)
 *Set up an environmental variable called "SENDGRID_API_KEY". This is used for sending emails
-NOTE: as of summer 2020, the SENDGRID_API_KEY has been lost for over a year and we can not find a reason it was ever even needed.
+NOTE: as of Fall 2022, the SENDGRID_API_KEY has been lost for over a year and we can not find a reason it was ever even needed.
 *Set up an environmental variable called "PROD" and set the value to 0. This is used by the application to determine whether or not emails can be sent (in production only, but this can be modified for debugging/testing. It's not even necessary to have as "1" for integration tests because the library will just make the REST calls to make sure it can connect. So unless needed just set this to "0")
 
 Install Tesseract for your system. https://github.com/tesseract-ocr/tesseract/wiki
