@@ -99,9 +99,9 @@
 		<div class="modal-body">
 
 			<!--word List-->
-			<div *ngFor='let word of totalWords; let i= index;'>
+			<div *ngFor='let word of noDuplicates; let i= index;'>
                 <span *ngIf="word.category == category" [class]="word.category" (click)="getDefinition(word.initialValue); open(content); ">
-                    <a href="javascript:void(0)">{{word.initialValue}}<hr></a>
+                    <a href="javascript:void(0)">{{word.value}}<hr></a>
 
                 </span>
                 <span class="oneLine" *ngIf="word.initialValue == ''">

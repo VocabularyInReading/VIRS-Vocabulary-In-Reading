@@ -88,7 +88,8 @@ var PdfComponent = (function () {
         this.formData = new FormData();
         this.processing = true;
         this.error = false;
-        var fileBrowser = this.fileInput.nativeElement;
+        var fileBrowser = this.fileInput.nativeElement; //could it be this constant or something else causing the uploads to stop working after a while
+        //the issue is possibly caused by memory running out after a while.
         if (fileBrowser.files && fileBrowser.files[0]) {
             this.userPDFFile = fileBrowser.files[0];
             // check the file size - more than 25mb will throw an alert to user

@@ -181,7 +181,7 @@ ImageComponent = __decorate([
         styles: [__webpack_require__("./src/app/layout/image/image.component.scss")],
         animations: [Object(__WEBPACK_IMPORTED_MODULE_1__router_animations__["a" /* routerTransition */])()]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared__["TextService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared__["TextService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services__["e" /* iTranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services__["e" /* iTranslateService */]) === "function" && _e || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared__["TextService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared__["TextService"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_router__["c" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services__["f" /* iTranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services__["f" /* iTranslateService */]) === "function" && _e || Object])
 ], ImageComponent);
 
 var _a, _b, _c, _d, _e;
@@ -228,7 +228,7 @@ ImageModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */]
         ],
         declarations: [__WEBPACK_IMPORTED_MODULE_4__image_component__["a" /* ImageComponent */]],
-        providers: [__WEBPACK_IMPORTED_MODULE_5__shared__["TextService"], __WEBPACK_IMPORTED_MODULE_6__shared_services__["e" /* iTranslateService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_5__shared__["TextService"], __WEBPACK_IMPORTED_MODULE_6__shared_services__["f" /* iTranslateService */]],
     })
 ], ImageModule);
 

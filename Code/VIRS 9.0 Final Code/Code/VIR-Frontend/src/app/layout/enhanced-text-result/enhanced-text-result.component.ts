@@ -30,12 +30,14 @@ export class EnhancedTextResultComponent implements OnInit {
   wordCategory: string;
   categoryDescription: string;
   totalWords: IWordMatch[];
+  noDuplicates: IWordMatch[];
   pageOfWords: IWordMatch[];
   pageSize: number = 1000;
   lowerBound: number;
   upperBound: number = 0;
   numberOfTotalWords: number;
 
+ 
 
   // tslint:disable-next-line:max-line-length
   constructor(private _textService: TextService, public _definitionService: DefinitionService, public router: Router, private _location: Location,
@@ -49,7 +51,9 @@ export class EnhancedTextResultComponent implements OnInit {
     this.numberOfTotalWords = this.text.words.length;
     this.addPage();
     this.getDefinition('book')
+    this.noDuplicates = Array.from(this.totalWords.reduce((m, t) => m.set(t.value, t), new Map()).values()); // removes duplicates from totalWords
   }
+
 
   /**
   * adds 1000 or less words to the words displayed on the page.

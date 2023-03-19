@@ -59,6 +59,11 @@
 		Please check this for when the latest version of tesseract is available. 4.0.0 was officially released already
 		https://mvnrepository.com/artifact/org.bytedeco.javacpp-presets/tesseract
 	-->
+	    <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 		<dependency>
 			<groupId>org.bytedeco.javacpp-presets</groupId>
 			<artifactId>tesseract-platform</artifactId>

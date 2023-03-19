@@ -233,7 +233,7 @@ ItranslateComponent = __decorate([
         template: __webpack_require__("./src/app/layout/itranslate/itranslate.component.html"),
         styles: [__webpack_require__("./src/app/layout/itranslate/itranslate.component.scss")],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services__["e" /* iTranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services__["e" /* iTranslateService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services__["f" /* iTranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services__["f" /* iTranslateService */]) === "function" && _a || Object])
 ], ItranslateComponent);
 
 var _a;
@@ -283,7 +283,7 @@ ItranslateModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_1__ng_bootstrap_ng_bootstrap__["d" /* NgbDropdownModule */].forRoot()
         ],
         declarations: [__WEBPACK_IMPORTED_MODULE_5__itranslate_component__["a" /* ItranslateComponent */]],
-        providers: [__WEBPACK_IMPORTED_MODULE_6__shared_services__["e" /* iTranslateService */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_6__shared_services__["f" /* iTranslateService */]],
     })
 ], ItranslateModule);
 
