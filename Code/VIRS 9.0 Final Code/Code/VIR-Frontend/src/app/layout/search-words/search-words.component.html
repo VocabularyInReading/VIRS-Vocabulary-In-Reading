@@ -53,10 +53,11 @@
           <button class= "btn light-mode m-1 mt-2" placement="bottom" ngbTooltip="Text Copied!" triggers="click:blur" (click)="copyMessage('Ehsanzadeh, S.J. & Dwyer, E. (2017). A Corpus-based K-12 School Dictionary.')" value="click to copy"> Cite Us </button>
       </div-->
         <div class="btn-group me-3">
-            <div class="btn light-mode mt-2 filter">Filters: </div>
+            <div class="btn light-mode mt-2 
+            ">Filters: </div>
             <div class="btn-group" ngbDropdown autoClose=false role="group" id="dropdownConfig"
                 aria-label="Button group with nested dropdown" #Category="ngbDropdown">
-                <button type="button" class="btn light-mode mt-2 category" ngbDropdownToggle ngbDropdownAnchor
+                <button type="button" class="btn light-mode mt-2 category" title="List of words categorized by frequency level" ngbDropdownToggle ngbDropdownAnchor
                     (click)="Grade.close();"> Category: {{wordCategory}}</button>
                 <div ngbDropdownMenu>
 
@@ -134,11 +135,11 @@
       </thead>
       -->
             <tbody id="table-body">
-                <tr *ngIf='showTable && !error' class="table-success" scope="row">
-                    <td (click)="getDefinition(word.value); open(content);">
-                        <a href="javascript:void(0)">{{word.value}}</a>
+                <tr *ngFor='let item of wordToDisplay;let i=index' class="table-success" scope="row">
+                    <td (click)="getDefinition(item.value); open(content);">
+                        <a href="javascript:void(0)">{{item.value}}</a>
                     </td>
-                    <td>{{resultCategory}}</td>
+                    <td>{{resultCategory[i]}}</td>
                 </tr>
             </tbody>
         </table>
@@ -274,11 +275,24 @@
                 <th>Category</th>
             </tr>
         </thead>
-        <tbody>
-            <tr *ngFor='let word of page.content'>
+        <tbody *ngIf="!showTable">
+            <!--<span *ngFor='let obj of wordTo'>-->
                 <!-- <tr *ngFor='let word of liveWordsList'> -->
-                <td (click)="getDefinition(word.value); open(content);">
-                    <a href="javascript:void(0)">{{ word.value}}</a>
+                <tr *ngFor='let w of page.content' >
+                <td (click)="getDefinition(w.value); open(content);">
+                    <a href="javascript:void(0)">{{w.value}}</a>
+                    <!--<a href="javascript:void(0)">{{ word}}</a> -->
+                </td>
+                <td>{{wordCategory}}</td>
+            </tr>
+        </tbody>
+
+        <tbody *ngFor='let obj of wordTo'>
+            <!--<span *ngFor='let obj of wordTo'>-->
+                <!-- <tr *ngFor='let word of liveWordsList'> -->
+                <tr *ngFor='let w of obj.content' >
+                <td (click)="getDefinition(w.value); open(content);">
+                    <a href="javascript:void(0)">{{w.value}}</a>
                     <!--<a href="javascript:void(0)">{{ word}}</a> -->
                 </td>
                 <td>{{wordCategory}}</td>

@@ -5,10 +5,29 @@
   font-size: 16px;
   border: none;
 }
+
+.parent_div_1{
+  display:flex;
+  flex-wrap: wrap;
+}
+
 .dark-mode{
     background-color: #3d3d3d;
     color: #ebebeb;
 }
+.dark-mode2{
+  background-color: #3d3d3d;
+  color: #ebebeb;
+  float: right;
+  position: relative;
+  left: 200%;
+}
+
+.dark-mode2:hover{
+  border: 1px solid #888;
+}
+
+
 .light-mode{
     background-color: #ebebeb;
     color: #3d3d3d;
@@ -47,7 +66,6 @@
 .dropup:hover .dropbtn {
   background-color: #2833A5;
 }
-
 
 .scrollable-menu {
   height: auto;

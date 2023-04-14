@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6537349c-7875-4ad4-8aa5-9ebc80e4b3b2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/vir/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vir/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/account.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/account.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/beginner.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/beginner.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/change-password.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/change-password.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/common.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/common.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/common.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/common.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/contact-us.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/contact-us.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/credits.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/credits.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/dashboard.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/dashboard.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/doc.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/doc.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/enhanced-text-result.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/enhanced-text-result.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/enhanced-text-result.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/enhanced-text-result.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/fontawesome-webfont.912ec66d7572ff821749.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/fontawesome-webfont.912ec66d7572ff821749.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/image.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/image.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/inline.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/inline.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/inline.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/inline.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/itranslate.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/itranslate.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/itranslate.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/itranslate.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/layout.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/layout.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/main.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/main.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/not-found.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/not-found.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pdf.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pdf.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/pdf.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/pdf.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/polyfills.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/polyfills.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/recovery.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/recovery.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/register.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/register.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/scripts.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/scripts.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/search-words.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/search-words.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/search-words.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/search-words.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/styles.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/styles.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/tests.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/tests.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/text-statistics.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/text-statistics.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/text-statistics.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/text-statistics.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/text.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/text.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/vendor.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/vendor.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VIR-Backend-6.3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/VIR-Backend-6.3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/VIR-Backend-6.3.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/VIR-Backend-6.3.0.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/VirBackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/VirBackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/config/CorsConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/config/CorsConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/config/DataConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/config/DataConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/config/EncryptorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/config/EncryptorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/config/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/config/SwaggerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/config/TesseractPropertiesConfig$TesseractProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/config/TesseractPropertiesConfig$TesseractProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/config/TesseractPropertiesConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/config/TesseractPropertiesConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/AnalyzerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/AnalyzerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/AngularRedirectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/AngularRedirectController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/DictionaryEntryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/DictionaryEntryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/DownloadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/DownloadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/ExceptionAdviceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/ExceptionAdviceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/ResourceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/ResourceController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/WordAdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/WordAdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/controller/WordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/controller/WordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/exception/ApiError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/exception/ApiError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/exception/HeaderMalformattedError.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/exception/HeaderMalformattedError.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/exception/PageLimitExceededException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/exception/PageLimitExceededException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/exception/UnableToGetEntryException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/exception/UnableToGetEntryException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/exception/UnparseableContentException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/exception/UnparseableContentException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/exception/UnsupportedFileException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/exception/UnsupportedFileException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader$BlockData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader$BlockData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader$TextCluster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader$TextCluster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/helpers/AWSBlockReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/helpers/IOHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/helpers/IOHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/helpers/OcrReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/helpers/OcrReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/helpers/TesseractOcrReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/helpers/TesseractOcrReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Count.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Count.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Dictionary.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Dictionary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/DictionaryEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/DictionaryEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/EmailMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/EmailMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/FileType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/FileType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/ItranslateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/ItranslateRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Itranslator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Itranslator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Percent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Percent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Recovery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Recovery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/SourceType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/SourceType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Statistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Statistics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Text.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Text.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/ThreadValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/ThreadValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/WordMatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/WordMatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/CategorizedText.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/CategorizedText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/CrossReference.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/CrossReference.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Entry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Example.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Example.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/GrammaticalFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/GrammaticalFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/HeadwordEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/HeadwordEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/LexicalEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/LexicalEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Pronunciation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Pronunciation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/RelatedEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/RelatedEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/RetrieveEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/RetrieveEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Sense.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Sense.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Translation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/Translation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/VariantForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/oxford/VariantForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/wiki/WikiEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/wiki/WikiEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/wiki/WikiPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/wiki/WikiPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/wiki/WikiResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/dictionary/wiki/WikiResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/enumerations/EmailResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/enumerations/EmailResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/enumerations/ImageConversionOption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/enumerations/ImageConversionOption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/model/translator/WordTranslator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/model/translator/WordTranslator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/repository/RecoveryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/repository/RecoveryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/repository/WordRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/repository/WordRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/repository/WordRepositoryHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/repository/WordRepositoryHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/DictionaryEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/DictionaryEntryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/FileProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/FileProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/ResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/ResourceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/SendEmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/SendEmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/TextProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/TextProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/WordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/WordService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/CSVResourceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/CSVResourceService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/DownloadWordsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/DownloadWordsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/OcrOptimizerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/OcrOptimizerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/SendEmail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/SendEmail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/SimpleWordService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/SimpleWordService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/TesseractConfigurationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/TesseractConfigurationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/OxfordDictionaryEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/OxfordDictionaryEntryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/SimpleDictionaryEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/SimpleDictionaryEntryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/WikiDictionaryEntryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/WikiDictionaryEntryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/WikiHtmlCleanerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/WikiHtmlCleanerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/converter/WikiConverterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/dictionary/converter/WikiConverterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/email/SendGridEmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/email/SendGridEmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/DocProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/DocProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/ImgProcessorService$StopWatchOutputOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/ImgProcessorService$StopWatchOutputOptions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/ImgProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/ImgProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/OptimizedTextProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/OptimizedTextProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/PdfProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/PdfProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/SimpleFileProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/SimpleFileProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/SimpleTextProcessorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/vir/service/impl/processor/SimpleTextProcessorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/account.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/account.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/beginner.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/beginner.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/change-password.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/change-password.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/common.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/common.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/common.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/common.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/contact-us.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/contact-us.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/credits.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/credits.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/dashboard.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/dashboard.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/doc.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/doc.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/enhanced-text-result.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/enhanced-text-result.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/enhanced-text-result.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/enhanced-text-result.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/fontawesome-webfont.912ec66d7572ff821749.svg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/fontawesome-webfont.912ec66d7572ff821749.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/image.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/inline.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/inline.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/inline.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/inline.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/itranslate.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/itranslate.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/itranslate.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/itranslate.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/layout.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/layout.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/main.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/main.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/main.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/main.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/not-found.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/not-found.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/pdf.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pdf.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/pdf.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/pdf.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/polyfills.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/polyfills.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/recovery.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/recovery.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/register.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/register.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/scripts.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/scripts.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/search-words.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/search-words.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/search-words.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/search-words.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/styles.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/styles.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/tests.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/tests.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/text-statistics.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/text-statistics.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/text-statistics.module.chunk.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/text-statistics.module.chunk.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/text.module.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/text.module.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/vendor.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/vendor.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/itranslate/itranslate.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/itranslate/itranslate.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/itranslate/itranslate.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/itranslate/itranslate.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/itranslate/itranslate.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/itranslate/itranslate.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/search-words/search-words.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/search-words/search-words.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/search-words/search-words.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VIR-Frontend/src/app/layout/search-words/search-words.component.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2L4DAGM3aENaNlw1jndF2XGJIk8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/andym/Desktop/VIRS_PROJECT/VIRS-Vocabulary-In-Reading/Code/VIRS 9.0 Final Code/Code/VIR-Backend",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6537349c-7875-4ad4-8aa5-9ebc80e4b3b2" name="Changes" comment="" />
+      <created>1675121333477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675121333477</updated>
+      <workItem from="1675121343618" duration="51000" />
+      <workItem from="1675302436540" duration="1237000" />
+      <workItem from="1675658972334" duration="3441000" />
+      <workItem from="1675726441414" duration="12000" />
+      <workItem from="1676683811117" duration="7683000" />
+      <workItem from="1677261602443" duration="990000" />
+      <workItem from="1680806695955" duration="1287000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

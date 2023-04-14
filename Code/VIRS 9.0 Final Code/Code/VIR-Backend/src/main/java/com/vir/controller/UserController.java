@@ -94,9 +94,7 @@ public class UserController
 		boolean emptyUserName = TextUtils.isBlank(userName);
 		
 		User u = emptyUserName ? null : _userRepository.findByUserName(userName);
-		int code = emptyUserName
-			? HttpServletResponse.SC_BAD_REQUEST
-			: u == null
+		int code = emptyUserName ? HttpServletResponse.SC_BAD_REQUEST : u == null
 				? HttpServletResponse.SC_NOT_FOUND
 				: HttpServletResponse.SC_OK;
 		response.setStatus(code);

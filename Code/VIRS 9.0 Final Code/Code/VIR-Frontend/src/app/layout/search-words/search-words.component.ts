@@ -39,6 +39,7 @@ export class SearchWordsComponent implements OnInit {
   sort: string;
   activeCategory: string;
   wordCategory: string;
+  wordTo = new Array();
 
   processing: boolean;
   wordDefinition: IDefinition;
@@ -47,11 +48,12 @@ export class SearchWordsComponent implements OnInit {
   cleanWord: string;
   closeResult: string;
 
-  resultCategory: string;
+  resultCategory= new Array();
   searchTrigger: boolean = false;
 
   errorSearch: boolean;
   word: IWord;
+  wordToDisplay = new Array();
   showTable = false;
   alertWord: string;
   @Input() searchArea: string;
@@ -153,6 +155,7 @@ export class SearchWordsComponent implements OnInit {
       .subscribe
       (res => {
         this.page = res;
+        this.wordTo.push(this.page);
         this.turnOn = true;
       },
         (err: HttpErrorResponse) => {
@@ -163,6 +166,7 @@ export class SearchWordsComponent implements OnInit {
           }
         }
       );
+      this.wordTo.splice(0);
   }
 
   // Since the page Number starts from 0 in the backend we decrement the PageNumber by 1
@@ -212,7 +216,23 @@ export class SearchWordsComponent implements OnInit {
   }
 
 
-  convertText(category: string) {
+  convertText2(category: string) {
+    var temp: string;
+
+    temp = (category === 'k1')   ? 'K1'
+         : (category === 'k2')   ? 'K2'
+         : (category === 'k3')   ? 'K3'
+         : (category === 'baw')  ? 'Basic Academic Words'
+         : (category === 'awl')  ? 'Academic Words'
+         : (category === 'stem') ? 'STEM'
+         : (category === 'hi')   ? 'Other High Frequency'
+         : (category === 'med')  ? 'Medium Frequency'
+         : (category === 'low')  ? 'Low Frequency'
+         : category;
+    
+  }
+
+  convertText(category: string):string {
     var temp: string;
 
     temp = (category === 'k1')   ? 'K1'
@@ -226,11 +246,12 @@ export class SearchWordsComponent implements OnInit {
          : (category === 'low')  ? 'Low Frequency'
          : category;
 
-    if (this.searchTrigger == true) {
-      return this.resultCategory = temp;
-    } else if (this.searchTrigger == false) {
-      return this.wordCategory = temp;
-    }//This determines if the user hits 'search' in order to update the view properly
+         
+      if (this.searchTrigger == false) {
+        return this.wordCategory = temp;
+      }//This determines if the user hits 'search' in order to update the view properly
+
+    return temp;
   }
 
   ngOnInit() {
@@ -286,24 +307,73 @@ export class SearchWordsComponent implements OnInit {
   }
 
 
-  searchWord(sortOrder: string = this.sort): void {
+  splitByDelimeter():string[]{
+    let x = this.searchArea.split(/(?:,|\.|:|-| )+/);
+    return x;
+  }
 
-    
+  HyphenatedWord():boolean{
+  return /[,\-\.\:]/.test(this.searchArea);
+  }
+
+  searchWord(sortOrder: string = this.sort): void {
+  
     this.errorSearch = false;
     this.searchTrigger = true;
     this.alertWord = this.searchArea;
     var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
 
-    this.getLiveWordList(0, this.activeCategory, this.tableSize, sortOrder, this.searchItem.nativeElement.value);
     if(this.searchArea === undefined){return;}
-    
+
+      this.getLiveWordList(0, this.activeCategory, this.tableSize, sortOrder, this.searchArea);
+
     this._wordsList.getWord(this.searchArea, categories)
       .subscribe
       (res => {
         this.word = res;
+       this.wordToDisplay.push(this.word);
         this.processing = false;
         this.showTable = true;
-        this.resultCategory = this.convertText(res.category);
+        this.resultCategory.push(this.convertText(res.category));
+        categories = null;
+      },
+        (err: HttpErrorResponse) => {
+          if (err.error instanceof Error) {
+              console.log('Client-side Error occured');
+             
+          } else {
+            if(this.HyphenatedWord())
+              {
+                this.searchWord_Hyphenated_Word(this.sort);
+              }else
+              {this.errorSearch = true;
+                console.log('Server-side Error occured');
+              }
+          }
+          categories = null;
+        }
+      );
+
+      this.wordToDisplay.splice(0);
+      this.resultCategory.splice(0);
+  }
+
+  searchWord_Hyphenated_Word(sortOrder: string = this.sort): void {
+    var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
+
+    if(this.searchArea === undefined){return;}
+
+    for(let i = 0; i<this.splitByDelimeter().length; i++){
+      this.getLiveWordList(0, this.activeCategory, this.tableSize, sortOrder, this.splitByDelimeter()[i]);
+
+    this._wordsList.getWord(this.splitByDelimeter()[i], categories)
+      .subscribe
+      (res => {
+        this.word = res;
+       this.wordToDisplay.push(this.word);
+        this.processing = false;
+        this.showTable = true;
+        this.resultCategory.push(this.convertText(res.category));
         categories = null;
       },
         (err: HttpErrorResponse) => {
@@ -316,6 +386,10 @@ export class SearchWordsComponent implements OnInit {
           categories = null;
         }
       );
+
+      this.wordToDisplay.splice(0);
+      this.resultCategory.splice(0);
+    }
 
   }
 

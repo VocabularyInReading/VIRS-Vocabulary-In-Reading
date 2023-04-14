@@ -127,7 +127,7 @@ export class ItranslateComponent implements OnInit {
 
   translate()
   {
-    if(this.charsLeft < 1)
+    if((this.charsLeft) < 1)
     {
       this.charsLeft = this.charsLeft - this.textArea.length;
       this.setCookie("charsLeft", this.charsLeft);
@@ -144,6 +144,8 @@ export class ItranslateComponent implements OnInit {
             this.t2 = this._itranslate.retrieveTextFromResults(rec);
             console.log(this.t2);
             this.charsLeft=this.charsLeft-this.textArea.length;
+            if(this.charsLeft<=0)
+              this.charsLeft = 1000;
             this.setCookie("charsLeft", this.charsLeft);
           },
           (err: HttpErrorResponse) =>
@@ -152,6 +154,7 @@ export class ItranslateComponent implements OnInit {
           }
       );
   }
+
 
   setCookie(cname, cvalue)
   {
@@ -187,11 +190,15 @@ export class ItranslateComponent implements OnInit {
 
     if (chars != "")
     {
-        this.charsLeft = parseInt(chars);
+        this.charsLeft = 1000;  //parseInt(chars);
     }//if
     else
     {
       this.setCookie("charsLeft", "1000");
     }//else
   }
+
+  eraseText() {
+    this.textArea = '';
+}
 }

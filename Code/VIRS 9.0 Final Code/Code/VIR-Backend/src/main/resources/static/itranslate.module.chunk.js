@@ -39,14 +39,14 @@ ItranslateRoutingModule = __decorate([
 /***/ "./src/app/layout/itranslate/itranslate.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\r\n<div class = \"container-fluid ml-1\">\r\n\r\n    <div class=\"card-header card-primary card-inverse\" id=\"itranslate\">\r\n        <i class=\"fa fa-fw fa-font fa-2x float-right\"></i>iTranslate&nbsp;&nbsp;\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <textarea class=\"form-control\" name=\"textArea\" id=\"exampleTextarea\" rows=\"10\" maxlength=\"30000\" [(ngModel)]=\"textArea\"\r\n        placeholder=\"Enter your text to translate here\" required></textarea>\r\n    </div>\r\n\r\n    <br>\r\n\r\n    <div>\r\n        <select class=\"custom-select\" id=\"inlineFormCustomSelect\" [(ngModel)]=\"target\" required>\r\n            <option [ngValue]=\"undefined\" disabled  selected> Select target language </option>\r\n            <option *ngFor=\"let options of optionsSelect\" [value]=\"options.value\">{{options.label}}</option>\r\n        </select>\r\n    </div>\r\n    <br/>\r\n    <div class=\"btn-group\">\r\n        <button type=\"button\" class=\"btn dark-mode float-left\" (click)=\"translate()\">Translate</button>\r\n    </div>\r\n\r\n    <br>\r\n    <br>\r\n\r\n    <div >\r\n        <p class=\"float-left\"> Characters left to translate: {{charsLeft}} </p>\r\n    </div>\r\n\r\n    <br>\r\n    <br>\r\n\r\n    <div style=\"text-align:justify\">\r\n        <div class=\"card\">\r\n            <div class=\"card-header card-primary card-inverse bg-success\">\r\n                <i class=\"fa fa-fw fa-2x float-left\"></i>Translation&nbsp;&nbsp;\r\n            </div>\r\n            <div class=\"container-fluid\" style=\"text-align:justify\">\r\n                {{t2}}\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n\r\n</div>\r\n\r\n"
+module.exports = "\r\n<div class = \"container-fluid ml-1\">\r\n\r\n    <div class=\"card-header card-primary card-inverse\" id=\"itranslate\">\r\n        <i class=\"fa fa-fw fa-font fa-2x float-right\"></i>iTranslate&nbsp;&nbsp;\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <textarea class=\"form-control\" name=\"textArea\" id=\"exampleTextarea\" rows=\"10\" maxlength=\"30000\" [(ngModel)]=\"textArea\"\r\n        placeholder=\"Enter your text to translate here\" required></textarea>\r\n    </div>\r\n\r\n    <br>\r\n\r\n    <div>\r\n        <select class=\"custom-select\" id=\"inlineFormCustomSelect\" [(ngModel)]=\"target\" required>\r\n            <option [ngValue]=\"undefined\" disabled  selected> Select target language </option>\r\n            <option *ngFor=\"let options of optionsSelect\" [value]=\"options.value\">{{options.label}}</option>\r\n        </select>\r\n    </div>\r\n    <br/>\r\n\r\n<div class=\"parent_div_1\">\r\n    <div class=\"btn-group\">\r\n        <button type=\"button\" class=\"btn dark-mode float-left\" (click)=\"translate()\">Translate</button>\r\n       <!-- <input type=\"button\" value=\"Reset\" class =\"dark-mode2\"(click)=\"eraseText()\"> -->\r\n    </div>\r\n    \r\n    <div *ngIf=\"textArea\">\r\n        <input type=\"button\" title=\"Clear entered text.\" value=\"Clear\" class=\"btn dark-mode2\"(click)=\"eraseText()\">\r\n    </div>\r\n</div>\r\n    <br>\r\n    <br>\r\n\r\n    <div >\r\n        <p class=\"float-left\"> Characters left to translate: {{charsLeft}} </p>\r\n    </div>\r\n\r\n    <br>\r\n    <br>\r\n\r\n    <div style=\"text-align:justify\">\r\n        <div class=\"card\">\r\n            <div class=\"card-header card-primary card-inverse bg-success\">\r\n                <i class=\"fa fa-fw fa-2x float-left\"></i>Translation&nbsp;&nbsp;\r\n            </div>\r\n            <div class=\"container-fluid\" style=\"text-align:justify\">\r\n                {{t2}}\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n    <br>\r\n\r\n</div>\r\n\r\n"
 
 /***/ }),
 
 /***/ "./src/app/layout/itranslate/itranslate.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".dropbtn {\n  background-color: #2833A5;\n  color: white;\n  padding: 16px;\n  font-size: 16px;\n  border: none; }\n\n.dark-mode {\n  background-color: #3d3d3d;\n  color: #ebebeb; }\n\n.light-mode {\n  background-color: #ebebeb;\n  color: #3d3d3d; }\n\n#itranslate {\n  background-color: #98c1d9; }\n\n.dropup {\n  position: relative;\n  display: inline-block; }\n\n.dropup-content {\n  display: none;\n  position: absolute;\n  background-color: #f1f1f1;\n  min-width: 160px;\n  bottom: 50px;\n  z-index: 1; }\n\n.dropup-content a {\n  color: black;\n  padding: 12px 16px;\n  text-decoration: none;\n  display: block; }\n\n.dropup-content a:hover {\n  background-color: #ccc; }\n\n.dropup:hover .dropup-content {\n  display: block; }\n\n.dropup:hover .dropbtn {\n  background-color: #2833A5; }\n\n.scrollable-menu {\n  height: auto;\n  max-height: 200px;\n  overflow-x: hidden; }\n"
+module.exports = ".dropbtn {\n  background-color: #2833A5;\n  color: white;\n  padding: 16px;\n  font-size: 16px;\n  border: none; }\n\n.parent_div_1 {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap; }\n\n.dark-mode {\n  background-color: #3d3d3d;\n  color: #ebebeb; }\n\n.dark-mode2 {\n  background-color: #3d3d3d;\n  color: #ebebeb;\n  float: right;\n  position: relative;\n  left: 200%; }\n\n.dark-mode2:hover {\n  border: 1px solid #888; }\n\n.light-mode {\n  background-color: #ebebeb;\n  color: #3d3d3d; }\n\n#itranslate {\n  background-color: #98c1d9; }\n\n.dropup {\n  position: relative;\n  display: inline-block; }\n\n.dropup-content {\n  display: none;\n  position: absolute;\n  background-color: #f1f1f1;\n  min-width: 160px;\n  bottom: 50px;\n  z-index: 1; }\n\n.dropup-content a {\n  color: black;\n  padding: 12px 16px;\n  text-decoration: none;\n  display: block; }\n\n.dropup-content a:hover {\n  background-color: #ccc; }\n\n.dropup:hover .dropup-content {\n  display: block; }\n\n.dropup:hover .dropbtn {\n  background-color: #2833A5; }\n\n.scrollable-menu {\n  height: auto;\n  max-height: 200px;\n  overflow-x: hidden; }\n"
 
 /***/ }),
 
@@ -170,7 +170,7 @@ var ItranslateComponent = (function () {
     };
     ItranslateComponent.prototype.translate = function () {
         var _this = this;
-        if (this.charsLeft < 1) {
+        if ((this.charsLeft) < 1) {
             this.charsLeft = this.charsLeft - this.textArea.length;
             this.setCookie("charsLeft", this.charsLeft);
             return;
@@ -182,6 +182,8 @@ var ItranslateComponent = (function () {
             _this.t2 = _this._itranslate.retrieveTextFromResults(rec);
             console.log(_this.t2);
             _this.charsLeft = _this.charsLeft - _this.textArea.length;
+            if (_this.charsLeft <= 0)
+                _this.charsLeft = 1000;
             _this.setCookie("charsLeft", _this.charsLeft);
         }, function (err) {
             _this.t2 = "There was an unknown error";
@@ -211,11 +213,14 @@ var ItranslateComponent = (function () {
     ItranslateComponent.prototype.checkCookie = function () {
         var chars = this.getCookie("charsLeft");
         if (chars != "") {
-            this.charsLeft = parseInt(chars);
+            this.charsLeft = 1000; //parseInt(chars);
         } //if
         else {
             this.setCookie("charsLeft", "1000");
         } //else
+    };
+    ItranslateComponent.prototype.eraseText = function () {
+        this.textArea = '';
     };
     return ItranslateComponent;
 }());

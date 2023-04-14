@@ -18,10 +18,17 @@
         </select>
     </div>
     <br/>
+
+<div class="parent_div_1">
     <div class="btn-group">
         <button type="button" class="btn dark-mode float-left" (click)="translate()">Translate</button>
+       <!-- <input type="button" value="Reset" class ="dark-mode2"(click)="eraseText()"> -->
     </div>
-
+    
+    <div *ngIf="textArea">
+        <input type="button" title="Clear entered text." value="Clear" class="btn dark-mode2"(click)="eraseText()">
+    </div>
+</div>
     <br>
     <br>
 
