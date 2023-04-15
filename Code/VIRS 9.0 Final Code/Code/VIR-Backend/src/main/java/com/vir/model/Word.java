@@ -35,6 +35,9 @@ public class Word implements Serializable {
 	@Column(name = "[category]")
 	private String category;
 
+	@Column(name = "[grade]")
+	private String grade;
+
 	public Word() {
 	}
 
@@ -82,5 +85,13 @@ public class Word implements Serializable {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 }
