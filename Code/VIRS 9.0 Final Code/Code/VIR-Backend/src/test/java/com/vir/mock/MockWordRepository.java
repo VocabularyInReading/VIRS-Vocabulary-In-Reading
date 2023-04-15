@@ -256,7 +256,7 @@ public class MockWordRepository implements WordRepository {
     }
 
     @Override
-    public Page<Word> findAllByCategory(Pageable pageable, String category) {
+    public Page<Word> findAllByCategoryAndGrade(Pageable pageable, String category, String grade) {
         throw new NotImplementedError();
     }
 
@@ -305,5 +305,12 @@ public class MockWordRepository implements WordRepository {
         datastore.add(new Word("abiding", "cat"));
         datastore.add(new Word("abidingly", "cat"));
         return datastore;
+    }
+
+    @Override
+    public Page<Word> findAllByValueStartingWithAndCategoryAndGradeIn(Pageable pageable, String value, String category,
+            String Grade) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findAllByValueStartingWithAndCategoryAndGradeIn'");
     }
 }

@@ -9,7 +9,6 @@ import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { IWord, IText, IDefinition, IPage, WordsListService } from '../../shared'
 import * as XLSX from 'xlsx';
-import { getErrorLogger } from '@angular/core/src/errors';
 
 @Component({
   selector: 'app-search-words',
@@ -33,13 +32,12 @@ export class SearchWordsComponent implements OnInit {
   isDisabled: boolean;
   tableSize: number;
   k1: number; k2: number; k3: number; hi: number; med: number; low: number; awl: number; stem: number; baw: number;
-  //gradeK: number; grade1: number; grade2: number; grade3: number; grade4: number; grade5: number; grade6: number; 
-  //grade7: number; grade8: number; grade9: number; grade10: number; grade11: number; grade12: number;
+  K: number; G1: number; G2: number; G3: number; G4: number; G5: number; G6: number;
+  G7: number; G8: number; G9: number; G10: number; G11: number; G12: number;
   perma: 0;
   sort: string;
   activeCategory: string;
   wordCategory: string;
-  wordTo = new Array();
 
   processing: boolean;
   wordDefinition: IDefinition;
@@ -48,15 +46,15 @@ export class SearchWordsComponent implements OnInit {
   cleanWord: string;
   closeResult: string;
 
-  resultCategory= new Array();
+  resultCategory: string;
   searchTrigger: boolean = false;
 
   errorSearch: boolean;
   word: IWord;
-  wordToDisplay = new Array();
   showTable = false;
   alertWord: string;
   @Input() searchArea: string;
+  activeGrade: string;
 
   constructor(private _wordsList: WordsListService, public _definitionService: DefinitionService, private modalService: NgbModal) {
     this.defaultPagination = 1;
@@ -67,6 +65,7 @@ export class SearchWordsComponent implements OnInit {
     this.tableSize = 20;
     this.sort = 'ASC'
     this.activeCategory = 'k1';
+    this.activeGrade = 'K';
     this.wordCategory = 'K1';
     this.k1 = 1;
 
@@ -74,16 +73,16 @@ export class SearchWordsComponent implements OnInit {
 
   popUpCategory(cat: string) {
 
-    return (cat === 'awl')  ? 'Commonly occurring among a wide variety of academic subjects but not within the 2000 most frequent words'
-         : (cat === 'stem') ? 'Words occurring in Math or Science texts but not within the 2000 most frequent words'
-         : (cat === 'hi')   ? 'Words more than 100 times per 10 million words but not within the 3000 most commonly used words'
-         : (cat === 'med')  ? 'Moderately occurring words, occurring between 10 to 100 times per 10 million words'
-         : (cat === 'low')  ? 'Rarely occurring words, occurring only 1 to 10 times per 10 million words'
-         : (cat === 'K1')   ? 'Among the list of the 1000 most frequently used words in primary and secondary texts'
-         : (cat === 'K2')   ? 'Among the list of the 2nd 1000 most frequently used words in primary and secondary texts'
-         : (cat === 'K3')   ? 'Among the list of the 3rd 1000 most frequently used words in primary and secondary texts'
-         : (cat === 'baw')  ? 'These are academic words that are simpler'
-         : 'These are words that are names or are not analyzed by us';
+    return (cat === 'awl') ? 'Commonly occurring among a wide variety of academic subjects but not within the 2000 most frequent words'
+      : (cat === 'stem') ? 'Words occurring in Math or Science texts but not within the 2000 most frequent words'
+        : (cat === 'hi') ? 'Words more than 100 times per 10 million words but not within the 3000 most commonly used words'
+          : (cat === 'med') ? 'Moderately occurring words, occurring between 10 to 100 times per 10 million words'
+            : (cat === 'low') ? 'Rarely occurring words, occurring only 1 to 10 times per 10 million words'
+              : (cat === 'K1') ? 'Among the list of the 1000 most frequently used words in primary and secondary texts'
+                : (cat === 'K2') ? 'Among the list of the 2nd 1000 most frequently used words in primary and secondary texts'
+                  : (cat === 'K3') ? 'Among the list of the 3rd 1000 most frequently used words in primary and secondary texts'
+                    : (cat === 'baw') ? 'These are academic words that are simpler'
+                      : 'These are words that are names or are not analyzed by us';
 
   }
 
@@ -107,12 +106,13 @@ export class SearchWordsComponent implements OnInit {
 
   }
 
-  /*checkGradeStatus(grade: string){
+  checkGradeStatus(grade: string) {
 
-    if(this[grade])
+    if (this[grade]) {
       return "✓";
+    }
 
-  }*/
+  }
 
 
   updateCategory(category: string) {
@@ -124,15 +124,24 @@ export class SearchWordsComponent implements OnInit {
     this.activeCategory = category;
     this.searchTrigger = false;
     //this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
-    this.getLiveWordList(0, this.activeCategory, this.tableSize, this.sort);
+    this.getLiveWordList(0, this.activeCategory, this.activeGrade, this.tableSize, this.sort);
     this.convertText(this.activeCategory)
 
   }
 
-  private getWordList(pageNumber: number, category: string, size: number, sort: string): void {
+  updateGrade(grade: string) {
+    this.K = 0; this.G1 = 0; this.G2 = 0; this.G3 = 0; this.G4 = 0; this.G5 = 0; this.G6 = 0;
+    this.G7 = 0; this.G8 = 0; this.G9 = 0; this.G10 = 0; this.G11 = 0; this.G12 = 0;
+    this[grade] = 1;
+    this.activeGrade = grade;
+    this.searchTrigger = false;
+    this.getLiveWordList(1, this.activeCategory, this.activeGrade, this.tableSize, this.sort);
+  }
+
+  private getWordList(pageNumber: number, category: string, grade: string, size: number, sort: string): void {
     this.defaultPagination = 1;
     this.sort = sort;
-    this._wordsList.getData(pageNumber, category, size, sort)
+    this._wordsList.getData(pageNumber, category, grade, size, sort)
       .subscribe
       (res => {
         this.page = res;
@@ -148,14 +157,13 @@ export class SearchWordsComponent implements OnInit {
       );
   }
 
-  private getLiveWordList(pageNumber: number = 0, category: string, size: number, sort: string, value: string = this.searchItem.nativeElement.value): void {
+  private getLiveWordList(pageNumber: number = 1, category: string, grade: string, size: number, sort: string, value: string = this.searchItem.nativeElement.value): void {
     console.log(`inside livewords method. category is:  ${category}`);
     this.sort = sort;
-    this._wordsList.getLiveWordList(pageNumber, category, size, sort, value)
+    this._wordsList.getLiveWordList(pageNumber, category, grade, size, sort, value)
       .subscribe
       (res => {
         this.page = res;
-        this.wordTo.push(this.page);
         this.turnOn = true;
       },
         (err: HttpErrorResponse) => {
@@ -166,96 +174,93 @@ export class SearchWordsComponent implements OnInit {
           }
         }
       );
-      this.wordTo.splice(0);
   }
 
-  // Since the page Number starts from 0 in the backend we decrement the PageNumber by 1
+  // Since the page Number starts from 1 in the backend we decrement the PageNumber by 1
   getK1WordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'k1', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'k1', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'k1', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getK2WordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'k2', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'k2', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'k2', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getK3WordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'k3', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'k3', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'k3', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getBAWWordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'baw', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'baw', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'baw', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getAWLWordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'awl', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'awl', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'awl', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getSTEMWordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'stem', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'stem', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'stem', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getHIWordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'hi', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'hi', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'hi', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getMEDWordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'med', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'med', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'med', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
   getLOWWordList(pageNumber: number): void {
     //this.getWordList(pageNumber - 1, 'low', this.tableSize, this.sort)
-    this.getLiveWordList(pageNumber - 1, 'low', this.tableSize, this.sort, this.searchItem.nativeElement.value);
+    this.getLiveWordList(pageNumber - 1, 'low', this.activeGrade, this.tableSize, this.sort, this.searchItem.nativeElement.value);
   }
 
 
-  convertText2(category: string) {
+  convertText(category: string) {
     var temp: string;
 
-    temp = (category === 'k1')   ? 'K1'
-         : (category === 'k2')   ? 'K2'
-         : (category === 'k3')   ? 'K3'
-         : (category === 'baw')  ? 'Basic Academic Words'
-         : (category === 'awl')  ? 'Academic Words'
-         : (category === 'stem') ? 'STEM'
-         : (category === 'hi')   ? 'Other High Frequency'
-         : (category === 'med')  ? 'Medium Frequency'
-         : (category === 'low')  ? 'Low Frequency'
-         : category;
-    
+    temp = (category === 'k1') ? 'K1'
+      : (category === 'k2') ? 'K2'
+        : (category === 'k3') ? 'K3'
+          : (category === 'baw') ? 'Basic Academic Words'
+            : (category === 'awl') ? 'Academic Words'
+              : (category === 'stem') ? 'STEM'
+                : (category === 'hi') ? 'Other High Frequency'
+                  : (category === 'med') ? 'Medium Frequency'
+                    : (category === 'low') ? 'Low Frequency'
+                      : category;
+
+    if (this.searchTrigger == true) {
+      return this.resultCategory = temp;
+    } else if (this.searchTrigger == false) {
+      return this.wordCategory = temp;
+    }//This determines if the user hits 'search' in order to update the view properly
   }
-
-  convertText(category: string):string {
-    var temp: string;
-
-    temp = (category === 'k1')   ? 'K1'
-         : (category === 'k2')   ? 'K2'
-         : (category === 'k3')   ? 'K3'
-         : (category === 'baw')  ? 'Basic Academic Words'
-         : (category === 'awl')  ? 'Academic Words'
-         : (category === 'stem') ? 'STEM'
-         : (category === 'hi')   ? 'Other High Frequency'
-         : (category === 'med')  ? 'Medium Frequency'
-         : (category === 'low')  ? 'Low Frequency'
-         : category;
-
-         
-      if (this.searchTrigger == false) {
-        return this.wordCategory = temp;
-      }//This determines if the user hits 'search' in order to update the view properly
-
-    return temp;
+  convertGrade(grade: string) {
+    return grade === 'K' ? 'Kindergarten' 
+    :grade === 'G1' ? '1' 
+    :grade === 'G2' ? '2' 
+    :grade === 'G3' ? '3' 
+    :grade === 'G4' ? '4' 
+    :grade === 'G5' ? '5' 
+    :grade === 'G6' ? '6' 
+    :grade === 'G7' ? '7' 
+    :grade === 'G8' ? '8' 
+    :grade === 'G9' ? '9' 
+    :grade === 'G10' ? '10' 
+    :grade === 'G11' ? '11'
+    :grade === 'G12' ? '12'   : grade;
   }
 
   ngOnInit() {
-    this.getWordList(0, this.activeCategory, this.tableSize, this.sort);
+    this.getWordList(0, this.activeCategory, this.activeGrade, this.tableSize, this.sort);
     this.convertText(this.activeCategory)
     window.scrollTo(0, 0);
   }
@@ -307,73 +312,25 @@ export class SearchWordsComponent implements OnInit {
   }
 
 
-  splitByDelimeter():string[]{
-    let x = this.searchArea.split(/(?:,|\.|:|-| )+/);
-    return x;
-  }
-
-  HyphenatedWord():boolean{
-  return /[,\-\.\:]/.test(this.searchArea);
-  }
-
   searchWord(sortOrder: string = this.sort): void {
-  
+
+
     this.errorSearch = false;
     this.searchTrigger = true;
     this.alertWord = this.searchArea;
     var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
+    var grade = "K,G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11,G12";
 
-    if(this.searchArea === undefined){return;}
-
-      this.getLiveWordList(0, this.activeCategory, this.tableSize, sortOrder, this.searchArea);
+    this.getLiveWordList(0, this.activeCategory, this.activeGrade, this.tableSize, sortOrder, this.searchItem.nativeElement.value);
+    if (this.searchArea === undefined) { return; }
 
     this._wordsList.getWord(this.searchArea, categories)
       .subscribe
       (res => {
         this.word = res;
-       this.wordToDisplay.push(this.word);
         this.processing = false;
         this.showTable = true;
-        this.resultCategory.push(this.convertText(res.category));
-        categories = null;
-      },
-        (err: HttpErrorResponse) => {
-          if (err.error instanceof Error) {
-              console.log('Client-side Error occured');
-             
-          } else {
-            if(this.HyphenatedWord())
-              {
-                this.searchWord_Hyphenated_Word(this.sort);
-              }else
-              {this.errorSearch = true;
-                console.log('Server-side Error occured');
-              }
-          }
-          categories = null;
-        }
-      );
-
-      this.wordToDisplay.splice(0);
-      this.resultCategory.splice(0);
-  }
-
-  searchWord_Hyphenated_Word(sortOrder: string = this.sort): void {
-    var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
-
-    if(this.searchArea === undefined){return;}
-
-    for(let i = 0; i<this.splitByDelimeter().length; i++){
-      this.getLiveWordList(0, this.activeCategory, this.tableSize, sortOrder, this.splitByDelimeter()[i]);
-
-    this._wordsList.getWord(this.splitByDelimeter()[i], categories)
-      .subscribe
-      (res => {
-        this.word = res;
-       this.wordToDisplay.push(this.word);
-        this.processing = false;
-        this.showTable = true;
-        this.resultCategory.push(this.convertText(res.category));
+        this.resultCategory = this.convertText(res.category);
         categories = null;
       },
         (err: HttpErrorResponse) => {
@@ -386,10 +343,6 @@ export class SearchWordsComponent implements OnInit {
           categories = null;
         }
       );
-
-      this.wordToDisplay.splice(0);
-      this.resultCategory.splice(0);
-    }
 
   }
 
