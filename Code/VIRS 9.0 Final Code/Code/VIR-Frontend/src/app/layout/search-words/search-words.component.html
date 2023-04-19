@@ -245,19 +245,19 @@
                 <!-- <input ngbButton type="radio" [value]="20"
                     (click)="getWordList(0, activeCategory, 20, sort);resetPagination()"> 20 -->
                 <input ngbButton type="radio" value="20"
-                    (click)="getLiveWordList(0, activeCategory, 20, sort);resetPagination()"> 20
+                    (click)="getLiveWordList(0, activeCategory, activeGrade, 20, sort);resetPagination()"> 20
             </label>
             <label ngbButtonLabel class="btn-secondary">
                 <!-- <input ngbButton type="radio" value="60"
                     (click)="getWordList(0, activeCategory, 60, sort);resetPagination()"> 60 -->
                 <input ngbButton type="radio" value="60"
-                    (click)="getLiveWordList(0, activeCategory, 60, sort);resetPagination()"> 60
+                    (click)="getLiveWordList(0, activeCategory, activeGrade, 60, sort);resetPagination()"> 60
             </label>
             <label ngbButtonLabel class="btn-secondary">
                 <!-- <input ngbButton type="radio" [value]="6000"
                     (click)="getWordList(0, activeCategory, 6000, sort);resetPagination()"> ALL -->
                 <input ngbButton type="radio" value="6000"
-                    (click)="getLiveWordList(0, activeCategory, 6000, sort);resetPagination()"> ALL
+                    (click)="getLiveWordList(0, activeCategory, activeGrade, 6000, sort);resetPagination()"> ALL
             </label>
         </div>
 

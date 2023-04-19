@@ -135,7 +135,7 @@ export class SearchWordsComponent implements OnInit {
     this[grade] = 1;
     this.activeGrade = grade;
     this.searchTrigger = false;
-    this.getLiveWordList(1, this.activeCategory, this.activeGrade, this.tableSize, this.sort);
+    this.getLiveWordList(0, this.activeCategory, this.activeGrade, this.tableSize, this.sort);
   }
 
   private getWordList(pageNumber: number, category: string, grade: string, size: number, sort: string): void {
@@ -319,7 +319,7 @@ export class SearchWordsComponent implements OnInit {
     this.searchTrigger = true;
     this.alertWord = this.searchArea;
     var categories = "K1,K2,K3,baw,awl,stem,hi,med,low";
-    var grade = "K,G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G11,G12";
+   // var grade = "K,G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,,G11,G12"
 
     this.getLiveWordList(0, this.activeCategory, this.activeGrade, this.tableSize, sortOrder, this.searchItem.nativeElement.value);
     if (this.searchArea === undefined) { return; }
