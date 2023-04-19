@@ -42,17 +42,18 @@ public class WordController {
 		this.wordRepository = wordRepository;
 	}
 
-	@ApiOperation("Retrieves a list of words by category")
+	@ApiOperation("Retrieves a list of words by category and grade")
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public Page<Word> findAll(
 			@RequestParam(value = "category", required = true) String category,
+			@RequestParam(value = "grade", required = true) String grade,
 			@RequestParam(value = "page", defaultValue = "0") int page,
 			@RequestParam(value = "size", defaultValue = "20") int size,
 			@RequestParam(value = "sortKey", defaultValue = "value") String sortField,
 			@RequestParam(value = "sortDirection", defaultValue = "ASC") Direction direction) {
 
 		PageRequest pageRequest = new PageRequest(page, size, new Sort(direction, sortField));
-		return wordRepository.findAllByCategory(pageRequest, category);
+		return wordRepository.findAllByCategoryAndGrade(pageRequest, category, grade);
 	}
 
 	@ApiOperation("Finds a word by value")
@@ -75,11 +76,12 @@ public class WordController {
 		return word;
 	}
 
-	@ApiOperation("Retrieves a PAGE of words by starting value and category")
+	@ApiOperation("Retrieves a PAGE of words by starting value,category, and grade")
 	@GetMapping(value = "valueandcat", produces = MediaType.APPLICATION_JSON_VALUE)
 	public Page<Word> findAllByValueStartingWith(
 			@RequestParam(value = "value", required = true) String value,
 			@RequestParam(value = "category", required = true) String category,
+			@RequestParam(value = "grade", required = true) String grade,
 			@RequestParam(value = "page", defaultValue = "0") int page,
 			@RequestParam(value = "size", defaultValue = "20") int size,
 			@RequestParam(value = "sortKey", defaultValue = "value") String sortField,
@@ -87,7 +89,7 @@ public class WordController {
 
 		PageRequest pageRequest = new PageRequest(page, size, new Sort(direction, sortField));
 
-		return wordRepository.findAllByValueStartingWithAndCategoryIn(pageRequest, value, category);
+		return wordRepository.findAllByValueStartingWithAndCategoryAndGradeIn(pageRequest, value, category,grade);
 	}
 
 }

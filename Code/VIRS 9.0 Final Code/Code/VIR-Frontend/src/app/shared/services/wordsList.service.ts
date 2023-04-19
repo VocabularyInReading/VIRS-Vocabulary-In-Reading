@@ -13,16 +13,16 @@ export class WordsListService {
   constructor(private http: HttpClient) {
   }
 
-  getData(page: number, category: string, size: number, sort: string): Observable<IPage> {
-    return this.http.get<IPage>(`/api/words?category=${category}&page=${page}&size=${size}&sortKey=value&sortDirection=${sort}`)
+  getData(page: number, category: string,grade: string, size: number, sort: string): Observable<IPage> {
+    return this.http.get<IPage>(`/api/words?category=${category}&grade=${grade}&page=${page}&size=${size}&sortKey=value&sortDirection=${sort}`)
       .do((res => console.log(res)));
   }
 
-  getLiveWordList(pageNumber: number = 0, category: string, size: number, sort: string, value: string): Observable<IPage> {
+  getLiveWordList(pageNumber: number = 0, category: string, grade: string, size: number, sort: string, value: string): Observable<IPage> {
     if (value == null)
-      return this.http.get<IPage>(`/api/words?category=${category}&page=${pageNumber}&size=${size}&sortKey=value&sortDirection=${sort}`)
+      return this.http.get<IPage>(`/api/words?category=${category}&grade=${grade}&page=${pageNumber}&size=${size}&sortKey=value&sortDirection=${sort}`)
 
-    return this.http.get<IPage>(`/api/words/valueandcat?value=${value}&category=${category}&page=${pageNumber}&size=${size}&sortKey=value&sortDirection=${sort}`)
+    return this.http.get<IPage>(`/api/words/valueandcat?value=${value}&category=${category}&grade=${grade}&page=${pageNumber}&size=${size}&sortKey=value&sortDirection=${sort}`)
       .do((res => console.log("Response:", res)));
   }
 

@@ -53,11 +53,10 @@
           <button class= "btn light-mode m-1 mt-2" placement="bottom" ngbTooltip="Text Copied!" triggers="click:blur" (click)="copyMessage('Ehsanzadeh, S.J. & Dwyer, E. (2017). A Corpus-based K-12 School Dictionary.')" value="click to copy"> Cite Us </button>
       </div-->
         <div class="btn-group me-3">
-            <div class="btn light-mode mt-2 
-            ">Filters: </div>
+            <div class="btn light-mode mt-2 filter">Filters: </div>
             <div class="btn-group" ngbDropdown autoClose=false role="group" id="dropdownConfig"
                 aria-label="Button group with nested dropdown" #Category="ngbDropdown">
-                <button type="button" class="btn light-mode mt-2 category" title="List of words categorized by frequency level" ngbDropdownToggle ngbDropdownAnchor
+                <button type="button" class="btn light-mode mt-2 category" ngbDropdownToggle ngbDropdownAnchor
                     (click)="Grade.close();"> Category: {{wordCategory}}</button>
                 <div ngbDropdownMenu>
 
@@ -89,21 +88,34 @@
             <div class="btn-group" ngbDropdown role="group" id="dropdownConfig"
                 aria-label="Button group with nested dropdown" autoClose=false #Grade="ngbDropdown">
                 <button type="button" class="btn light-mode mr-2 mt-2 grade" ngbDropdownToggle
-                    (click)="Category.close();">Grade</button>
+                    (click)="Category.close();">Grade: {{convertGrade(activeGrade)}}</button>
                 <div class="dropdown-menu" ngbDropdownMenu>
-                    <button class="dropdown-item">Kindergarten</button>
-                    <button class="dropdown-item">1</button>
-                    <button class="dropdown-item">2</button>
-                    <button class="dropdown-item">3</button>
-                    <button class="dropdown-item">4</button>
-                    <button class="dropdown-item">5</button>
-                    <button class="dropdown-item">6</button>
-                    <button class="dropdown-item">7</button>
-                    <button class="dropdown-item">8</button>
-                    <button class="dropdown-item">9</button>
-                    <button class="dropdown-item">10</button>
-                    <button class="dropdown-item">11</button>
-                    <button class="dropdown-item">12</button>
+                    <button class="dropdown-item" (click)="updateGrade('K');"
+                        placement="right">Kindergarten{{checkGradeStatus('K')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G1');"
+                        placement="right">1{{checkGradeStatus('G1')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G2');"
+                        placement="right">2{{checkGradeStatus('G2')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G3');"
+                        placement="right">3{{checkGradeStatus('G3')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G4');"
+                        placement="right">4{{checkGradeStatus('G4')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G5');"
+                        placement="right">5{{checkGradeStatus('G5')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G6');"
+                        placement="right">6{{checkGradeStatus('G6')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G7');"
+                        placement="right">7{{checkGradeStatus('G7')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G8');"
+                        placement="right">8{{checkGradeStatus('G8')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G9');"
+                        placement="right">9{{checkGradeStatus('G9')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G10');"
+                        placement="right">10{{checkGradeStatus('G10')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G11');"
+                        placement="right">11{{checkGradeStatus('G11')}}</button>
+                    <button class="dropdown-item" (click)="updateGrade('G12');"
+                        placement="right">12{{checkGradeStatus('G12')}}</button>
 
                 </div>
             </div>
@@ -135,11 +147,12 @@
       </thead>
       -->
             <tbody id="table-body">
-                <tr *ngFor='let item of wordToDisplay;let i=index' class="table-success" scope="row">
-                    <td (click)="getDefinition(item.value); open(content);">
-                        <a href="javascript:void(0)">{{item.value}}</a>
+                <tr *ngIf='showTable && !error' class="table-success" scope="row">
+                    <td (click)="getDefinition(word.value); open(content);">
+                        <a href="javascript:void(0)">{{word.value}}</a>
                     </td>
-                    <td>{{resultCategory[i]}}</td>
+                    <td>{{resultCategory}}</td>
+                    <td>{{convertGrade(word.grade)}}</td>
                 </tr>
             </tbody>
         </table>
@@ -273,29 +286,18 @@
             <tr>
                 <th>Word</th>
                 <th>Category</th>
+                <th>Grade</th>
             </tr>
         </thead>
-        <tbody *ngIf="!showTable">
-            <!--<span *ngFor='let obj of wordTo'>-->
+        <tbody>
+            <tr *ngFor='let word of page.content'>
                 <!-- <tr *ngFor='let word of liveWordsList'> -->
-                <tr *ngFor='let w of page.content' >
-                <td (click)="getDefinition(w.value); open(content);">
-                    <a href="javascript:void(0)">{{w.value}}</a>
+                <td (click)="getDefinition(word.value); open(content);">
+                    <a href="javascript:void(0)">{{ word.value}}</a>
                     <!--<a href="javascript:void(0)">{{ word}}</a> -->
                 </td>
                 <td>{{wordCategory}}</td>
-            </tr>
-        </tbody>
-
-        <tbody *ngFor='let obj of wordTo'>
-            <!--<span *ngFor='let obj of wordTo'>-->
-                <!-- <tr *ngFor='let word of liveWordsList'> -->
-                <tr *ngFor='let w of obj.content' >
-                <td (click)="getDefinition(w.value); open(content);">
-                    <a href="javascript:void(0)">{{w.value}}</a>
-                    <!--<a href="javascript:void(0)">{{ word}}</a> -->
-                </td>
-                <td>{{wordCategory}}</td>
+                <td>{{convertGrade(word.grade)}}</td>
             </tr>
         </tbody>
     </table>
