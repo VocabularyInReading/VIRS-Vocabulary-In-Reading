@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.vir.service.impl.processor.PdfProcessorServiceTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.009 sec - in com.vir.service.impl.processor.PdfProcessorServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.029 sec - in com.vir.service.impl.processor.PdfProcessorServiceTest

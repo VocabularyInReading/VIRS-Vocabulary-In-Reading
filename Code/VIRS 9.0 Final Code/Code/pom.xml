@@ -6,7 +6,7 @@
 	<groupId>com.vir</groupId>
 	<artifactId>VIR-Project</artifactId>
 
-	<version>6.3.5-SNAPSHOT</version>
+	<version>6.3.7-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 

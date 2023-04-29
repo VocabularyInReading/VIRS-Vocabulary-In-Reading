@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.vir.service.impl.dictionary.SimpleDictionaryEntryServiceTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.009 sec - in com.vir.service.impl.dictionary.SimpleDictionaryEntryServiceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 3, Time elapsed: 0.03 sec - in com.vir.service.impl.dictionary.SimpleDictionaryEntryServiceTest

@@ -3,12 +3,12 @@
 <target name="main">
   <echo message="Prepearing the bundle..."/>
   <delete>
-    <fileset dir="C:\Users\regin\Desktop\VIRS\Code\VIR-Backend/bundle">
+    <fileset dir="C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend/bundle">
       <include name="*.jar"/>
     </fileset>
   </delete>
-  <copy file="C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\target/VIR-Backend-6.3.0.jar" toFile="C:\Users\regin\Desktop\VIRS\Code\VIR-Backend/bundle/VIR-Backend-6.3.0.jar"/>
-  <echo file="C:\Users\regin\Desktop\VIRS\Code\VIR-Backend/bundle/Procfile">web: java -jar VIR-Backend-6.3.0.jar</echo>
-  <zip basedir="C:\Users\regin\Desktop\VIRS\Code\VIR-Backend/bundle" destfile="C:\Users\regin\Desktop\VIRS\Code\VIR-Backend/release/bundle-VIR-Backend-6.3.0.zip" compress="false"/>
+  <copy file="C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\target/VIR-Backend-6.3.0.jar" toFile="C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend/bundle/VIR-Backend-6.3.0.jar"/>
+  <echo file="C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend/bundle/Procfile">web: java -jar VIR-Backend-6.3.0.jar</echo>
+  <zip basedir="C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend/bundle" destfile="C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend/release/bundle-VIR-Backend-6.3.0.zip" compress="false"/>
 </target>
 </project>

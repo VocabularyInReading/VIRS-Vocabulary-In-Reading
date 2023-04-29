@@ -2,6 +2,10 @@
 // https://karma-runner.github.io/0.13/config/configuration-file.html
 
 module.exports = function (config) {
+  // npm install puppeteer --save-dev
+  // paste in frontend folder to get below working (if not done already)
+  const puppeteer = require('puppeteer');
+  process.env.CHROME_BIN = puppeteer.executablePath();
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular/cli'],
@@ -34,6 +38,13 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
+    browsers: ['ChromeNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessCI: {
+          base: 'ChromeHeadless',
+          flags: ['--no-sandbox']
+      }
+  },
     singleRun: false
 
   });

@@ -1,89 +1,91 @@
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\SimpleDictionaryEntryService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Percent.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\OcrOptimizerService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\PdfProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\ResourceController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\repository\RecoveryRepository.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\ExceptionAdviceController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\wiki\WikiPage.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\SourceType.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\VariantForm.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\enumerations\ImageConversionOption.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\DocProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Sense.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\exception\UnparseableContentException.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\converter\WikiConverterService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\User.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\SendEmailService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\exception\UnsupportedFileException.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\repository\WordRepositoryHelper.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\TesseractConfigurationService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\FileProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Text.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\config\CorsConfig.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\DictionaryEntry.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\UserController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\ResourceService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\EmailMessage.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\TextProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\GrammaticalFeature.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\repository\WordRepository.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\email\SendGridEmailService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\DictionaryEntryController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\exception\UnableToGetEntryException.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\wiki\WikiEntry.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\config\EncryptorConfig.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\AnalyzerController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Entry.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\SimpleWordService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\WordController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\config\DataConfig.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\enumerations\EmailResult.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\RelatedEntry.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\exception\HeaderMalformattedError.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\AuditLog.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\helpers\IOHelper.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\helpers\OcrReader.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\WordService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\AngularRedirectController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\ThreadValue.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\ImgProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Count.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\SimpleFileProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\VirBackendApplication.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\controller\WordAdminController.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\exception\ApiError.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\exception\PageLimitExceededException.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\RetrieveEntry.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\helpers\AWSBlockReader.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\OptimizedTextProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\WordMatch.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\repository\UserRepository.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\CategorizedText.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\FileType.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Translation.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\WikiHtmlCleanerService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\wiki\WikiResult.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\ItranslateRequest.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Pronunciation.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Word.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\SimpleTextProcessorService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\SendEmail.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\CrossReference.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\LexicalEntry.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\DictionaryEntryService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\config\SecurityConfig.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\HeadwordEntry.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\config\TesseractPropertiesConfig.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Recovery.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\config\SwaggerConfig.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\OxfordDictionaryEntryService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Example.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Dictionary.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\translator\WordTranslator.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\helpers\TesseractOcrReader.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Itranslator.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\model\Statistics.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\EmailService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\CSVResourceService.java
-C:\Users\regin\Desktop\VIRS\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\WikiDictionaryEntryService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\enumerations\EmailResult.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\email\SendGridEmailService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\DownloadController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\config\EncryptorConfig.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Pronunciation.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\config\DataConfig.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\WordMatch.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Text.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\repository\UserRepository.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\helpers\OcrReader.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\AnalyzerController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\WordService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\OxfordDictionaryEntryService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\SendEmailService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\ExceptionAdviceController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\AuditLog.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\repository\RecoveryRepository.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\exception\HeaderMalformattedError.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\FileProcessorService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\translator\WordTranslator.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\EmailService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\DictionaryEntryService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\exception\UnsupportedFileException.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\OptimizedTextProcessorService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\config\TesseractPropertiesConfig.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\VariantForm.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\exception\PageLimitExceededException.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\SimpleWordService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\wiki\WikiEntry.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\ThreadValue.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Statistics.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\SimpleFileProcessorService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\WordController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\CrossReference.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\converter\WikiConverterService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\UserController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\wiki\WikiPage.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\enumerations\ImageConversionOption.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\ItranslateRequest.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Word.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\helpers\AWSBlockReader.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\repository\WordRepository.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\repository\WordRepositoryHelper.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\User.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\SourceType.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\SimpleDictionaryEntryService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Translation.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\RelatedEntry.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\VirBackendApplication.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Count.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\FileType.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\GrammaticalFeature.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\CSVResourceService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Dictionary.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\exception\UnableToGetEntryException.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\helpers\IOHelper.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\exception\ApiError.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\WikiDictionaryEntryService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\SimpleTextProcessorService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\LexicalEntry.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\ResourceService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Itranslator.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\HeadwordEntry.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\RetrieveEntry.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\CategorizedText.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Entry.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\helpers\TesseractOcrReader.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\TextProcessorService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Sense.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\ResourceController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\wiki\WikiResult.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\DictionaryEntry.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\TesseractConfigurationService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Percent.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\config\CorsConfig.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\DownloadWordsService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\Recovery.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\DictionaryEntryController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\AngularRedirectController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\SendEmail.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\config\SecurityConfig.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\EmailMessage.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\ImgProcessorService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\dictionary\WikiHtmlCleanerService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\controller\WordAdminController.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\OcrOptimizerService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\exception\UnparseableContentException.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\model\dictionary\oxford\Example.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\DocProcessorService.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\config\SwaggerConfig.java
+C:\Users\Windows 10\VIRS-Vocabulary-In-Reading\Code\VIRS 9.0 Final Code\Code\VIR-Backend\src\main\java\com\vir\service\impl\processor\PdfProcessorService.java

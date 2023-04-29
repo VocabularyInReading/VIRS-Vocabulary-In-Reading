@@ -27,6 +27,7 @@ com\vir\model\Percent.class
 com\vir\repository\WordRepository.class
 com\vir\model\dictionary\oxford\Translation.class
 com\vir\service\impl\processor\SimpleFileProcessorService.class
+com\vir\service\impl\DownloadWordsService.class
 com\vir\service\FileProcessorService.class
 com\vir\model\dictionary\oxford\HeadwordEntry.class
 com\vir\service\impl\CSVResourceService.class
@@ -72,6 +73,7 @@ com\vir\service\impl\processor\OptimizedTextProcessorService.class
 com\vir\model\WordMatch.class
 com\vir\model\dictionary\oxford\CategorizedText.class
 com\vir\exception\PageLimitExceededException.class
+com\vir\controller\DownloadController.class
 com\vir\controller\WordAdminController.class
 com\vir\model\dictionary\oxford\Example.class
 com\vir\service\EmailService.class
